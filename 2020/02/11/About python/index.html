@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="HuangR's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;本文整理了我在使用和学习python的过程中借鉴的博客！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="About python">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/About%20python/index.html">
+<meta property="og:site_name" content="HuangR&#39;s Blog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本文整理了我在使用和学习python的过程中借鉴的博客！">
+<meta property="og:image" content="http://yoursite.com/2020/02/11/About%20python/python.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/11/About%20python/2.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/11/About%20python/3.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/11/About%20python/4.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/11/About%20python/vscode.png">
+<meta property="article:published_time" content="2020-02-11T06:23:47.934Z">
+<meta property="article:modified_time" content="2020-03-24T09:03:14.662Z">
+<meta property="article:author" content="黄  锐">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/11/About%20python/python.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/11/About python/"/>
+
+
+
+
+
+  <title>About python | HuangR's Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://Ruirui-Huang.github.io" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HuangR's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录世界，记录你！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/About%20python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄  锐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HuangR's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">About python</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-11T14:23:47+08:00">
+                2020-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/11/About%20python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/11/About%20python/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 搂了
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>眼
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  916
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;本文整理了我在使用和学习python的过程中借鉴的博客！</p>
+<a id="more"></a>
+<p><img src="/2020/02/11/About%20python/python.png" alt></p>
+<h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="About-Anaconda"><a href="#About-Anaconda" class="headerlink" title="About Anaconda"></a>About Anaconda</h2><ol>
+<li>下载Anaconda<br>&emsp;&emsp;进入<a href="https://www.anaconda.com/distribution/#download-section" target="_blank" rel="noopener">Conda</a>官网,点击<code>64-Bit Graphical Installer (462 MB)</code>等待下载  </li>
+<li>安装<br>&emsp;&emsp;点击已经下载好的安装包，<code>Destination Folder</code>选择自定义<code>Browse</code>文件夹（建议在D盘新建Conda文件夹）<br>剩余参考：<a href="https://jingyan.baidu.com/article/eae078275a31851fec5485b8.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/eae078275a31851fec5485b8.html</a></li>
+<li><code>Finish</code>之后不需要其他操作，关闭即可。</li>
+</ol>
+<h2 id="About-Pycharm"><a href="#About-Pycharm" class="headerlink" title="About Pycharm"></a>About Pycharm</h2><ol>
+<li>下载Pycharm<br>&emsp;&emsp;进入<a href="https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe" target="_blank" rel="noopener">Pychram</a>官网，选择<code>Professional</code>等待下载</li>
+<li>安装  </li>
+</ol>
+<ul>
+<li>自定义安装路径，方便存放自己的代码<br>&emsp;&emsp;</li>
+<li>勾选<code>64-bit launcher</code>、<code>.py</code>和<code>Add to ... the PATH</code>，点击<code>next</code></li>
+<li>直接<code>install</code>，结束</li>
+</ul>
+<ol start="3">
+<li>剩余操作参考上面那个链接里面的（点击步骤4中的<code>Pychram</code>转到）（如果觉得麻烦，在下载的时候选择<code>Community</code></li>
+<li>打开pychram<br>&emsp;&emsp;选择<code>open</code>，打开你之前已经创建好了的文件夹，我的是<code>D:/Conda/Code</code>，然后点击左上角<code>file</code>找到里面的<code>setting</code>，进去之后选择<code>project</code>下面的<code>project Interpreter</code>，看到：<img src="/2020/02/11/About%20python/2.png" alt><br>&emsp;&emsp;按如下操作：<img src="/2020/02/11/About%20python/3.png" alt>)<img src="/2020/02/11/About%20python/4.png" alt></li>
+<li>结束</li>
+</ol>
+<h2 id="About-VScode"><a href="#About-VScode" class="headerlink" title="About VScode"></a>About VScode</h2><ul>
+<li>人狠话不多，上菜！<img src="/2020/02/11/About%20python/vscode.png" alt>  </li>
+</ul>
+<ol>
+<li>下载Visual Studio Code：<a href="https://code.visualstudio.com/docs/?dv=win" target="_blank" rel="noopener">https://code.visualstudio.com/docs/?dv=win</a></li>
+<li></li>
+</ol>
+<h1 id="使用过程中的一些问题"><a href="#使用过程中的一些问题" class="headerlink" title="使用过程中的一些问题"></a>使用过程中的一些问题</h1><h2 id="问题1：安装相应的包很慢"><a href="#问题1：安装相应的包很慢" class="headerlink" title="问题1：安装相应的包很慢"></a>问题1：安装相应的包很慢</h2><h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p>&emsp;&emsp;由于访问外网，python在加载包的时候很慢</p>
+<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>&emsp;&emsp;方法一：手动添加<code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</code><br>&emsp;&emsp;方法二：windows下，直接在<code>user</code>目录中创建一个<code>pip</code>文件，如：<code>C:\Users\xx\pip</code>，新建文件<code>pip.ini</code></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+
+<h2 id="问题2：jupyter更换虚拟环境"><a href="#问题2：jupyter更换虚拟环境" class="headerlink" title="问题2：jupyter更换虚拟环境"></a>问题2：jupyter更换虚拟环境</h2><h3 id="问题描述：-1"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h3><p>&emsp;&emsp;在创建的conda env上运行Jupyter notebook，但是发现在notebook中的python其实并没有运行在那个env上。</p>
+<h3 id="解决方案：-1"><a href="#解决方案：-1" class="headerlink" title="解决方案："></a>解决方案：</h3><ol>
+<li>在<code>cmd</code>中切换到想要的环境xxx</li>
+<li>输入命令<code>conda activate xxx</code></li>
+<li>在xxx环境中安装好<code>ipykernel</code></li>
+<li><code>python -m ipykernel install --name xxx</code>（一般第三步操作完就可以了）</li>
+</ol>
+<h2 id="问题3：Pychram专业版破解"><a href="#问题3：Pychram专业版破解" class="headerlink" title="问题3：Pychram专业版破解"></a>问题3：Pychram专业版破解</h2><h3 id="问题描述：-2"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h3><p>&emsp;&emsp;专业版功能比较齐全，但是收费，破解感觉比较🐂🍺（社区版可以满足日常学习需求）</p>
+<h3 id="解决方案：-2"><a href="#解决方案：-2" class="headerlink" title="解决方案："></a>解决方案：</h3><ul>
+<li>暂时性激活：<a href="http://lookdiv.com/" target="_blank" rel="noopener">入口</a> ,钥匙：lookdiv.com</li>
+<li>永久激活：<ol>
+<li>下载Pychram2019:<a href="https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe" target="_blank" rel="noopener">https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe</a></li>
+<li>下载破解补丁链接：<a href="https://pan.baidu.com/s/1pr5Ri3SxUtpCDaSAUIpQQg" target="_blank" rel="noopener">https://pan.baidu.com/s/1pr5Ri3SxUtpCDaSAUIpQQg</a></li>
+<li>将破解补丁<code>JetbrainsCrack-release-enc.jar</code>放置在<code>pychram</code>安装目录<code>\bin</code>目录下面。</li>
+<li>在<code>Pycharm</code>安装目录的\bin目录下找到<code>pycharm.exe.vmoptions</code>和<code>pycharm64.exe.vmoptions</code>两个文件 ，右键以文本格式打开（可用借助<code>Notepad</code>打开），在两个文件最后追加  <code>-javaagent:D:\RuanJian\PyCharm 2018.3.3\bin\JetbrainsCrack-release-enc.jar</code>，注意修改为你自己的安装路径，然后保存即可。</li>
+<li>启动<code>pychram</code>,选择<code>Activation code</code>,输入以下内容。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">   ThisCrackLicenseId-&#123;</span><br><span class="line">“licenseId”:”11011″,</span><br><span class="line">“licenseeName”:”WeChat”,</span><br><span class="line">“assigneeName”:”IT–Pig”,</span><br><span class="line">“assigneeEmail”:”1113449881@qq.com”,</span><br><span class="line">“licenseRestriction”:””,</span><br><span class="line">“checkConcurrentUse”:false,</span><br><span class="line">“products”:[</span><br><span class="line">&#123;“code”:”II”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”DM”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”AC”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”RS0″,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”WS”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”DPN”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”RC”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”PS”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”DC”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”RM”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”CL”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”PC”,”paidUpTo”:”2099-12-31″&#125;</span><br><span class="line">],</span><br><span class="line">“hash”:”2911276/0″,</span><br><span class="line">“gracePeriodDays”:7,</span><br><span class="line">“autoProlongated”:false&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="判断pytorch是否支持GPU加速"><a href="#判断pytorch是否支持GPU加速" class="headerlink" title="判断pytorch是否支持GPU加速"></a>判断pytorch是否支持GPU加速</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(torch.cuda.is_available())</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="python的一些常用操作"><a href="#python的一些常用操作" class="headerlink" title="python的一些常用操作"></a>python的一些常用操作</h1><h2 id="读取和写入dat文件"><a href="#读取和写入dat文件" class="headerlink" title="读取和写入dat文件"></a>读取和写入dat文件</h2><h3 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path = <span class="string">r'D:\Matlab\Data\test.dat'</span></span><br><span class="line">data = pd.read_table(path, sep = <span class="string">'\t'</span>, header=<span class="literal">None</span>, engine=<span class="string">'python'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="写入"><a href="#写入" class="headerlink" title="写入"></a>写入</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path = <span class="string">r'D:\test.dat'</span></span><br><span class="line">np.savetxt(path, xyz, fmt=<span class="string">"%d"</span>, delimiter=<span class="string">'\t'</span>)</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;type(xyz) = list</p>
+<h2 id="自定义z轴刻度值"><a href="#自定义z轴刻度值" class="headerlink" title="自定义z轴刻度值"></a>自定义z轴刻度值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ax.set_zticks(np.arange(<span class="number">0</span>, <span class="number">17</span>, <span class="number">1</span>))</span><br><span class="line">ax.set_zticklabels([<span class="string">'-320'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'-240 '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'-160'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' -80'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'0'</span>])</span><br><span class="line">ax.set_zlabel(<span class="string">'H(m)'</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>我好久没吃辣条了</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="黄  锐 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="黄  锐 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+    <div>
+	  
+	    
+<div class="my_post_copyright">
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 版权信息 ------</div>
+ <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+ 
+ 
+ <p><span>发布时间:</span>2020年02月11日 - 14:23</p>
+ <p><span>最后更新:</span>2020年03月24日 - 17:03</p>
+ <p><span>版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+   var clipboard = new Clipboard('.fa-clipboard');
+   $(".fa-clipboard").click(function(){
+     clipboard.on('success', function(){
+       swal({   
+         title: "",   
+         text: '复制成功',
+         icon: "success", 
+         showConfirmButton: true
+         });
+ 	 });
+   });  
+</script>
+
+	  
+	</div>
+	
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/06/Markdown-s%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/" rel="next" title="Markdown's 常用语法">
+                <i class="fa fa-chevron-left"></i> Markdown's 常用语法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="黄  锐" />
+            
+              <p class="site-author-name" itemprop="name">黄  锐</p>
+              <p class="site-description motion-element" itemprop="description">回忆是一种重逢</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Ruirui-Huang/My-Code" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://i.csdn.net/#/uc/collection-list" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-copyright"></i>CSDN</a>
+                  </span>
+                
+            </div>
+			
+          
+
+          
+          
+
+          
+          
+	  
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作流程"><span class="nav-number">1.</span> <span class="nav-text">操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#About-Anaconda"><span class="nav-number">1.1.</span> <span class="nav-text">About Anaconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#About-Pycharm"><span class="nav-number">1.2.</span> <span class="nav-text">About Pycharm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#About-VScode"><span class="nav-number">1.3.</span> <span class="nav-text">About VScode</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用过程中的一些问题"><span class="nav-number">2.</span> <span class="nav-text">使用过程中的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题1：安装相应的包很慢"><span class="nav-number">2.1.</span> <span class="nav-text">问题1：安装相应的包很慢</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述："><span class="nav-number">2.1.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案："><span class="nav-number">2.1.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题2：jupyter更换虚拟环境"><span class="nav-number">2.2.</span> <span class="nav-text">问题2：jupyter更换虚拟环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述：-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案：-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题3：Pychram专业版破解"><span class="nav-number">2.3.</span> <span class="nav-text">问题3：Pychram专业版破解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述：-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案：-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断pytorch是否支持GPU加速"><span class="nav-number">2.4.</span> <span class="nav-text">判断pytorch是否支持GPU加速</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python的一些常用操作"><span class="nav-number">3.</span> <span class="nav-text">python的一些常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#读取和写入dat文件"><span class="nav-number">3.1.</span> <span class="nav-text">读取和写入dat文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取"><span class="nav-number">3.1.1.</span> <span class="nav-text">读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入"><span class="nav-number">3.1.2.</span> <span class="nav-text">写入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义z轴刻度值"><span class="nav-number">3.2.</span> <span class="nav-text">自定义z轴刻度值</span></a></li></ol></li></ol></div>
+            
+			
+          </div>
+        </section>
+      <!--/noindex-->
+      
+	  
+      
+
+	  
+	    <div>
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=1300413068&auto=1&height=66">
+		  </iframe>
+        </div>
+        
+    </div>
+	
+  </aside>
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄  锐</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.9k字</span>
+</div>
+-->
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'HHBn5XjQ2BAAB8s1rcAPf2YN-gzGzoHsz',
+        appKey: 'FBIsIoenE5GCB1IF3mBTpgTz',
+        placeholder: '元芳，你怎么看......',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

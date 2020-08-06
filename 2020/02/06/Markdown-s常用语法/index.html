@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="HuangR's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;本文利用vscode作为Markdown编辑器，详细介绍Markdown的一些常用语法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown&#39;s 常用语法">
+<meta property="og:url" content="http://yoursite.com/2020/02/06/Markdown-s%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="HuangR&#39;s Blog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本文利用vscode作为Markdown编辑器，详细介绍Markdown的一些常用语法。">
+<meta property="og:image" content="http://yoursite.com/images/test.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/large/0083T5Bugy1gbljhhaja1j30zk0htwie.jpg">
+<meta property="article:published_time" content="2020-02-06T07:43:21.000Z">
+<meta property="article:modified_time" content="2020-03-09T05:32:40.951Z">
+<meta property="article:author" content="黄  锐">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/test.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/06/Markdown-s常用语法/"/>
+
+
+
+
+
+  <title>Markdown's 常用语法 | HuangR's Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://Ruirui-Huang.github.io" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HuangR's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录世界，记录你！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/06/Markdown-s%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄  锐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HuangR's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Markdown's 常用语法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-06T15:43:21+08:00">
+                2020-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/06/Markdown-s%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/06/Markdown-s%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 搂了
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>眼
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;本文利用vscode作为Markdown编辑器，详细介绍Markdown的一些常用语法。</p>
+<a id="more"></a>
+<h2 id="书写格式"><a href="#书写格式" class="headerlink" title="书写格式"></a>书写格式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">全角空格：&amp;emsp;</span><br><span class="line">半角空格：&amp;ensp;</span><br></pre></td></tr></table></figure>
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>&emsp;&emsp;方法1：连续两个以上空格+回车  </p>
+<p>&emsp;&emsp;方法2：使用html语言换行标签</p>
+<h2 id="斜体-粗体-字号"><a href="#斜体-粗体-字号" class="headerlink" title="斜体/粗体/字号"></a>斜体/粗体/字号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">粗体：**加粗的文字**</span><br><span class="line">斜体：*斜体文字*</span><br><span class="line">自定义字体大小：&lt;font size&#x3D;4&gt;变化的字&lt;&#x2F;font&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是一段引用</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;效果如下：</p>
+<blockquote>
+<p>这是一段引用</p>
+</blockquote>
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_人是群居动物_</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;效果如下：  </p>
+<p><em>人是群居动物</em>  </p>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~删除效果~~</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;效果如下：<br><del>删除效果</del></p>
+<h2 id="文字居中-背景色"><a href="#文字居中-背景色" class="headerlink" title="文字居中/背景色"></a>文字居中/背景色</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>需要居中的文字<span class="tag">&lt;/<span class="name">center</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">red</span>&gt;</span>背景色是：red<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table><tr><td bgcolor="red"><center>背景色是：red</center></td></tr></table>
+
+<h2 id="分级标题"><a href="#分级标题" class="headerlink" title="分级标题"></a>分级标题</h2><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><h3 id="行内形式"><a href="#行内形式" class="headerlink" title="行内形式"></a>行内形式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[链接文字](链接网址 &quot;标题&quot;)</span><br><span class="line">[黄锐的博客](http:&#x2F;&#x2F;Ruirui-Huang.github.io)</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;效果如下：  </p>
+<p><a href="http://Ruirui-Huang.github.io" target="_blank" rel="noopener">黄锐的博客</a></p>
+<h3 id="参考形式"><a href="#参考形式" class="headerlink" title="参考形式"></a>参考形式</h3><p>&emsp;&emsp;为参考形式的链接定一个[名称]，方便我们在文章中多次引用（链接名称可以用字母、数字和空格，不分大小写）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[链接文字][name]</span><br><span class="line">[name]:link &quot;Title&quot;</span><br><span class="line"></span><br><span class="line">例如：我喜欢用[Google][1]和[Bing][2]进行学术搜索，[Baidu][3]算个什么东西。</span><br><span class="line">（:后面不要空格）</span><br><span class="line">[1]:https:&#x2F;&#x2F;www.google.com&#x2F; &quot;Google&quot;</span><br><span class="line">[2]:https:&#x2F;&#x2F;cn.bing.com&#x2F; &quot;Bing Search&quot;</span><br><span class="line">[3]:https:&#x2F;&#x2F;www.baidu.com&#x2F; &quot;Baidu Search&quot;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;我喜欢用<a href="https://www.google.com/" target="_blank" rel="noopener" title="Google">Google</a>和<a href="https://cn.bing.com/" target="_blank" rel="noopener" title="Bing Search">Bing</a>进行学术搜索，<a href="https://www.baidu.com/" target="_blank" rel="noopener" title="Baidu Search">Baidu</a>算个什么东西。</p>
+<h3 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h3><p>&emsp;&emsp;Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用 <code>&lt; &gt;</code> 包起来，Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，邮址的自动链接也很类似，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;http://example.com/&gt;</span><br><span class="line">&lt;address@example.com&gt;</span><br><span class="line">例如：访问：&lt;http://localhost:4000&gt;</span><br><span class="line">显示：访问：http://localhost:4000</span><br></pre></td></tr></table></figure>
+
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>&emsp;&emsp;语法如下：数字后加点<code>.</code>，再空一格写内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 打开冰箱</span><br><span class="line">2. 放入大象</span><br><span class="line">3. 关上冰箱</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;效果如下：</p>
+<ol>
+<li>打开冰箱</li>
+<li>放入大象</li>
+<li>关上冰箱<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3>&emsp;&emsp;语法如下：把数字和<code>.</code>换成<code>-</code>就行。（<code>*</code>/<code>+</code>）也可以  </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 打开冰箱</span><br><span class="line">- 放入大象</span><br><span class="line">- 关上冰箱</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;效果如下：  </p>
+<ul>
+<li>打开冰箱</li>
+<li>放入大象</li>
+<li>关上冰箱<h2 id="引用-1"><a href="#引用-1" class="headerlink" title="引用"></a>引用</h2></li>
+</ul>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>&emsp;&emsp;<strong>方法一：（推荐）</strong>   </p>
+<p>&emsp;&emsp;配置<code>_config.yml</code>里面的<code>post_asset_folder:false</code>这个选项设置为<code>true</code><br>&emsp;&emsp;在你的hexo目录下执行<code>npm install hexo-asset-image --save</code>，运行<code>hexo n &quot;xxxx&quot;</code>来生成md博文时，<code>/source/_posts</code>文件夹内除了xxxx.md文件外还有一个同名的文件夹。<br>&emsp;&emsp;在xxxx.md中想引入图片时，先把图片放入xxxx文件夹中，使用<code>![你想输入的替代文字](xxxx/图片名.jpg)</code>即可插入图片。  </p>
+<p>&emsp;&emsp;<strong>方法二：</strong></p>
+<p>&emsp;&emsp;在本地<code>source</code>中建立images文件夹，然后<code>&lt;img src=&quot;/images/图片名.jpg&quot;&gt;</code>  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/images/cat.jpg"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<img src="/images/test.jpg">    
+
+<p>&emsp;&emsp;<strong>方法三：</strong><br>&emsp;&emsp;利用图床    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![](网页图片的url)</span><br><span class="line">![](https:&#x2F;&#x2F;wx3.sinaimg.cn&#x2F;large&#x2F;0083T5Bugy1gbljhhaja1j30zk0htwie.jpg)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://wx3.sinaimg.cn/large/0083T5Bugy1gbljhhaja1j30zk0htwie.jpg" alt></p>
+<h2 id="内容目录"><a href="#内容目录" class="headerlink" title="内容目录"></a>内容目录</h2><h2 id="注脚"><a href="#注脚" class="headerlink" title="注脚"></a>注脚</h2><h2 id="LaTeX公式"><a href="#LaTeX公式" class="headerlink" title="LaTeX公式"></a>LaTeX公式</h2><h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>？？？表格无法居中</p>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>&emsp;&emsp;使用三个或以上的<code>*</code>/<code>-</code>来创建分割线。（行内不能有其他东西）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">***</span><br></pre></td></tr></table></figure>
+<p>效果如下：  </p>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h2 id="setting-json"><a href="#setting-json" class="headerlink" title="setting.json"></a>setting.json</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">"latex-workshop.showContextMenu":true,                //右键菜单</span><br><span class="line">"latex-workshop.intellisense.package.enabled": true,  //根据加载的包，自动完成命令或包  </span><br><span class="line">"latex-workshop.latex.autoBuild.run": "never",        //禁止保存文件时自动build  </span><br><span class="line">"latex-workshop.latex.recipes": [  </span><br><span class="line">  &#123;  </span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"latexmk"</span>,  </span><br><span class="line">    <span class="attr">"tools"</span>: [  </span><br><span class="line">      <span class="string">"latexmk"</span>  </span><br><span class="line">    ]  </span><br><span class="line">  &#125;,  </span><br><span class="line">  &#123;  </span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"PDFlatex"</span>,  </span><br><span class="line">    <span class="attr">"tools"</span>: [  </span><br><span class="line">      <span class="string">"pdflatex"</span>  </span><br><span class="line">    ]  </span><br><span class="line">  &#125;,  </span><br><span class="line">  &#123;  </span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"pdflatex -&gt;žž bibtex -&gt;žž pdflatex2"</span>,  </span><br><span class="line">    <span class="attr">"tools"</span>: [  </span><br><span class="line">      <span class="string">"pdflatex"</span>,  </span><br><span class="line">      <span class="string">"bibtex"</span>,  </span><br><span class="line">      <span class="string">"pdflatex"</span>,  </span><br><span class="line">      <span class="string">"pdflatex"</span>  </span><br><span class="line">    ]  </span><br><span class="line">  &#125;,  </span><br><span class="line">  &#123;  </span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"xelatex"</span>,  </span><br><span class="line">    <span class="attr">"tools"</span>: [  </span><br><span class="line">      <span class="string">"xelatex"</span>  </span><br><span class="line">    ]  </span><br><span class="line">  &#125;,  </span><br><span class="line">  &#123;  </span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"xelatex -&gt; bibtex -&gt; xelatex"</span>,  </span><br><span class="line">    <span class="attr">"tools"</span>: [  </span><br><span class="line">      <span class="string">"xelatex"</span>,  </span><br><span class="line">      <span class="string">"bibtex"</span>,  </span><br><span class="line">      <span class="string">"xelatex"</span>,  </span><br><span class="line">    ]  </span><br><span class="line">  &#125;  </span><br><span class="line">],  </span><br><span class="line">"latex-workshop.latex.tools":[  </span><br><span class="line">  &#123;  </span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"latexmk"</span>,  </span><br><span class="line">    <span class="attr">"command"</span>: <span class="string">"latexmk"</span>,  </span><br><span class="line">    <span class="attr">"args"</span>: [  </span><br><span class="line">      <span class="string">"-synctex=1"</span>,  </span><br><span class="line">      <span class="string">"-interaction=nonstopmode"</span>,  </span><br><span class="line">      <span class="string">"-file-line-error"</span>,  </span><br><span class="line">      <span class="string">"-pdf"</span>,  </span><br><span class="line">      <span class="string">"-outdir=%OUTDIR%"</span>,  </span><br><span class="line">      <span class="string">"%DOC%"</span>  </span><br><span class="line">    ],  </span><br><span class="line">    <span class="attr">"env"</span>: &#123;&#125;  </span><br><span class="line">    &#125;,  </span><br><span class="line">    &#123;  </span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"pdflatex"</span>,  </span><br><span class="line">    <span class="attr">"command"</span>: <span class="string">"pdflatex"</span>,  </span><br><span class="line">    <span class="attr">"args"</span>: [  </span><br><span class="line">      <span class="string">"-synctex=1"</span>,  </span><br><span class="line">      <span class="string">"-interaction=nonstopmode"</span>,  </span><br><span class="line">      <span class="string">"-file-line-error"</span>,  </span><br><span class="line">      <span class="string">"%DOC%"</span>  </span><br><span class="line">    ],  </span><br><span class="line">    <span class="attr">"env"</span>: &#123;&#125;  </span><br><span class="line">    &#125;,  </span><br><span class="line">    &#123;  </span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"xelatex"</span>,  </span><br><span class="line">    <span class="attr">"command"</span>: <span class="string">"xelatex"</span>,  </span><br><span class="line">    <span class="attr">"args"</span>: [  </span><br><span class="line">      <span class="string">"-synctex=1"</span>,  </span><br><span class="line">      <span class="string">"-interaction=nonstopmode"</span>,  </span><br><span class="line">      <span class="string">"-file-line-error"</span>,  </span><br><span class="line">      <span class="string">"%DOC%"</span>  </span><br><span class="line">    ],  </span><br><span class="line">    <span class="attr">"env"</span>: &#123;&#125;  </span><br><span class="line">    &#125;,  </span><br><span class="line">    &#123;  </span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"bibtex"</span>,  </span><br><span class="line">    <span class="attr">"command"</span>: <span class="string">"bibtex"</span>,  </span><br><span class="line">    <span class="attr">"args"</span>: [  </span><br><span class="line">      <span class="string">"%DOCFILE%"</span>  </span><br><span class="line">    ],  </span><br><span class="line">    <span class="attr">"env"</span>: &#123;&#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">],  </span><br><span class="line">"latex-workshop.latex.clean.fileTypes": [  //设定清理文件的类型  </span><br><span class="line">  "*.aux",  </span><br><span class="line">  "*.bbl",  </span><br><span class="line">  "*.blg",  </span><br><span class="line">  "*.idx",  </span><br><span class="line">  "*.ind",  </span><br><span class="line">  "*.lof",  </span><br><span class="line">  "*.lot",  </span><br><span class="line">  "*.out",  </span><br><span class="line">  "*.toc",  </span><br><span class="line">  "*.acn",  </span><br><span class="line">  "*.acr",  </span><br><span class="line">  "*.alg",  </span><br><span class="line">  "*.glg",  </span><br><span class="line">  "*.glo",  </span><br><span class="line">  "*.gls",  </span><br><span class="line">  "*.ist",  </span><br><span class="line">  "*.fls",  </span><br><span class="line">  "*.log",  </span><br><span class="line">  "*.fdb_latexmk",  </span><br><span class="line">  "*.nav",  </span><br><span class="line">  "*.snm",  </span><br><span class="line">  <span class="string">"*.synctex.gz"</span>  </span><br><span class="line">],  </span><br><span class="line">"latex-workshop.view.pdf.viewer":"tab",//pdf文件的预览方式</span><br></pre></td></tr></table></figure>
+
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ul>
+<li><code>ctrl+alt+c</code>：清除辅助文件</li>
+<li><code>ctrl+alt+v</code>：预览编译的PDF文件</li>
+<li><code>ctrl+alt+j</code>：正向搜索。当设置<code>latex-workshop.view.pdf.viewer&quot;: &quot;tab&quot;</code>时，在LaTex源文件中按下快捷键，定位到PDF文档相应位置。<br>未完待续！</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>我好久没吃辣条了</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="黄  锐 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="黄  锐 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+    <div>
+	  
+	    
+<div class="my_post_copyright">
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 版权信息 ------</div>
+ <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+ 
+ 
+ <p><span>发布时间:</span>2020年02月06日 - 15:43</p>
+ <p><span>最后更新:</span>2020年03月09日 - 13:32</p>
+ <p><span>版权声明:</span><i class="fa fa-creative-commons"></i> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+   var clipboard = new Clipboard('.fa-clipboard');
+   $(".fa-clipboard").click(function(){
+     clipboard.on('success', function(){
+       swal({   
+         title: "",   
+         text: '复制成功',
+         icon: "success", 
+         showConfirmButton: true
+         });
+ 	 });
+   });  
+</script>
+
+	  
+	</div>
+	
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="next" title="我的第一篇博客">
+                <i class="fa fa-chevron-left"></i> 我的第一篇博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/11/About%20python/" rel="prev" title="About python">
+                About python <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="黄  锐" />
+            
+              <p class="site-author-name" itemprop="name">黄  锐</p>
+              <p class="site-description motion-element" itemprop="description">回忆是一种重逢</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Ruirui-Huang/My-Code" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://i.csdn.net/#/uc/collection-list" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-copyright"></i>CSDN</a>
+                  </span>
+                
+            </div>
+			
+          
+
+          
+          
+
+          
+          
+	  
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#书写格式"><span class="nav-number">1.</span> <span class="nav-text">书写格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#换行"><span class="nav-number">2.</span> <span class="nav-text">换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斜体-粗体-字号"><span class="nav-number">3.</span> <span class="nav-text">斜体&#x2F;粗体&#x2F;字号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">4.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下划线"><span class="nav-number">5.</span> <span class="nav-text">下划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除线"><span class="nav-number">6.</span> <span class="nav-text">删除线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字居中-背景色"><span class="nav-number">7.</span> <span class="nav-text">文字居中&#x2F;背景色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分级标题"><span class="nav-number">8.</span> <span class="nav-text">分级标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超链接"><span class="nav-number">9.</span> <span class="nav-text">超链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行内形式"><span class="nav-number">9.1.</span> <span class="nav-text">行内形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考形式"><span class="nav-number">9.2.</span> <span class="nav-text">参考形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动链接"><span class="nav-number">9.3.</span> <span class="nav-text">自动链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">10.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有序列表"><span class="nav-number">10.1.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无序列表"><span class="nav-number">10.2.</span> <span class="nav-text">无序列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用-1"><span class="nav-number">11.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入图片"><span class="nav-number">12.</span> <span class="nav-text">插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容目录"><span class="nav-number">13.</span> <span class="nav-text">内容目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注脚"><span class="nav-number">14.</span> <span class="nav-text">注脚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LaTeX公式"><span class="nav-number">15.</span> <span class="nav-text">LaTeX公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程图"><span class="nav-number">16.</span> <span class="nav-text">流程图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">17.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分割线"><span class="nav-number">18.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">19.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setting-json"><span class="nav-number">20.</span> <span class="nav-text">setting.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快捷键"><span class="nav-number">21.</span> <span class="nav-text">快捷键</span></a></li></ol></div>
+            
+			
+          </div>
+        </section>
+      <!--/noindex-->
+      
+	  
+      
+
+	  
+	    <div>
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=1300413068&auto=1&height=66">
+		  </iframe>
+        </div>
+        
+    </div>
+	
+  </aside>
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄  锐</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.9k字</span>
+</div>
+-->
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'HHBn5XjQ2BAAB8s1rcAPf2YN-gzGzoHsz',
+        appKey: 'FBIsIoenE5GCB1IF3mBTpgTz',
+        placeholder: '元芳，你怎么看......',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
