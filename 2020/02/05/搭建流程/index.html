@@ -58,20 +58,13 @@
   
 
   
-
-  
     
-
     
   
 
   
     
-
-    
-  
-
-  
+      
     
 
     
@@ -79,6 +72,24 @@
 
   
     
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
 
     
   
@@ -86,7 +97,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Gothic:300,300italic,400,400italic,700,700italicMicrosoft YaHei:300,300italic,400,400italic,700,700italicBig Caslon:300,300italic,400,400italic,700,700italicMonaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -119,8 +130,6 @@
 
 
 
-
-  <link rel="alternate" href="/atom.xml" title="HuangR's Blog" type="application/atom+xml" />
 
 
 
@@ -187,7 +196,8 @@
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="HuangR's Blog" type="application/atom+xml">
+</head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -233,7 +243,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -243,7 +253,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/%20" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -253,7 +263,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -263,7 +273,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/%20" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -271,21 +281,45 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" rel="external nofollow noreferrer" class="popup-trigger">
+          
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            归档
+            搜索
           </a>
         </li>
-      
-
       
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -436,16 +470,16 @@
 <p>&emsp;&emsp;如果标题中包含空格，请使用引号括起来</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My First Blog"</span></span><br></pre></td></tr></table></figure>
 
-<p>&emsp;&emsp;详见：<a href="https://hexo.io/zh-cn/docs/commands#new" target="_blank" rel="noopener">指令/Hexo</a></p>
+<p>&emsp;&emsp;详见：<a href="https://hexo.io/zh-cn/docs/commands#new" target="_blank" rel="noopener external nofollow noreferrer">指令/Hexo</a></p>
 <h3 id="生成页面"><a href="#生成页面" class="headerlink" title="生成页面"></a>生成页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate / hexo g</span><br></pre></td></tr></table></figure>
 
 <h3 id="启动预览"><a href="#启动预览" class="headerlink" title="启动预览"></a>启动预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo sever / $ hexo s</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;访问：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>出现Hexo默认页面，本地博客安装成功！</p>
+<p>&emsp;&emsp;访问：<a href="http://localhost:4000" target="_blank" rel="noopener external nofollow noreferrer">http://localhost:4000</a>出现Hexo默认页面，本地博客安装成功！</p>
 <h3 id="部署预先生成的静态文件"><a href="#部署预先生成的静态文件" class="headerlink" title="部署预先生成的静态文件"></a>部署预先生成的静态文件</h3><p>&emsp;&emsp;即：进入网址&lt;yourname.github.io/&gt;看到同样的效果</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy / hexo d</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;进入网站可能会发现静态网站还未更新，等一会就好了，不需要重复操作！</p>
-<h2 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h2><h3 id="添加外部链接"><a href="#添加外部链接" class="headerlink" title="添加外部链接"></a>添加外部链接</h3><p>&emsp;&emsp;参考：<a href="https://blog.csdn.net/qq_43020645/article/details/82845708" target="_blank" rel="noopener">https://blog.csdn.net/qq_43020645/article/details/82845708</a></p>
-<h3 id="添加访问人数"><a href="#添加访问人数" class="headerlink" title="添加访问人数"></a>添加访问人数</h3><p>&emsp;&emsp;参考：<a href="https://chrischen0405.github.io/2018/09/11/post20180911/" target="_blank" rel="noopener">https://chrischen0405.github.io/2018/09/11/post20180911/</a></p>
+<h2 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h2><h3 id="添加外部链接"><a href="#添加外部链接" class="headerlink" title="添加外部链接"></a>添加外部链接</h3><p>&emsp;&emsp;参考：<a href="https://blog.csdn.net/qq_43020645/article/details/82845708" target="_blank" rel="noopener external nofollow noreferrer">https://blog.csdn.net/qq_43020645/article/details/82845708</a></p>
+<h3 id="添加访问人数"><a href="#添加访问人数" class="headerlink" title="添加访问人数"></a>添加访问人数</h3><p>&emsp;&emsp;参考：<a href="https://chrischen0405.github.io/2018/09/11/post20180911/" target="_blank" rel="noopener external nofollow noreferrer">https://chrischen0405.github.io/2018/09/11/post20180911/</a></p>
 <h3 id="添加网易云外播放链"><a href="#添加网易云外播放链" class="headerlink" title="添加网易云外播放链"></a>添加网易云外播放链</h3><p>&emsp;&emsp;打开<code>D:\Blog\blog\themes\next\layout\_macro\sidebar.swig</code>，添加如下内容：<img src="/2020/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/music1.png" alt>&emsp;&emsp;在<code>D:\Blog\blog\themes\next\_config.yml</code>末尾添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 网易云音乐插件</span><br><span class="line">background_music: &#x2F;&#x2F;music.163.com&#x2F;outchain&#x2F;player?type&#x3D;2&amp;id&#x3D;1380546324&amp;auto&#x3D;1&amp;height&#x3D;66</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;设置特定的音乐，打开网页网易云  <img src="/2020/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/music2.png" alt><br>&emsp;&emsp;点击生成外链播放器，替换箭头部分，即<code>src=</code>之后的内容。<br><img src="/2020/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/music3.png" alt><br>&emsp;&emsp;<code>auto=1</code>表示自动播放；<code>auto=0</code>表示取消自动播放。</p>
@@ -459,7 +493,7 @@
 <p>&emsp;&emsp;如果想放在侧边栏，搜索关键词<code>b2t</code>，把<code>false</code> 改为 <code>true</code>：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Back to top in sidebar (only for Pisces | Gemini).</span><br><span class="line">b2t: false</span><br><span class="line"></span><br><span class="line"># Scroll percent label in b2t button.</span><br><span class="line">scrollpercent: true</span><br></pre></td></tr></table></figure>
 
-<h3 id="添加评论系统"><a href="#添加评论系统" class="headerlink" title="添加评论系统"></a>添加评论系统</h3><p>&emsp;&emsp;参考：<a href="https://blog.csdn.net/blue_zy/article/details/79071414" target="_blank" rel="noopener">https://blog.csdn.net/blue_zy/article/details/79071414</a></p>
+<h3 id="添加评论系统"><a href="#添加评论系统" class="headerlink" title="添加评论系统"></a>添加评论系统</h3><p>&emsp;&emsp;参考：<a href="https://blog.csdn.net/blue_zy/article/details/79071414" target="_blank" rel="noopener external nofollow noreferrer">https://blog.csdn.net/blue_zy/article/details/79071414</a></p>
 <h4 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h4><p>&emsp;&emsp;avatar 参数:  </p>
 <table>
 <thead>
@@ -503,14 +537,14 @@
 </tbody></table>
 <h4 id="邮箱设置"><a href="#邮箱设置" class="headerlink" title="邮箱设置"></a>邮箱设置</h4><p>&emsp;&emsp;参考：</p>
 <ol>
-<li><a href="https://github.com/zhaojun1998/Valine-Admin" target="_blank" rel="noopener">https://github.com/zhaojun1998/Valine-Admin</a></li>
-<li><a href="https://www.leeyiding.com/archives/27/" target="_blank" rel="noopener">https://www.leeyiding.com/archives/27/</a></li>
+<li><a href="https://github.com/zhaojun1998/Valine-Admin" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/zhaojun1998/Valine-Admin</a></li>
+<li><a href="https://www.leeyiding.com/archives/27/" target="_blank" rel="noopener external nofollow noreferrer">https://www.leeyiding.com/archives/27/</a></li>
 </ol>
 <h3 id="解决点击侧边栏日志无法转到的问题！"><a href="#解决点击侧边栏日志无法转到的问题！" class="headerlink" title="解决点击侧边栏日志无法转到的问题！"></a>解决点击侧边栏日志无法转到的问题！</h3><p>？？？</p>
-<h2 id="本地代码上传到GitHub"><a href="#本地代码上传到GitHub" class="headerlink" title="本地代码上传到GitHub"></a>本地代码上传到GitHub</h2><p>&emsp;&emsp;参考：<a href="https://blog.csdn.net/qq_32846595/article/details/71149312" target="_blank" rel="noopener">https://blog.csdn.net/qq_32846595/article/details/71149312</a></p>
+<h2 id="本地代码上传到GitHub"><a href="#本地代码上传到GitHub" class="headerlink" title="本地代码上传到GitHub"></a>本地代码上传到GitHub</h2><p>&emsp;&emsp;参考：<a href="https://blog.csdn.net/qq_32846595/article/details/71149312" target="_blank" rel="noopener external nofollow noreferrer">https://blog.csdn.net/qq_32846595/article/details/71149312</a></p>
 <h3 id="预备备"><a href="#预备备" class="headerlink" title="预备备"></a>预备备</h3><ol>
-<li>注册一个<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>账号</li>
-<li>安装<a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">git</a>工具</li>
+<li>注册一个<a href="https://github.com/" target="_blank" rel="noopener external nofollow noreferrer">GitHub</a>账号</li>
+<li>安装<a href="https://git-for-windows.github.io/" target="_blank" rel="noopener external nofollow noreferrer">git</a>工具</li>
 </ol>
 <h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><ol start="3">
 <li>进入Github首页，点击<code>New repository</code>新建一个项目  </li>
@@ -704,7 +738,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%20%7C%7C%20archive">
+                <a href="/archives">
               
                   <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
@@ -713,31 +747,33 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
             
 
           </nav>
 
           
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
 
           
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://github.com/Ruirui-Huang/My-Code" target="_blank" title="GitHub">
+                    <a href="https://github.com/Ruirui-Huang/My-Code" rel="external nofollow noreferrer" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://i.csdn.net/#/uc/collection-list" target="_blank" title="CSDN">
+                    <a href="https://i.csdn.net/#/uc/collection-list" rel="external nofollow noreferrer" target="_blank" title="CSDN">
                       
                         <i class="fa fa-fw fa-copyright"></i>CSDN</a>
                   </span>
@@ -1355,7 +1391,7 @@ if(canvas.getContext){
 -->
 
 <div class="translate-style">
-繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+繁/简：<a id="translateLink" href="javascript:translatePage();" rel="external nofollow noreferrer">繁体
 </a>
 </div>
 <script type="text/javascript" src="/js/tw_cn.js"></script>
@@ -1570,6 +1606,323 @@ translateInitilization();
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
@@ -1589,8 +1942,6 @@ translateInitilization();
 
   
 
-  
-  
 
   
    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
