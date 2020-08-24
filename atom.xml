@@ -5,9 +5,9 @@
   <subtitle>记录世界，记录你！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://ruirui-huang.github.io/"/>
+  <link href="http://ruirui-huang.github.io/"/>
   <updated>2020-08-23T15:05:35.061Z</updated>
-  <id>https://ruirui-huang.github.io/</id>
+  <id>http://ruirui-huang.github.io/</id>
   
   <author>
     <name>黄  锐</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>About python</title>
-    <link href="https://ruirui-huang.github.io/2020/02/11/About%20python/"/>
-    <id>https://ruirui-huang.github.io/2020/02/11/About%20python/</id>
+    <link href="http://ruirui-huang.github.io/2020/02/11/About%20python/"/>
+    <id>http://ruirui-huang.github.io/2020/02/11/About%20python/</id>
     <published>2020-02-11T06:23:47.934Z</published>
     <updated>2020-08-23T15:05:35.061Z</updated>
     
@@ -32,15 +32,15 @@
     </summary>
     
     
-      <category term="python" scheme="https://Ruirui-Huang.github.io/categories/python/"/>
+      <category term="python" scheme="http://Ruirui-Huang.github.io/categories/python/"/>
     
     
   </entry>
   
   <entry>
     <title>Markdown&#39;s 常用语法</title>
-    <link href="https://ruirui-huang.github.io/2020/02/06/Markdown-s%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
-    <id>https://ruirui-huang.github.io/2020/02/06/Markdown-s%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</id>
+    <link href="http://ruirui-huang.github.io/2020/02/06/Markdown-s%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
+    <id>http://ruirui-huang.github.io/2020/02/06/Markdown-s%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</id>
     <published>2020-02-06T07:43:21.000Z</published>
     <updated>2020-03-09T05:32:40.951Z</updated>
     
@@ -58,8 +58,8 @@
   
   <entry>
     <title>我的第一篇博客</title>
-    <link href="https://ruirui-huang.github.io/2020/02/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://ruirui-huang.github.io/2020/02/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
+    <link href="http://ruirui-huang.github.io/2020/02/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://ruirui-huang.github.io/2020/02/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
     <published>2020-02-04T16:56:56.608Z</published>
     <updated>2020-02-20T06:48:58.676Z</updated>
     
@@ -77,8 +77,8 @@
   
   <entry>
     <title>搭建流程</title>
-    <link href="https://ruirui-huang.github.io/2020/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/"/>
-    <id>https://ruirui-huang.github.io/2020/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</id>
+    <link href="http://ruirui-huang.github.io/2020/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/"/>
+    <id>http://ruirui-huang.github.io/2020/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</id>
     <published>2020-02-04T16:20:07.735Z</published>
     <updated>2020-02-21T04:36:54.358Z</updated>
     
