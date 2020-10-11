@@ -245,4 +245,140 @@
 <p><img src="/2020/02/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/title.jpg" alt></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>A Software for 3D Gravity Inversion</title>
+    <url>/2020/08/25/A-Software-for-3D-Gravity-Inversion/</url>
+    <content><![CDATA[<p>&emsp;&emsp;主要介绍一款做重力反演的软件！</p>
+<a id="more"></a>
+<p><strong>参考文献：</strong><br><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/head.png" alt></p>
+<p><a href="https://pan.baidu.com/s/12B9l-9-pzaY6BP6b1-wLeg" target="_blank" rel="noopener external nofollow noreferrer">获取软件</a>，钥匙：Grav</p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/Abstract.png" alt></p>
+<ol>
+<li>重力反演的方法有很多，非唯一性，不保证此软件的反演结果绝对准确；</li>
+<li>安装好<code>Matlab2016b(唯一支持)</code>后，双击<code>DenInv3D.exe</code>；</li>
+</ol>
+<h2 id="安装Matlab2016b"><a href="#安装Matlab2016b" class="headerlink" title="安装Matlab2016b"></a>安装Matlab2016b</h2><p><code>一台电脑安装两个版本的matlab没有影响！！！</code>  </p>
+<p><a href="https://pan.baidu.com/s/1G-LONSRYfI13L88RxZnnKQ" target="_blank" rel="noopener external nofollow noreferrer">获取matlab2016b</a>,钥匙：Grav<br>参考博客：<a href="https://blog.csdn.net/weixin_43974113/article/details/91863154" target="_blank" rel="noopener external nofollow noreferrer">https://blog.csdn.net/weixin_43974113/article/details/91863154</a></p>
+<h2 id="切入正题"><a href="#切入正题" class="headerlink" title="切入正题"></a>切入正题</h2><p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/object0.png" alt></p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/object1.png" alt> </p>
+<p>$\Delta m = m-m_0$，其中$m_0$为初始化模型，可以是先前研究的背景模型，比如其他的物理调查，或者$m_0 = 0$， $\Delta d$为对应的修正重力数据。  </p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/object2.png" alt></p>
+<p>其中，$\sigma_i$表示误差（相对于第<em>i</em>个观测站）的标准差。   </p>
+<h3 id="操作界面："><a href="#操作界面：" class="headerlink" title="操作界面："></a>操作界面：</h3><ul>
+<li>加载重力数据：<code>File &gt; Open &gt; Observed Gravity</code>选择<code>.grd</code>的文件，会出现左边箭头的文件。<code>.grd</code>重力数据详见<a href="https://github.com/Ruirui-Huang/My-Code/blob/master/ForwardModeling.m" target="_blank" rel="noopener external nofollow noreferrer">line166</a>  </li>
+</ul>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/gui.png" alt></p>
+<p>以下使用$32\times32 (X ranges from 25 to 1575, Y ranges from 25 to 1575, dx=dy=50)$的观测数据，如下：  </p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/gravity-data.png" alt>  </p>
+<ul>
+<li><p>重力数据可视化：<code>Draw &gt; Observed Gravity\Gradient &gt; Gravity</code>  </p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/show-data.png" alt></p>
+</li>
+<li><p>加载模型：在右边箭头位置右键选择<code>load model</code>， 选择<code>.txt</code>的文件，具体数据如下：  </p>
+</li>
+</ul>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/model.png" alt>  </p>
+<p>line1分别为<code>X-range(m)</code>中的<code>Minimum</code>和<code>Maximum</code>；<br>line2分别为<code>Y-range(m)</code>中的<code>Minimum</code>和<code>Maximum</code>；<br>line3分别为<code>Z-range(m)</code>中的<code>Minimum</code>和<code>Maximum</code>，<code>（Z轴取向下为正方向）</code>；<br>line4分别为<code>Observed Surface(m)</code><br><code>line9</code>之后第3列为各深度间距，第4列为与重力源分布相关的深度加权。  </p>
+<ul>
+<li><p>选择超参：<code>Parameter Setting</code>；</p>
+</li>
+<li><p>开始反演：点击<code>Calculate</code>.<br>为了节约时间，一般提前载入核矩阵<code>G</code>：<code>File &gt; Open &gt; Kernel Function Matrix</code>；</p>
+</li>
+<li><p>保存反演结果：<code>File &gt; Save &gt; Inverted Density</code>；<br>该软件可以实现非等间距反演，可以使用该软件计算相应的核函数，并保存：<code>File &gt; Save &gt; Kernel Function Matrix</code>；  </p>
+</li>
+</ul>
+<p>可视化：选择<code>Draw &gt; Inverted Density &gt; 3D Grid Density</code>，其中<code>Density1=1.0,Density1=0.5</code>表示显示0.5至1区间的密度，如果想要显示大于1，小于0的密度部分，那么<code>Density1=0.5,Density1=1.0</code>。  </p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/3D-Grid-density.png" alt><br>结果：（此次测试未设置深度加权）</p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/pre-result.png" alt></p>
+<p>真实模型：<br><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/truth-model.png" alt><br>展示剖面图<code>Draw &gt; Inverted Density &gt; Slice 3D</code>，如下：  </p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/Slice-3D.png" alt>  </p>
+<p>真实数据2：  </p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/show-data2.png" alt>  </p>
+<p>预测模型2：</p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/pre-result2.png" alt>  </p>
+<p>真实模型2：  </p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/truth-model2.png" alt><br><strong>注：</strong><br>由于电脑原因在可视化<code>Inverted Density</code>的过程较长，<code>Slice 3D</code>倒还好，以下附上之前常用的python代码：</p>
+<pre><code class="python"><span class="comment"># 真实模型</span>
+m1 = scio.loadmat(<span class="string">'d:/Data/g/data30/data12000.mat'</span>)[<span class="string">'m'</span>]/<span class="number">1000</span>
+<span class="comment"># 保存的反演模型</span>
+f = open(<span class="string">'D:/Matlab2016b/DenInv3D/result/model12000.dat'</span>,encoding=<span class="string">'utf-8'</span>)
+
+sentimentlist = []
+<span class="keyword">for</span> line <span class="keyword">in</span> f:
+    s = line.strip().split(<span class="string">' '</span>)
+    s = [ float(x) <span class="keyword">for</span> x <span class="keyword">in</span> s ]
+    sentimentlist.append(s)
+f.close()
+df_train = pd.DataFrame(sentimentlist,columns=[<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'z'</span>,<span class="string">'rho'</span>])
+m2 = df_train[<span class="string">'rho'</span>].values
+<span class="comment"># 阈值处理（类似上述可视化中的密度选择）</span>
+m3 = (m2 &gt; <span class="number">0.5</span>).astype(np.uint8)
+
+
+<span class="function"><span class="keyword">def</span> <span class="title">plt_model</span><span class="params">(model)</span>:</span>
+    plt.rcParams[<span class="string">'font.size'</span>] = <span class="number">8</span>
+    fig = plt.figure(figsize = (<span class="number">8</span>, <span class="number">4</span>))
+    ax = fig.gca(projection=<span class="string">'3d'</span>)
+    ax.voxels(model, facecolors=<span class="string">'r'</span>, edgecolors=<span class="string">'w'</span>, linewidth=<span class="number">0.5</span>)
+
+    plt.xticks(np.arange(<span class="number">0</span>, <span class="number">33</span>, <span class="number">1</span>), (<span class="string">'0'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'400'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'800'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'1200'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'1600'</span>))
+    ax.set_xlabel(<span class="string">'L(m)'</span>, fontsize=<span class="number">10</span>)
+    plt.yticks(np.arange(<span class="number">0</span>, <span class="number">33</span>, <span class="number">1</span>), (<span class="string">'0'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'400'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'800'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'1200'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'1600'</span>))
+    ax.set_ylabel(<span class="string">'W(m)'</span>, fontsize=<span class="number">10</span>)
+    ax.set_zticks(np.arange(<span class="number">0</span>, <span class="number">17</span>, <span class="number">1</span>))
+    ax.set_zticklabels([<span class="string">'0'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'-200 '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'-400'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' -600'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'-800'</span>])
+    ax.set_zlabel(<span class="string">'H(m)'</span>, fontsize=<span class="number">10</span>)
+    ax.invert_zaxis()
+
+    plt.show()
+
+<span class="function"><span class="keyword">def</span> <span class="title">plt_m</span><span class="params">(y, color=<span class="string">'b'</span>)</span>:</span>
+    x = range(<span class="number">1</span>, <span class="number">16385</span>)
+    plt.xlim(<span class="number">-100</span>, <span class="number">16500</span>)
+    plt.ylim(<span class="number">0</span>, <span class="number">1.01</span>)
+    plt.xticks(np.arange(<span class="number">0</span>, <span class="number">16500</span>, step=<span class="number">1024</span>), fontsize=<span class="number">4</span>)
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">16384</span>):
+        <span class="keyword">if</span> y[i]==<span class="number">1</span>:
+            plt.scatter(x[i], y[i],linewidths=<span class="number">0.001</span>)
+    plt.plot(x, y, linewidth=<span class="number">0.8</span>, color=color, linestyle=<span class="string">":"</span>)
+
+
+print(<span class="string">"0.0表示没有模型的方块数；1.0表示有模型的方块数"</span>)
+print(<span class="string">"----------------------------------------------"</span>)
+print(<span class="string">"原始模型:"</span>, Counter(m1.reshape(<span class="number">1</span>, <span class="number">16384</span>)[<span class="number">0</span>]))
+print(<span class="string">"反演模型:"</span>, Counter(m3))
+
+plt.figure(figsize=(<span class="number">8</span>, <span class="number">3</span>))
+
+plt.subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>)
+plt_m(m1, <span class="string">'r'</span>)
+
+plt.subplot(<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>)
+plt_m(m2)
+
+plt.subplot(<span class="number">3</span>, <span class="number">1</span>, <span class="number">3</span>)
+plt_m(m3)
+
+tru_model = m1.reshape(<span class="number">16</span>, <span class="number">32</span>, <span class="number">32</span>)
+truth_model = tru_model.T &gt; <span class="number">0</span>
+plt_model(truth_model)
+
+pre_model = m3.reshape(<span class="number">16</span>, <span class="number">32</span>, <span class="number">32</span>)
+predict_model = pre_model.T &gt; <span class="number">0</span>
+plt_model(predict_model)</code></pre>
+<ul>
+<li>原代码测试使用数据<br>界面：  </li>
+</ul>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/example.png" alt>  </p>
+<p>重力梯度数据：  </p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/example-gradient.png" alt>  </p>
+<p>反演结果：（展示大于0.2，小于-0.2的部分）  </p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/example-pre-result.png" alt>  </p>
+<p>切片：  </p>
+<p><img src="/2020/08/25/A-Software-for-3D-Gravity-Inversion/example-slice.png" alt></p>
+]]></content>
+      <categories>
+        <category>Gravity Inversion</category>
+      </categories>
+  </entry>
 </search>
