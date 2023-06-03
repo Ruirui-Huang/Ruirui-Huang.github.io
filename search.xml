@@ -3,7 +3,7 @@
   <entry>
     <title>About python</title>
     <url>/2020/02/11/About%20python/</url>
-    <content><![CDATA[<p>&emsp;&emsp;本文整理了我在使用和学习python的过程中借鉴的博客！<br><a id="more"></a><br><img src="/2020/02/11/About%20python/python.png" alt></p>
+    <content><![CDATA[<p>本文整理了我在使用和学习python的过程中借鉴的博客！<br><a id="more"></a><br><img src="/2020/02/11/About%20python/python.png" alt></p>
 <h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="About-Anaconda"><a href="#About-Anaconda" class="headerlink" title="About Anaconda"></a>About Anaconda</h2><ol>
 <li>下载Anaconda<br>&emsp;&emsp;进入<a href="https://www.anaconda.com/distribution/#download-section" target="_blank" rel="noopener external nofollow noreferrer">Conda</a>官网,点击<code>64-Bit Graphical Installer (462 MB)</code>等待下载  </li>
 <li>安装<br>&emsp;&emsp;点击已经下载好的安装包，<code>Destination Folder</code>选择自定义<code>Browse</code>文件夹（建议在D盘新建Conda文件夹）<br>剩余参考：<a href="https://jingyan.baidu.com/article/eae078275a31851fec5485b8.html" target="_blank" rel="noopener external nofollow noreferrer">https://jingyan.baidu.com/article/eae078275a31851fec5485b8.html</a></li>
@@ -60,20 +60,6 @@
       <categories>
         <category>python</category>
       </categories>
-  </entry>
-  <entry>
-    <title>C语言</title>
-    <url>/2022/05/07/C%E8%AF%AD%E8%A8%80/</url>
-    <content><![CDATA[<p>&emsp;&emsp;习题<br><a id="more"></a></p>
-<h2 id="第一课"><a href="#第一课" class="headerlink" title="第一课"></a>第一课</h2><ol>
-<li><p>CPU唯一认识二进制语言；</p>
-</li>
-<li><p>C语言编写的源代码转换为汇编语言的过程叫编译；</p>
-</li>
-</ol>
-<h2 id="第二课"><a href="#第二课" class="headerlink" title="第二课"></a>第二课</h2><h3 id="为什么下边代码不能正常编译？"><a href="#为什么下边代码不能正常编译？" class="headerlink" title="为什么下边代码不能正常编译？"></a>为什么下边代码不能正常编译？</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">#inc1ude &lt;stdio.h&gt; <span class="comment">// 1 -&gt; l</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Hello World!\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> O; <span class="comment">// O -&gt; 0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="以下程序打印的是什么内容？"><a href="#以下程序打印的是什么内容？" class="headerlink" title="以下程序打印的是什么内容？"></a>以下程序打印的是什么内容？</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Hello world\b\b\b\b\bFishC\n"</span>); <span class="comment">// \b表示将光标从当前位置向左移动一个字符（遇到\n或\r则停止移动），并从此位置开始输出后面的字符（空字符\0和换行符\n除外）。</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>刷题ing</title>
@@ -154,10 +140,48 @@
 ]]></content>
   </entry>
   <entry>
+    <title>C语言</title>
+    <url>/2022/05/07/C%E8%AF%AD%E8%A8%80/</url>
+    <content><![CDATA[<p>&emsp;&emsp;习题<br><a id="more"></a></p>
+<h2 id="第一课"><a href="#第一课" class="headerlink" title="第一课"></a>第一课</h2><ol>
+<li><p>CPU唯一认识二进制语言；</p>
+</li>
+<li><p>C语言编写的源代码转换为汇编语言的过程叫编译；</p>
+</li>
+</ol>
+<h2 id="第二课"><a href="#第二课" class="headerlink" title="第二课"></a>第二课</h2><h3 id="为什么下边代码不能正常编译？"><a href="#为什么下边代码不能正常编译？" class="headerlink" title="为什么下边代码不能正常编译？"></a>为什么下边代码不能正常编译？</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">#inc1ude &lt;stdio.h&gt; <span class="comment">// 1 -&gt; l</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Hello World!\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> O; <span class="comment">// O -&gt; 0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="以下程序打印的是什么内容？"><a href="#以下程序打印的是什么内容？" class="headerlink" title="以下程序打印的是什么内容？"></a>以下程序打印的是什么内容？</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Hello world\b\b\b\b\bFishC\n"</span>); <span class="comment">// \b表示将光标从当前位置向左移动一个字符（遇到\n或\r则停止移动），并从此位置开始输出后面的字符（空字符\0和换行符\n除外）。</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>目标检测</title>
+    <url>/2022/04/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[<p>&emsp;&emsp;论文学习<br><a id="more"></a></p>
+<h1 id="以下依据UP-DETR为主线展开。"><a href="#以下依据UP-DETR为主线展开。" class="headerlink" title="以下依据UP-DETR为主线展开。"></a>以下依据UP-DETR为主线展开。</h1><p>DETR (Object Detection with Transformers) 无需进行样本选择以及NMS操作，其效果和Faster R-CNN有得一拼。</p>
+<h2 id="RCNN"><a href="#RCNN" class="headerlink" title="RCNN"></a>RCNN</h2><p>RCNN算法分为4个步骤：<br><img src="/2022/04/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/RCNN.png" alt></p>
+<ol>
+<li>生成候选区</li>
+<li>特征提取：输出2000*20的矩阵 (每张图片对应2000个候选区域，20个类别)</li>
+<li>类别判断</li>
+<li>位置精修</li>
+</ol>
+<p>存在的问题：</p>
+<ol>
+<li>多个目标候选区对应的图像需要预先提取，占用较大的磁盘空间；</li>
+<li>针对传统CNN需要固定尺寸的输入图像，裁剪、变形等操作会产生物体截断或拉伸现象，导致输入CNN的信息丢失；</li>
+<li>每一个目标候选区域都需要进入CNN网络计算，上千个区域存在大量的范围重叠，重复的特征提取造成计算浪费；</li>
+<li>CNN提取图像特征、分类器预测类别、边界框的边界坐标回归模型是分别训练的，流程复杂，耗时久。</li>
+</ol>
+<h3 id="为什么RCNN用SVM做分类而不直接用全连接之后接softmax"><a href="#为什么RCNN用SVM做分类而不直接用全连接之后接softmax" class="headerlink" title="为什么RCNN用SVM做分类而不直接用全连接之后接softmax?"></a>为什么RCNN用SVM做分类而不直接用全连接之后接softmax?</h3><p>SVM之前需要准备训练所需的正样本和负样本 (交并比小于0.3记为负样本，反之记为正样本)。</p>
+<h2 id="Fast-RCNN"><a href="#Fast-RCNN" class="headerlink" title="Fast RCNN"></a>Fast RCNN</h2><h2 id="Faster-R-CNN"><a href="#Faster-R-CNN" class="headerlink" title="Faster R-CNN"></a>Faster R-CNN</h2><p>References</p>
+<p>Dai, Z., Cai, B., Lin, Y. et al., 2021. UP-DETR: Unsupervised pre-training for object detection with transformers. In proceedings of the IEEE/CVF conference on computer vision and pattern recognition.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>搭建流程</title>
     <url>/2020/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</url>
-    <content><![CDATA[<p>&emsp;&emsp;以下是我总结的关于GitHub+Hexo搭建博客的流程以及一些主题细节变化的操作，以后若需要重新搭建，特此留眼。（精华帖）<br><a id="more"></a><br><img src="/2020/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/title.jpg" alt></p>
-<h2 id="简介：GitHub-Pages-＆-Hexo"><a href="#简介：GitHub-Pages-＆-Hexo" class="headerlink" title="简介：GitHub Pages ＆ Hexo"></a>简介：GitHub Pages ＆ Hexo</h2><h3 id="GitHub-Pages是什么？"><a href="#GitHub-Pages是什么？" class="headerlink" title="GitHub Pages是什么？"></a>GitHub Pages是什么？</h3><p>&emsp;&emsp;GitHub Pages是由GitHub官方提供的一种免费的静态站点托管服务，让我们可以在GitHub仓库里托管和发布自己的静态网站页面。</p>
+    <content><![CDATA[<p>以下是我总结的关于GitHub+Hexo搭建博客的流程以及一些主题细节变化的操作，以后若需要重新搭建，特此留眼。（精华帖）<br><a id="more"></a><br><img src="/2020/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/title.jpg" alt></p>
+<h2 id="简介：GitHub-Pages-＆-Hexo"><a href="#简介：GitHub-Pages-＆-Hexo" class="headerlink" title="简介：GitHub Pages ＆ Hexo"></a>简介：GitHub Pages ＆ Hexo</h2><h3 id="GitHub-Pages是什么？"><a href="#GitHub-Pages是什么？" class="headerlink" title="GitHub Pages是什么？"></a>GitHub Pages是什么？</h3><p>GitHub Pages是由GitHub官方提供的一种免费的静态站点托管服务，让我们可以在GitHub仓库里托管和发布自己的静态网站页面。</p>
 <h3 id="Hexo是什么？"><a href="#Hexo是什么？" class="headerlink" title="Hexo是什么？"></a>Hexo是什么？</h3><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="Hexo博客新建文章"><a href="#Hexo博客新建文章" class="headerlink" title="Hexo博客新建文章"></a>Hexo博客新建文章</h3><p>详见：<a href="https://hexo.io/zh-cn/docs/commands#new" target="_blank" rel="noopener external nofollow noreferrer">指令/Hexo</a><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new 我的第一篇博客</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My First Blog"</span></span><br></pre></td></tr></table></figure>
 <p><strong>注</strong>：如果标题中包含空格，请使用引号括起来</p>
@@ -247,7 +271,7 @@
 <li>杀：taskkill -PID 8976 -F</li>
 </ul>
 <h3 id="Hexo，Next主题的‘下一页’、‘上一页’按钮错误显示为"><a href="#Hexo，Next主题的‘下一页’、‘上一页’按钮错误显示为" class="headerlink" title="Hexo，Next主题的‘下一页’、‘上一页’按钮错误显示为 "></a>Hexo，Next主题的‘下一页’、‘上一页’按钮错误显示为 <i class="fa fa-angle-right"></i></h3><p>打开<code>themes &gt; next &gt; layout &gt; _partials &gt; pagination.swig</code>：<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% if page.prev or page.next %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"pagination"</span>&gt;</span></span><br><span class="line">    &#123;&#123;</span><br><span class="line">      paginator(&#123;</span><br><span class="line">        prev_text: '上一页',</span><br><span class="line">        next_text: '下一页',</span><br><span class="line">        mid_size: 1</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="spawn-failed"><a href="#spawn-failed" class="headerlink" title="spawn failed"></a>spawn failed</h3><ul>
+<h3 id="git-ssh-github-com-Permission-denied-publickey-spawn-failed"><a href="#git-ssh-github-com-Permission-denied-publickey-spawn-failed" class="headerlink" title="git@ssh.github.com: Permission denied (publickey). spawn failed"></a>git@ssh.github.com: Permission denied (publickey). spawn failed</h3><ul>
 <li>删除<code>.deploy_git</code>文件夹</li>
 <li>输入<code>git config --global core.autocrlf false</code></li>
 <li>hexo clean</li>
@@ -256,30 +280,9 @@
 </ul>
 <p>未完待续！！!</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>目标检测</title>
-    <url>/2022/04/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</url>
-    <content><![CDATA[<p>&emsp;&emsp;论文学习<br><a id="more"></a></p>
-<h1 id="以下依据UP-DETR为主线展开。"><a href="#以下依据UP-DETR为主线展开。" class="headerlink" title="以下依据UP-DETR为主线展开。"></a>以下依据UP-DETR为主线展开。</h1><p>DETR (Object Detection with Transformers) 无需进行样本选择以及NMS操作，其效果和Faster R-CNN有得一拼。</p>
-<h2 id="RCNN"><a href="#RCNN" class="headerlink" title="RCNN"></a>RCNN</h2><p>RCNN算法分为4个步骤：<br><img src="/2022/04/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/RCNN.png" alt></p>
-<ol>
-<li>生成候选区</li>
-<li>特征提取：输出2000*20的矩阵 (每张图片对应2000个候选区域，20个类别)</li>
-<li>类别判断</li>
-<li>位置精修</li>
-</ol>
-<p>存在的问题：</p>
-<ol>
-<li>多个目标候选区对应的图像需要预先提取，占用较大的磁盘空间；</li>
-<li>针对传统CNN需要固定尺寸的输入图像，裁剪、变形等操作会产生物体截断或拉伸现象，导致输入CNN的信息丢失；</li>
-<li>每一个目标候选区域都需要进入CNN网络计算，上千个区域存在大量的范围重叠，重复的特征提取造成计算浪费；</li>
-<li>CNN提取图像特征、分类器预测类别、边界框的边界坐标回归模型是分别训练的，流程复杂，耗时久。</li>
-</ol>
-<h3 id="为什么RCNN用SVM做分类而不直接用全连接之后接softmax"><a href="#为什么RCNN用SVM做分类而不直接用全连接之后接softmax" class="headerlink" title="为什么RCNN用SVM做分类而不直接用全连接之后接softmax?"></a>为什么RCNN用SVM做分类而不直接用全连接之后接softmax?</h3><p>SVM之前需要准备训练所需的正样本和负样本 (交并比小于0.3记为负样本，反之记为正样本)。</p>
-<h2 id="Fast-RCNN"><a href="#Fast-RCNN" class="headerlink" title="Fast RCNN"></a>Fast RCNN</h2><h2 id="Faster-R-CNN"><a href="#Faster-R-CNN" class="headerlink" title="Faster R-CNN"></a>Faster R-CNN</h2><p>References</p>
-<p>Dai, Z., Cai, B., Lin, Y. et al., 2021. UP-DETR: Unsupervised pre-training for object detection with transformers. In proceedings of the IEEE/CVF conference on computer vision and pattern recognition.</p>
-]]></content>
+      <categories>
+        <category>Nothing</category>
+      </categories>
   </entry>
   <entry>
     <title>自然语言处理</title>
