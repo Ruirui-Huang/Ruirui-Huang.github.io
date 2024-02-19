@@ -125,7 +125,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="编程语言," />
 
 
 
@@ -138,7 +138,7 @@
 
 <meta name="description" content="本文整理了我在使用和学习python的过程中借鉴的博客！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About python">
+<meta property="og:title" content="Python">
 <meta property="og:url" content="http://ruirui-huang.github.io/2020/02/11/About%20python/index.html">
 <meta property="og:site_name" content="HuangR&#39;s Blog">
 <meta property="og:description" content="本文整理了我在使用和学习python的过程中借鉴的博客！">
@@ -148,8 +148,9 @@
 <meta property="og:image" content="http://ruirui-huang.github.io/2020/02/11/About%20python/4.png">
 <meta property="og:image" content="http://ruirui-huang.github.io/2020/02/11/About%20python/vscode.png">
 <meta property="article:published_time" content="2020-02-11T06:23:47.934Z">
-<meta property="article:modified_time" content="2023-06-03T14:09:44.539Z">
+<meta property="article:modified_time" content="2024-02-19T11:58:43.444Z">
 <meta property="article:author" content="黄  锐">
+<meta property="article:tag" content="编程语言">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://ruirui-huang.github.io/2020/02/11/About%20python/python.png">
 
@@ -187,7 +188,7 @@
 
 
 
-  <title>About python | HuangR's Blog</title>
+  <title>Python | HuangR's Blog</title>
   
 
 
@@ -366,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">About python</h1>
+          <h1 class="post-title" itemprop="name headline">Python</h1>
         
 
         <div class="post-meta">
@@ -401,8 +402,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -447,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  913
+                  842
                 </span>
               
 
@@ -463,7 +464,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -505,12 +506,8 @@
 <li>结束</li>
 </ol>
 <h2 id="About-VScode"><a href="#About-VScode" class="headerlink" title="About VScode"></a>About VScode</h2><ul>
-<li>人狠话不多，上菜！<img src="/2020/02/11/About%20python/vscode.png" alt>  </li>
+<li>人狠话不多，上菜！<img src="/2020/02/11/About%20python/vscode.png" alt></li>
 </ul>
-<ol>
-<li>下载Visual Studio Code：<a href="https://code.visualstudio.com/docs/?dv=win" target="_blank" rel="noopener external nofollow noreferrer">https://code.visualstudio.com/docs/?dv=win</a></li>
-<li></li>
-</ol>
 <h1 id="使用过程中的一些问题"><a href="#使用过程中的一些问题" class="headerlink" title="使用过程中的一些问题"></a>使用过程中的一些问题</h1><h2 id="问题1：安装相应的包很慢"><a href="#问题1：安装相应的包很慢" class="headerlink" title="问题1：安装相应的包很慢"></a>问题1：安装相应的包很慢</h2><h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p>&emsp;&emsp;由于访问外网，python在加载包的时候很慢</p>
 <h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>&emsp;&emsp;方法一：手动添加<code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</code><br>&emsp;&emsp;方法二：windows下，直接在<code>user</code>目录中创建一个<code>pip</code>文件，如：<code>C:\Users\xx\pip</code>，新建文件<code>pip.ini</code><br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure></p>
 <h2 id="问题2：jupyter更换虚拟环境"><a href="#问题2：jupyter更换虚拟环境" class="headerlink" title="问题2：jupyter更换虚拟环境"></a>问题2：jupyter更换虚拟环境</h2><h3 id="问题描述：-1"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h3><p>&emsp;&emsp;在创建的conda env上运行Jupyter notebook，但是发现在notebook中的python其实并没有运行在那个env上。</p>
@@ -520,24 +517,21 @@
 <li>在xxx环境中安装好<code>ipykernel</code></li>
 <li><code>python -m ipykernel install --name xxx</code>（一般第三步操作完就可以了）</li>
 </ol>
-<h2 id="问题3：Pychram专业版破解"><a href="#问题3：Pychram专业版破解" class="headerlink" title="问题3：Pychram专业版破解"></a>问题3：Pychram专业版破解</h2><h3 id="问题描述：-2"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h3><p>&emsp;&emsp;专业版功能比较齐全，但是收费，破解感觉比较🐂🍺（社区版可以满足日常学习需求）</p>
-<h3 id="解决方案：-2"><a href="#解决方案：-2" class="headerlink" title="解决方案："></a>解决方案：</h3><ul>
+<h2 id="问题3：Linux环境下使用Jupyter"><a href="#问题3：Linux环境下使用Jupyter" class="headerlink" title="问题3：Linux环境下使用Jupyter"></a>问题3：Linux环境下使用Jupyter</h2><h3 id="问题描述：-2"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h3><p>&emsp;&emsp;linux远程使用jupyter notebook</p>
+<h3 id="解决方案：-2"><a href="#解决方案：-2" class="headerlink" title="解决方案："></a>解决方案：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --allow-root --ip&#x3D;</span><br></pre></td></tr></table></figure>
+<h2 id="问题4：Pychram专业版破解"><a href="#问题4：Pychram专业版破解" class="headerlink" title="问题4：Pychram专业版破解"></a>问题4：Pychram专业版破解</h2><h3 id="问题描述：-3"><a href="#问题描述：-3" class="headerlink" title="问题描述："></a>问题描述：</h3><p>&emsp;&emsp;专业版功能比较齐全，但是收费，破解感觉比较🐂🍺（社区版可以满足日常学习需求）</p>
+<h3 id="解决方案：-3"><a href="#解决方案：-3" class="headerlink" title="解决方案："></a>解决方案：</h3><ul>
 <li>暂时性激活：<a href="http://lookdiv.com/" target="_blank" rel="noopener external nofollow noreferrer">入口</a> ,钥匙：lookdiv.com</li>
 <li>永久激活：<ol>
 <li>下载Pychram2019:<a href="https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe" target="_blank" rel="noopener external nofollow noreferrer">https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe</a></li>
 <li>下载破解补丁链接：<a href="https://pan.baidu.com/s/1pr5Ri3SxUtpCDaSAUIpQQg" target="_blank" rel="noopener external nofollow noreferrer">https://pan.baidu.com/s/1pr5Ri3SxUtpCDaSAUIpQQg</a></li>
 <li>将破解补丁<code>JetbrainsCrack-release-enc.jar</code>放置在<code>pychram</code>安装目录<code>\bin</code>目录下面。</li>
 <li>在<code>Pycharm</code>安装目录的\bin目录下找到<code>pycharm.exe.vmoptions</code>和<code>pycharm64.exe.vmoptions</code>两个文件 ，右键以文本格式打开（可用借助<code>Notepad</code>打开），在两个文件最后追加  <code>-javaagent:D:\RuanJian\PyCharm 2018.3.3\bin\JetbrainsCrack-release-enc.jar</code>，注意修改为你自己的安装路径，然后保存即可。</li>
-<li>启动<code>pychram</code>,选择<code>Activation code</code>,输入以下内容。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">   ThisCrackLicenseId-&#123;</span><br><span class="line">“licenseId”:”11011″,</span><br><span class="line">“licenseeName”:”WeChat”,</span><br><span class="line">“assigneeName”:”IT–Pig”,</span><br><span class="line">“assigneeEmail”:”1113449881@qq.com”,</span><br><span class="line">“licenseRestriction”:””,</span><br><span class="line">“checkConcurrentUse”:false,</span><br><span class="line">“products”:[</span><br><span class="line">&#123;“code”:”II”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”DM”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”AC”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”RS0″,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”WS”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”DPN”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”RC”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”PS”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”DC”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”RM”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”CL”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”PC”,”paidUpTo”:”2099-12-31″&#125;</span><br><span class="line">],</span><br><span class="line">“hash”:”2911276/0″,</span><br><span class="line">“gracePeriodDays”:7,</span><br><span class="line">“autoProlongated”:false&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="判断pytorch是否支持GPU加速"><a href="#判断pytorch是否支持GPU加速" class="headerlink" title="判断pytorch是否支持GPU加速"></a>判断pytorch是否支持GPU加速</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(torch.cuda.is_available())</span><br></pre></td></tr></table></figure>
-</li>
+<li>启动<code>pychram</code>,选择<code>Activation code</code>,输入以下内容。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">   ThisCrackLicenseId-&#123;</span><br><span class="line">“licenseId”:”11011″,</span><br><span class="line">“licenseeName”:”WeChat”,</span><br><span class="line">“assigneeName”:”IT–Pig”,</span><br><span class="line">“assigneeEmail”:”1113449881@qq.com”,</span><br><span class="line">“licenseRestriction”:””,</span><br><span class="line">“checkConcurrentUse”:false,</span><br><span class="line">“products”:[</span><br><span class="line">&#123;“code”:”II”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”DM”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”AC”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”RS0″,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”WS”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”DPN”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”RC”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”PS”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”DC”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”RM”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”CL”,”paidUpTo”:”2099-12-31″&#125;,</span><br><span class="line">&#123;“code”:”PC”,”paidUpTo”:”2099-12-31″&#125;</span><br><span class="line">],</span><br><span class="line">“hash”:”2911276/0″,</span><br><span class="line">“gracePeriodDays”:7,</span><br><span class="line">“autoProlongated”:false&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
 </li>
 </ul>
-<h1 id="python的一些常用操作"><a href="#python的一些常用操作" class="headerlink" title="python的一些常用操作"></a>python的一些常用操作</h1><h2 id="读取和写入dat文件"><a href="#读取和写入dat文件" class="headerlink" title="读取和写入dat文件"></a>读取和写入dat文件</h2><h3 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path = <span class="string">r'D:\Matlab\Data\test.dat'</span></span><br><span class="line">data = pd.read_table(path, sep = <span class="string">'\t'</span>, header=<span class="literal">None</span>, engine=<span class="string">'python'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="写入"><a href="#写入" class="headerlink" title="写入"></a>写入</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path = <span class="string">r'D:\test.dat'</span></span><br><span class="line">np.savetxt(path, xyz, fmt=<span class="string">"%d"</span>, delimiter=<span class="string">'\t'</span>)</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;type(xyz) = list</p>
-<h2 id="自定义z轴刻度值"><a href="#自定义z轴刻度值" class="headerlink" title="自定义z轴刻度值"></a>自定义z轴刻度值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ax.set_zticks(np.arange(<span class="number">0</span>, <span class="number">17</span>, <span class="number">1</span>))</span><br><span class="line">ax.set_zticklabels([<span class="string">'-320'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'-240 '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'-160'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' -80'</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">' '</span>, <span class="string">'0'</span>])</span><br><span class="line">ax.set_zlabel(<span class="string">'H(m)'</span>)</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -599,8 +593,8 @@
  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
  
  <p><span>发布时间:</span>2020年02月11日 - 14:23:47</p>
- <p><span>最后更新:</span>2023年06月03日 - 22:09:44</p>
- <p><span>原始链接:</span><a href="/2020/02/11/About%20python/" title="About python">http://ruirui-huang.github.io/2020/02/11/About%20python/</a>
+ <p><span>最后更新:</span>2024年02月19日 - 19:58:43</p>
+ <p><span>原始链接:</span><a href="/2020/02/11/About%20python/" title="Python">http://ruirui-huang.github.io/2020/02/11/About%20python/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://ruirui-huang.github.io/2020/02/11/About%20python/"  aria-label="复制成功！"></i></span>
  </p> 
 </div>
@@ -623,6 +617,12 @@
 	
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag"># 编程语言</a>
+          
+        </div>
+      
 
       
       
@@ -642,8 +642,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2022/02/21/%E5%88%B7%E9%A2%98ing/" rel="prev" title="刷题ing">
-                刷题ing <i class="fa fa-chevron-right"></i>
+              <a href="/2022/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="prev" title="数据结构">
+                数据结构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -728,7 +728,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -739,7 +739,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -750,7 +750,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1070,7 +1070,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作流程"><span class="nav-number">1.</span> <span class="nav-text">操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#About-Anaconda"><span class="nav-number">1.1.</span> <span class="nav-text">About Anaconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#About-Pycharm"><span class="nav-number">1.2.</span> <span class="nav-text">About Pycharm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#About-VScode"><span class="nav-number">1.3.</span> <span class="nav-text">About VScode</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用过程中的一些问题"><span class="nav-number">2.</span> <span class="nav-text">使用过程中的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题1：安装相应的包很慢"><span class="nav-number">2.1.</span> <span class="nav-text">问题1：安装相应的包很慢</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述："><span class="nav-number">2.1.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案："><span class="nav-number">2.1.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题2：jupyter更换虚拟环境"><span class="nav-number">2.2.</span> <span class="nav-text">问题2：jupyter更换虚拟环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述：-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案：-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题3：Pychram专业版破解"><span class="nav-number">2.3.</span> <span class="nav-text">问题3：Pychram专业版破解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述：-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案：-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断pytorch是否支持GPU加速"><span class="nav-number">2.4.</span> <span class="nav-text">判断pytorch是否支持GPU加速</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python的一些常用操作"><span class="nav-number">3.</span> <span class="nav-text">python的一些常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#读取和写入dat文件"><span class="nav-number">3.1.</span> <span class="nav-text">读取和写入dat文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取"><span class="nav-number">3.1.1.</span> <span class="nav-text">读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入"><span class="nav-number">3.1.2.</span> <span class="nav-text">写入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义z轴刻度值"><span class="nav-number">3.2.</span> <span class="nav-text">自定义z轴刻度值</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作流程"><span class="nav-number">1.</span> <span class="nav-text">操作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#About-Anaconda"><span class="nav-number">1.1.</span> <span class="nav-text">About Anaconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#About-Pycharm"><span class="nav-number">1.2.</span> <span class="nav-text">About Pycharm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#About-VScode"><span class="nav-number">1.3.</span> <span class="nav-text">About VScode</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用过程中的一些问题"><span class="nav-number">2.</span> <span class="nav-text">使用过程中的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题1：安装相应的包很慢"><span class="nav-number">2.1.</span> <span class="nav-text">问题1：安装相应的包很慢</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述："><span class="nav-number">2.1.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案："><span class="nav-number">2.1.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题2：jupyter更换虚拟环境"><span class="nav-number">2.2.</span> <span class="nav-text">问题2：jupyter更换虚拟环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述：-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案：-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题3：Linux环境下使用Jupyter"><span class="nav-number">2.3.</span> <span class="nav-text">问题3：Linux环境下使用Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述：-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案：-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题4：Pychram专业版破解"><span class="nav-number">2.4.</span> <span class="nav-text">问题4：Pychram专业版破解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述：-3"><span class="nav-number">2.4.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案：-3"><span class="nav-number">2.4.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li></ol></li></ol></div>
             
 			
           </div>
@@ -1091,7 +1091,7 @@ if(canvas.getContext){
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1111,7 +1111,7 @@ if(canvas.getContext){
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.3k字</span>
+  <span class="post-count">博客全站共13.9k字</span>
 </div>
 -->
 
