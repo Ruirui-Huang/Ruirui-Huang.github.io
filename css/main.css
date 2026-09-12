@@ -1253,7 +1253,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ff3657;
+    background: #24ff6e;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2862,6 +2862,30 @@ header.header {
 .site-author-image {
   transition: transform 0.18s ease;
   will-change: transform;
+}
+.tag-cloud-tags {
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7em;
+  line-height: 1.6;
+}
+.tag-cloud-tags a {
+  display: inline-block;
+  padding: 0.1em 0.7em;
+  border-radius: 999px;
+  text-decoration: none;
+  background: var(--btn-default-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.tag-cloud-tags a:hover {
+  transform: scale(1.1);
+  background: #3498db;
+  color: #fff !important;
+  border-color: #3498db;
 }
 .sidebar-bubble-cloud {
   margin-top: 1.5em;
