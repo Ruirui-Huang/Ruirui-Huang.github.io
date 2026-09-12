@@ -29,6 +29,10 @@ menu_settings:
 local_search:
   enable: true
 
+# 首页折叠：用文章 front-matter 的 description 作为摘要，点击"阅读全文"进文章页
+excerpt_description: true
+read_more_btn: true
+
 # 访问统计（原站使用 busuanzi）
 busuanzi_count:
   enable: true

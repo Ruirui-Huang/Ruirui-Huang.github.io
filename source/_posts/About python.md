@@ -1,5 +1,6 @@
 ---
 title: About Python
+description: 本文整理了我使用和学习 Python 的过程中借鉴的博客，包括 Anaconda、PyCharm 等工具配置。
 date: 2018-02-11 14:23:47
 updated: 2024-02-20 22:46:01
 tags:

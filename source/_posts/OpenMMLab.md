@@ -1,5 +1,6 @@
 ---
 title: OpenMMLab
+description: OpenMMLab 训练框架学习笔记。
 date: 2022-05-07 10:32:14
 updated: 2024-02-20 22:37:58
 tags:
