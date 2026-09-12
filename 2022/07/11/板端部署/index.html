@@ -426,8 +426,8 @@
 <li>量化模式下，Conv的输入和输出通道数建议采用32的整数倍；</li>
 <li>量化模式下，多个Conv算子之间，建议少插入Pooling算子</li>
 </ul>
-<p>FC（FullConnection）算子：当网络中存在FC算子，尽量使用多Batch同时推理，且Batch数为16倍数时，性能较好
-Concat算子：</p>
+<p>FC（FullConnection）算子：当网络中存在FC算子，尽量使用多Batch同时推理，且Batch数为16倍数时，性能较好</p>
+<p>Concat算子：</p>
 <ul>
 <li>非量化模式下，Concat的输入和输出通道数建议采用16的整数倍；</li>
 <li>量化模式下，Concat的输入和输出通道数建议采用32的整数倍</li>
