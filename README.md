@@ -38,8 +38,9 @@ D:\Code\blog
 ├── source/
 │   ├── _posts/          # 文章（7 篇；5 篇笔记为 PDF 嵌入显示）
 │   ├── pdf/             # 5 篇学习笔记的 PDF（文章用 <embed> 嵌入）
-│   ├── _data/styles.styl # 自定义样式（气泡词云/头像旋转/PDF工具栏/标签页）
-│   ├── _data/sidebar.njk # 侧栏注入模板（词云 + 头像旋转 + PDF 增强 JS）
+│   ├── _data/styles.styl # 自定义样式（气泡词云/头像旋转/PDF工具栏/标签页/暗色适配/正文排版）
+│   ├── _data/sidebar.njk # 侧栏注入模板（词云 + 头像旋转 + PDF 增强 + 图片懒加载 JS）
+│   ├── _data/head.njk    # head 注入（JSON-LD 结构化数据）
 │   ├── archives/ tags/ categories/ # 归档 / 标签云 / 分类页
 │   ├── about/            # 关于页
 │   ├── robots.txt        # 爬虫规则（指向 sitemap.xml）
@@ -55,7 +56,10 @@ D:\Code\blog
 - **打赏**：NexT `reward_settings` + `source/images/wechatpay.jpg` / `alipay.jpg`。
 - **首页折叠**：文章 front-matter 写 `description`，主题开 `excerpt_description` + `read_more_btn`。
 - **侧栏气泡词云**：`_config.next.yml` → `custom_file_path.sidebar: source/_data/sidebar.njk` + `sidebar.display: always`（首页也显示侧栏）。`sidebar.njk` 用 `tagcloud()` 输出标签 + 内嵌 JS（`styleBubbles`）把文字色转为气泡背景色（白字）。样式在 `_data/styles.styl` 的 `.sidebar-bubble-cloud`。注意：`{% for tag in site.tags %}` 在 inject 模板里取不到数据（已验证死路），必须用 `tagcloud()`；改 `styles.styl` 后需 `hexo clean && hexo g` 才会重编译进 `main.css`。
-- **其他自定义 JS/CSS**：侧栏头像鼠标 3D 旋转、PDF 嵌入文章自动加"新窗口打开/下载"工具栏（都在 `sidebar.njk` 的 script 块与 `styles.styl`）。文章菜单：归档/关于/标签/分类；开启阅读进度条、文章编辑链接（GitHub）、书签、本地搜索、代码复制。
+- **其他自定义 JS/CSS**：侧栏头像鼠标 3D 旋转、PDF 嵌入文章自动加"新窗口打开/下载"工具栏、正文图片懒加载（都在 `sidebar.njk` 的 script 块与 `styles.styl`）。文章菜单：归档/关于/标签/分类；开启阅读进度条、文章编辑链接（GitHub）、书签、本地搜索、代码复制。
+- **暗色模式**：`_config.next.yml` → `darkmode: true`（跟随系统 `prefers-color-scheme`，无手动切换按钮；NexT 8 即此行为）。
+- **正文排版**：链接主题蓝+淡下划线、h2 细分隔线、列表 marker 主题蓝、图片圆角阴影、行内代码淡蓝底、代码块 tab 缩进 4、PDF 容器圆角、文字选中品牌蓝、细滚动条（均在 `styles.styl`）。
+- **站点副标题**：`_config.yml` → `subtitle: 深度学习与日常随笔`；关于页 `source/about/index.md`。
 - **git 身份**（全局）：`Ruirui-Huang` / `Ruirui-Huang@users.noreply.github.com`（`.deploy_git` 子仓库读不到仓库级身份，必须全局）。
 
 ## 5 篇学习笔记的维护方式
