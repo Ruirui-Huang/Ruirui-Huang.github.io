@@ -504,7 +504,7 @@
 <p>蒸馏【<strong>测试阶段不涉及</strong>】：ViLD-text部分将区域编码与文本编码进行比较，通过最小化它们之间的距离来训练检测器的head，使其能够根据文本编码对定位的区域进行分类；ViLD-image部分通常使用L1，对齐<strong>M个相同输入</strong>，在不同模型上【ViLD &amp; CLIP】的输出结果</p>
 </li>
 </ul>
-<p>测试阶段和CLIP<a href="CLIP">4</a>一样</p>
+<p>测试阶段和CLIP<a href="#CLIP">4</a>一样</p>
 <h2 id="GLIP">GLIP</h2>
 <figure data-latex-placement="H">
 <img src="/images/multimodal/GLIP.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
@@ -527,7 +527,7 @@
 </li>
 </ul>
 <h3 id="模型结构-4">模型结构</h3>
-<p><strong>整体结构与<a href="ViLD">7</a>中的c类结构比较接近</strong></p>
+<p><strong>整体结构与<a href="#ViLD">7</a>中的c类结构比较接近</strong></p>
 <figure data-latex-placement="H">
 <img src="/images/multimodal/ALBEF.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
 </figure>
@@ -537,7 +537,7 @@
 <h3 id="Masked-Language-Modeling-MLM">Masked Language Modeling, MLM</h3>
 <p><strong>完形填空</strong></p>
 <h3 id="Image-Text-Matching-ITM">Image-Text Matching, ITM</h3>
-<p>ITM和ITC<a href="ITC">10.2</a>很相似，区别在于ITC只通过encoder获取特征就判断是否对齐，而ITM让图像、文本特征经过多模态层之后再判断是否匹配。</p>
+<p>ITM和ITC<a href="#ITC">10.2</a>很相似，区别在于ITC只通过encoder获取特征就判断是否对齐，而ITM让图像、文本特征经过多模态层之后再判断是否匹配。</p>
 <p>对于ITM而言，判断负样本太简单了，如果简单的随机抽取样本作为负样本的话，模型训练效果不太好。作者在一个batch里，通过计算特征相似度，寻找一张图片中除它本身对应的文本之外相似度最高的文本作为负样本。这样就能构建一批hard negatives，从而提升训练难度。</p>
 <figure data-latex-placement="H">
 <img src="/images/multimodal/ALBEF_Exp.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
@@ -637,7 +637,7 @@
 <h2 id="FastSAM">FastSAM</h2>
 <p><strong>FastSAM通过两阶段实现，先全景实例分割，再根据提示匹配</strong></p>
 <h3 id="全实例分割">全实例分割</h3>
-<p>基于Yolov8-seg实现，可以参考YOLACT<a href="YOLACT">15</a></p>
+<p>基于Yolov8-seg实现，可以参考YOLACT<a href="#YOLACT">15</a></p>
 <h3 id="目标匹配">目标匹配</h3>
 <ul>
 <li>
@@ -652,7 +652,7 @@
 </ul>
 <h2 id="Grounding-DINO">Grounding DINO</h2>
 <p>**特点：**可以根据文字描述检测指定目标</p>
-<p>相较于<a href="GLIP">8</a>，它的优势是：</p>
+<p>相较于<a href="#GLIP">8</a>，它的优势是：</p>
 <ul>
 <li>
 <p>Grounding DINO的transformer结构更接近于NLP模型，因此它更容易同时处理图片和文字</p>

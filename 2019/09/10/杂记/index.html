@@ -320,12 +320,12 @@
 </figure>
 <figcaption>泊松融合。表示目标图像；表示背景图片；表示mask为矩形框的融合图片；表示mask为目标边缘坐标的融合图片</figcaption>
 </figure>
-<p>可以看到，由于目标图像中存在过多的无用边界信息，导致融合后的视觉差较大（图<a href="possion_r">3</a>）。事实上，最好的做法是将需要的ROI抠出来。那么，</p>
+<p>可以看到，由于目标图像中存在过多的无用边界信息，导致融合后的视觉差较大（图<a href="#possion_r">3</a>）。事实上，最好的做法是将需要的ROI抠出来。那么，</p>
 <figure id="contour" data-latex-placement="H">
 <img src="/images/zaji/contour.jpg" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
 <figcaption>目标轮廓</figcaption>
 </figure>
-<p>图<a href="contour">6</a>为不同的边缘检测结果。然而，越精细的轮廓结构往往意味着数据分布的噪声程度越高。长话短说，<strong>我现在要蓝色数据点的外围轮廓</strong>。如果觉得太严格了，可以退而求其次，取黄色方框区域为ROI。</p>
+<p>图<a href="#contour">6</a>为不同的边缘检测结果。然而，越精细的轮廓结构往往意味着数据分布的噪声程度越高。长话短说，<strong>我现在要蓝色数据点的外围轮廓</strong>。如果觉得太严格了，可以退而求其次，取黄色方框区域为ROI。</p>
 <pre><code>    import numpy as np
     from scipy.spatial import ConvexHull
     import matplotlib.pyplot as plt

@@ -475,7 +475,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>CNN的方法本质上存在着一个巨大的桎梏，就是图像初始阶段输入到网络之时，CNN的卷积核不会太大，所以模型只能利用局部信息理解输入图像，难免有些一叶障目</p>
 <h3 id="HRNet">HRNet</h3>
 <p>理论参考：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4MjQ1NzI0NA==&amp;mid=2247490962&amp;idx=1&amp;sn=ed8f3eda028c72ddf98dacb3c8692603&amp;chksm=cf573261f820bb771580d4a09fa1f3b38419d04a5a355049f55e02898e291e9a2c251dee8d41&amp;token=2015045775&amp;lang=zh_CN#rd">Link</a></p>
-<p>HRNet(图<a href="HRNet">2</a>)通过<strong>并行多个分辨率分支</strong>以及不同分支之间的信息交互，获取强语义信息&amp;精准位置信息。而在此之前几乎所有的网络 (图<a href="before">1</a>) 都是<strong>通过下采样得到强语义信息，再上采样恢复高分辨率信息</strong>，导致<strong>大量的有效信息会在不断的上下采样过程中丢失</strong>。</p>
+<p>HRNet(图<a href="#HRNet">2</a>)通过<strong>并行多个分辨率分支</strong>以及不同分支之间的信息交互，获取强语义信息&amp;精准位置信息。而在此之前几乎所有的网络 (图<a href="#before">1</a>) 都是<strong>通过下采样得到强语义信息，再上采样恢复高分辨率信息</strong>，导致<strong>大量的有效信息会在不断的上下采样过程中丢失</strong>。</p>
 <figure id="before" data-latex-placement="H">
 <img src="/images/semantic_seg/before.png" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
 <figcaption>由低分辨率恢复到高分辨率的网络结构图</figcaption>
@@ -577,7 +577,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <img src="/images/semantic_seg/ViT+Adapter.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
 </figure>
 <h3 id="Object-Contextual-Representation-OCR">Object Contextual Representation, OCR</h3>
-<p>通过像素和所有类别的相关性，来加强所属类别的表示。类似于自注意力机制 它和PSPNet<a href="PSPNet">3.1</a>的区别是，前者学习的是类别区域之间的关系，而后者学习的是周边像素的关系</p>
+<p>通过像素和所有类别的相关性，来加强所属类别的表示。类似于自注意力机制 它和PSPNet<a href="#PSPNet">3.1</a>的区别是，前者学习的是类别区域之间的关系，而后者学习的是周边像素的关系</p>
 <figure data-latex-placement="H">
 <img src="/images/semantic_seg/OCR_region.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
 </figure>
@@ -779,7 +779,7 @@ l0,-744c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 <figure data-latex-placement="H">
 <img src="/images/semantic_seg/BeiTV2_CLS.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
 </figure>
-<p>原始的BEiT<a href="BeiT">4.9</a>只有patch-level的MIM任务，但是并没有预训练CLS token，【即没有预训练全局的图像特征】。而BEiTv2设计了一种bottleneck结构来实现对CLS token的预训练。这里除了常规的MIM损失，还增加了CLS token的MIM损失，具体地，</p>
+<p>原始的BEiT<a href="#BeiT">4.9</a>只有patch-level的MIM任务，但是并没有预训练CLS token，【即没有预训练全局的图像特征】。而BEiTv2设计了一种bottleneck结构来实现对CLS token的预训练。这里除了常规的MIM损失，还增加了CLS token的MIM损失，具体地，</p>
 <ul>
 <li>
 <p>从ViT的某个中间层（第<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span></span></span></span>层）取出patch的特征然后和最后的CLS token重新组合在一起</p>
