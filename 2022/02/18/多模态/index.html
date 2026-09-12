@@ -26,33 +26,11 @@
 <meta property="og:site_name" content="HuangR&#39;s Blog">
 <meta property="og:description" content="多模态论文学习笔记。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/CLIP_zeroshot.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/CLIP_fewshot.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/CLIP.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/CLIP_pseudocode.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/LSeg_demo.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/LSeg.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/BottleneckBlock.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/GroupViT.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/GroupViT_groupvis.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/GroupViT_zooshot.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/GroupViT_numcls.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/ViLD.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/ViLD_train&test.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/GLIP.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/GLIPv2.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/ALBEF.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/ALBEF_Exp.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/SAM.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/SAM_maskdecoder.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/YOLACT.PNG">
-<meta property="og:image" content="https://ruirui-huang.github.io/images/multimodal/Grounding_DINO_2.PNG">
 <meta property="article:published_time" content="2022-02-18T13:18:47.000Z">
-<meta property="article:modified_time" content="2026-09-12T03:45:00.000Z">
+<meta property="article:modified_time" content="2024-03-18T13:18:34.000Z">
 <meta property="article:author" content="黄锐">
 <meta property="article:tag" content="多模态">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ruirui-huang.github.io/images/multimodal/CLIP_zeroshot.PNG">
 
 
 <link rel="canonical" href="https://ruirui-huang.github.io/2022/02/18/%E5%A4%9A%E6%A8%A1%E6%80%81/">
@@ -91,7 +69,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
   <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
   <script src="/js/third-party/math/katex.js" defer></script>
 
@@ -175,7 +153,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -188,7 +166,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="nav-number">2.</span> <span class="nav-text">准备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="nav-number">2.1.</span> <span class="nav-text">大模型训练</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DeepSpeed"><span class="nav-number">2.1.1.</span> <span class="nav-text">DeepSpeed</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FullyShardedDataParallel"><span class="nav-number">2.1.2.</span> <span class="nav-text">FullyShardedDataParallel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ColossalAI"><span class="nav-number">2.1.3.</span> <span class="nav-text">ColossalAI</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E8%A7%88%E5%9B%BE"><span class="nav-number">3.</span> <span class="nav-text">总览图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLIP"><span class="nav-number">4.</span> <span class="nav-text">CLIP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Prompt-engineering-and-ensembling"><span class="nav-number">4.1.</span> <span class="nav-text">Prompt engineering and ensembling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%AD%A6%E4%B9%A0"><span class="nav-number">4.2.</span> <span class="nav-text">特征学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CLIP%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7"><span class="nav-number">4.3.</span> <span class="nav-text">CLIP的局限性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSeg"><span class="nav-number">5.</span> <span class="nav-text">LSeg</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84"><span class="nav-number">5.1.</span> <span class="nav-text">模型结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spatial-regularization"><span class="nav-number">5.2.</span> <span class="nav-text">Spatial regularization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%99%90%E6%80%A7"><span class="nav-number">5.3.</span> <span class="nav-text">局限性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GroupViT"><span class="nav-number">6.</span> <span class="nav-text">GroupViT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84-2"><span class="nav-number">6.1.</span> <span class="nav-text">模型结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grouping-Block"><span class="nav-number">6.2.</span> <span class="nav-text">Grouping Block</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86"><span class="nav-number">6.3.</span> <span class="nav-text">模型推理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%99%90%E6%80%A7-2"><span class="nav-number">6.4.</span> <span class="nav-text">局限性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ViLD"><span class="nav-number">7.</span> <span class="nav-text">ViLD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84-3"><span class="nav-number">7.1.</span> <span class="nav-text">模型结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E9%98%B6%E6%AE%B5"><span class="nav-number">7.2.</span> <span class="nav-text">训练阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GLIP"><span class="nav-number">8.</span> <span class="nav-text">GLIP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GLIPv2"><span class="nav-number">9.</span> <span class="nav-text">GLIPv2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALBEF"><span class="nav-number">10.</span> <span class="nav-text">ALBEF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84-4"><span class="nav-number">10.1.</span> <span class="nav-text">模型结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Text-Contrastive-Learning-ITC"><span class="nav-number">10.2.</span> <span class="nav-text">Image-Text Contrastive Learning, ITC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Masked-Language-Modeling-MLM"><span class="nav-number">10.3.</span> <span class="nav-text">Masked Language Modeling, MLM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Text-Matching-ITM"><span class="nav-number">10.4.</span> <span class="nav-text">Image-Text Matching, ITM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BLIP"><span class="nav-number">11.</span> <span class="nav-text">BLIP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CoCa"><span class="nav-number">12.</span> <span class="nav-text">CoCa</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeiTv3"><span class="nav-number">13.</span> <span class="nav-text">BeiTv3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAM"><span class="nav-number">14.</span> <span class="nav-text">SAM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#image-encoder"><span class="nav-number">14.1.</span> <span class="nav-text">image encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prompt-encoder"><span class="nav-number">14.2.</span> <span class="nav-text">prompt encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mask-decoder"><span class="nav-number">14.3.</span> <span class="nav-text">mask decoder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YOLACT"><span class="nav-number">15.</span> <span class="nav-text">YOLACT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E8%BF%87%E7%A8%8B"><span class="nav-number">15.1.</span> <span class="nav-text">训练过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E7%90%86%E8%BF%87%E7%A8%8B"><span class="nav-number">15.2.</span> <span class="nav-text">推理过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FastSAM"><span class="nav-number">16.</span> <span class="nav-text">FastSAM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E5%AE%9E%E4%BE%8B%E5%88%86%E5%89%B2"><span class="nav-number">16.1.</span> <span class="nav-text">全实例分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E5%8C%B9%E9%85%8D"><span class="nav-number">16.2.</span> <span class="nav-text">目标匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Grounding-DINO"><span class="nav-number">17.</span> <span class="nav-text">Grounding DINO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Extraction-and-Enhancer"><span class="nav-number">17.1.</span> <span class="nav-text">Feature Extraction and Enhancer</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -277,7 +254,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-09-12 11:45:00" itemprop="dateModified" datetime="2026-09-12T11:45:00+08:00">2026-09-12</time>
+      <time title="修改时间：2024-03-18 21:18:34" itemprop="dateModified" datetime="2024-03-18T21:18:34+08:00">2024-03-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -310,380 +287,9 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><span id="more"></span>
-<h2 id="前言">前言</h2>
-<p>以下是在学习基于深度学习方法实现多模态的过程中，总结的论文、学习报告、博客等等，以及针对部分问题提出的个人看法，特此记录！</p>
-<h2 id="准备知识">准备知识</h2>
-<h3 id="大模型训练">大模型训练</h3>
-<p>在训练大模型时，需要庞大的资源。单卡显存通常不能满足训练的需要，因此出现了大模型训练技术，其中典型的一种是DeepSpeed ZeRO</p>
-<h4 id="DeepSpeed">DeepSpeed</h4>
-<p>DeepSpeed是微软开源的基于PyTorch的分布式框架，其支持了ZeRO, 3D-Parallelism, DeepSpeed-MoE, ZeRO-Infinity等训练策略。其中，DeepSpedd ZeRO支持切分优化器、梯度以及参数。</p>
-<p>需配置 FlexibleRunner 的 strategy 和 optim_wrapper 参数：</p>
-<ul>
-<li>
-<p>strategy：指定 type='DeepSpeedStrategy' 并配置参数</p>
-</li>
-<li>
-<p>optim_wrapper：指定 type='DeepSpeedOptimWrapper' 并配置参数</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mmengine.runner._flexible_runner <span class="keyword">import</span> FlexibleRunner</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 指定 DeepSpeedStrategy 并配置参数</span></span><br><span class="line">    strategy = <span class="built_in">dict</span>(</span><br><span class="line">        <span class="built_in">type</span>=<span class="string">&#x27;DeepSpeedStrategy&#x27;</span>,</span><br><span class="line">        fp16=<span class="built_in">dict</span>(</span><br><span class="line">            enabled=<span class="literal">True</span>,</span><br><span class="line">            fp16_master_weights_and_grads=<span class="literal">False</span>,</span><br><span class="line">            loss_scale=<span class="number">0</span>,</span><br><span class="line">            loss_scale_window=<span class="number">500</span>,</span><br><span class="line">            hysteresis=<span class="number">2</span>,</span><br><span class="line">            min_loss_scale=<span class="number">1</span>,</span><br><span class="line">            initial_scale_power=<span class="number">15</span>,</span><br><span class="line">        ),</span><br><span class="line">        inputs_to_half=[<span class="number">0</span>],</span><br><span class="line">        zero_optimization=<span class="built_in">dict</span>(</span><br><span class="line">            stage=<span class="number">3</span>,</span><br><span class="line">            allgather_partitions=<span class="literal">True</span>,</span><br><span class="line">            reduce_scatter=<span class="literal">True</span>,</span><br><span class="line">            allgather_bucket_size=<span class="number">50000000</span>,</span><br><span class="line">            reduce_bucket_size=<span class="number">50000000</span>,</span><br><span class="line">            overlap_comm=<span class="literal">True</span>,</span><br><span class="line">            contiguous_gradients=<span class="literal">True</span>,</span><br><span class="line">            cpu_offload=<span class="literal">False</span>),</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 指定 DeepSpeedOptimWrapper 并配置参数</span></span><br><span class="line">    optim_wrapper = <span class="built_in">dict</span>(</span><br><span class="line">        <span class="built_in">type</span>=<span class="string">&#x27;DeepSpeedOptimWrapper&#x27;</span>,</span><br><span class="line">        optimizer=<span class="built_in">dict</span>(<span class="built_in">type</span>=<span class="string">&#x27;AdamW&#x27;</span>, lr=<span class="number">1e-3</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 初始化 FlexibleRunner</span></span><br><span class="line">    runner = FlexibleRunner(</span><br><span class="line">        model=MMResNet50(),</span><br><span class="line">        work_dir=<span class="string">&#x27;./work_dirs&#x27;</span>,</span><br><span class="line">        strategy=strategy,</span><br><span class="line">        train_dataloader=train_dataloader,</span><br><span class="line">        optim_wrapper=optim_wrapper,</span><br><span class="line">        param_scheduler=<span class="built_in">dict</span>(<span class="built_in">type</span>=<span class="string">&#x27;LinearLR&#x27;</span>),</span><br><span class="line">        train_cfg=<span class="built_in">dict</span>(by_epoch=<span class="literal">True</span>, max_epochs=<span class="number">10</span>, val_interval=<span class="number">1</span>),</span><br><span class="line">        val_dataloader=val_dataloader,</span><br><span class="line">        val_cfg=<span class="built_in">dict</span>(),</span><br><span class="line">        val_evaluator=<span class="built_in">dict</span>(<span class="built_in">type</span>=Accuracy))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 开始训练</span></span><br><span class="line">    runner.train()</span><br></pre></td></tr></table></figure>
-<h4 id="FullyShardedDataParallel">FullyShardedDataParallel</h4>
-<h4 id="ColossalAI">ColossalAI</h4>
-<h2 id="总览图">总览图</h2>
-<figure data-latex-placement="H">
-</figure>
-<h2 id="CLIP">CLIP</h2>
-<p><strong>迁移学习，泛化性强</strong></p>
-<figure data-latex-placement="H">
-<figure>
-<img src="/images/multimodal/CLIP_zeroshot.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-<figcaption>zoo-shot</figcaption>
-</figure>
-<figure>
-<img src="/images/multimodal/CLIP_fewshot.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-<figcaption>few-shot</figcaption>
-</figure>
-<figcaption>few-shot</figcaption>
-</figure>
-<blockquote>
-<p><strong>CLIP为什么能成功？</strong></p>
-<p>以前目标类别有限，且数据量不够大；模型不够大；算力资源有限制。</p>
-</blockquote>
-<p>训练的时候是通过文本和图片<strong>对比学习</strong>【图片和文本描述对应上的是正样本，其他的为负样本，二分类】，测试的时候，通过计算图片编码特征和文本编码特征计算相似度，实现zoo-shot</p>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/CLIP.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/CLIP_pseudocode.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<h3 id="Prompt-engineering-and-ensembling">Prompt engineering and ensembling</h3>
-<p><a target="_blank" rel="noopener" href="https://github.com/openai/CLIP/blob/main/notebooks/Prompt_Engineering_for_ImageNet.ipynb">prompt template</a>【<strong>缩小提示空间、强调</strong>】，解决文本歧义问题</p>
-<h3 id="特征学习">特征学习</h3>
-<p>衡量模型学到的特征好不好，有两种方式：</p>
-<ul>
-<li>
-<p>Linear probe：把预训练好了的参数冻住，然后再训练一个分类头【可学习的空间较小】</p>
-</li>
-<li>
-<p>Fine tune：开放网络参数，直接端到端学习【往往比Linear probe的效果要好】</p>
-<blockquote>
-<p><strong>CLIP为什么使用Linear probe？</strong></p>
-<p>主要是因为：</p>
-<ul>
-<li>
-<p>CLIP的目的就是为了研究和数据集无关的与训练方式，如果下游任务的数据集足够大，且开放网络参数微调的话，很有可能是预训练的模型并不好，但是微调之后效果很好，<strong>无法判断预训练参数到底好不好</strong></p>
-</li>
-<li>
-<p>下游任务不需要调参，不需要为不同的数据集设计超参数，流程正规</p>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h3 id="CLIP的局限性">CLIP的局限性</h3>
-<ul>
-<li>
-<p>CLIP很强，但是没有强到不可一世。如果加大数据和模型规模，CLIP的性能还能继续提高，但是计算量大概还需要<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">\times 1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">×</span><span class="mord">1000</span></span></span></span></p>
-</li>
-<li>
-<p>细分类数据集效果不好，且无法处理一些抽象的任务</p>
-</li>
-<li>
-<p>out of distribution，CLIP也不好，比如MNIST</p>
-</li>
-<li>
-<p>还是需要给定类别</p>
-</li>
-<li>
-<p>数据用量太大，可以考虑自监督或伪标签</p>
-</li>
-<li>
-<p>因为测试集是精心挑选的，无形带入了偏见</p>
-</li>
-<li>
-<p>语言描述本身存在局限性</p>
-</li>
-</ul>
-<h2 id="LSeg">LSeg</h2>
-<p><strong>有监督训练</strong></p>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/LSeg_demo.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-<figcaption>示例结果。LSeg能够处理看不见的标签以及任意长度和顺序的标签集</figcaption>
-</figure>
-<h3 id="模型结构">模型结构</h3>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/LSeg.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<p>至始至终文本编码器都是锁住的【<strong>数据集较小，fine-tune会把模型带偏了</strong>】</p>
-<h3 id="Spatial-regularization">Spatial regularization</h3>
-<p>空间正则化的目的是在不破坏像素之间标签关系的前提下，将预测的嵌入映射回原始图像的空间维度。【由于内存限制，图像编码器通常在低于输入图像分辨率的较低分辨率下预测像素嵌入】</p>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/BottleneckBlock.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<h3 id="局限性">局限性</h3>
-<ul>
-<li>
-<p>还是依赖于手工标注</p>
-</li>
-<li>
-<p>不是在做真正的分类，只是在按概率分配</p>
-</li>
-</ul>
-<h2 id="GroupViT">GroupViT</h2>
-<p><strong>不依赖于手工标注，仅需要图像-文本对</strong></p>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/GroupViT.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<h3 id="模型结构-2">模型结构</h3>
-<p>主要流程为：</p>
-<ul>
-<li>
-<p>利用ViT将原始图片编码为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>196</mn><mo>×</mo><mn>384</mn></mrow><annotation encoding="application/x-tex">196\times 384</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">196</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">384</span></span></span></span>的特征，并初始化group为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn><mo>×</mo><mn>384</mn></mrow><annotation encoding="application/x-tex">64\times 384</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">64</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">384</span></span></span></span>【64可以视为初始化聚类中心，384是为了和图片特征对齐】</p>
-</li>
-<li>
-<p>经过Grouping Block完成聚类中心分配【聚类可视化发现模型确实拥有这样的功能】</p>
-<p><img src="/images/multimodal/GroupViT_groupvis.PNG" alt=""></p>
-</li>
-<li>
-<p>后一个Transformer Layers，初始化聚类中心个数为8</p>
-</li>
-<li>
-<p>Avg Pooling【<strong>为了与文本特征维度对齐</strong>】</p>
-</li>
-</ul>
-<h3 id="Grouping-Block">Grouping Block</h3>
-<p>使用Gumbel-Softmax计算Group Tokens和图像段Tokens之间的相似性。每个图像段 Token被分配给与之最相似的一个Group Token。这个过程通过one-hot操作实现【<strong>不是可微分的</strong>】，确保每个图像段Token只属于一个Group。</p>
-<h3 id="模型推理">模型推理</h3>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/GroupViT_zooshot.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<p>推理流程为：</p>
-<ul>
-<li>
-<p>ViTd得到8个Group Embedding</p>
-</li>
-<li>
-<p>有可能的标签经过文本编码器得到文本特征</p>
-</li>
-<li>
-<p>计算相似度，得到每个Group Embedding对应的class</p>
-</li>
-</ul>
-<h3 id="局限性-2">局限性</h3>
-<ul>
-<li>
-<p>与有监督的方法差距比较大</p>
-</li>
-<li>
-<p><strong>最多只能分8类</strong></p>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/GroupViT_numcls.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-</li>
-<li>
-<p>背景类干扰【<strong>目标类别过多</strong>，导致前景置信度较低，过滤阈值不好把控】</p>
-</li>
-</ul>
-<h2 id="ViLD">ViLD</h2>
-<p>在ViLD之前，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>VE</mtext><mstyle mathcolor="#cc0000"><mtext>\textgreater</mtext></mstyle><mtext>TE</mtext><mstyle mathcolor="#cc0000"><mtext>\textgreater</mtext></mstyle><mtext>MI</mtext><mo>⇒</mo><mtext>VE</mtext><mo>=</mo><mtext>TE</mtext><mstyle mathcolor="#cc0000"><mtext>\textgreater</mtext></mstyle><mtext>MI</mtext><mo>⇒</mo><mtext>VE</mtext><mstyle mathcolor="#cc0000"><mtext>\textgreater</mtext></mstyle><mtext>MI</mtext><mstyle mathcolor="#cc0000"><mtext>\textgreater</mtext></mstyle><mtext>TE</mtext></mrow><annotation encoding="application/x-tex">\text{VE} \textgreater \text{TE} \textgreater \text{MI} \Rightarrow \text{VE} = \text{TE} \textgreater \text{MI} \Rightarrow \text{VE} \textgreater \text{MI} \textgreater \text{TE}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">VE</span></span><span class="mord text" style="color:#cc0000;"><span class="mord" style="color:#cc0000;">\textgreater</span></span><span class="mord text"><span class="mord">TE</span></span><span class="mord text" style="color:#cc0000;"><span class="mord" style="color:#cc0000;">\textgreater</span></span><span class="mord text"><span class="mord">MI</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">VE</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">TE</span></span><span class="mord text" style="color:#cc0000;"><span class="mord" style="color:#cc0000;">\textgreater</span></span><span class="mord text"><span class="mord">MI</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">VE</span></span><span class="mord text" style="color:#cc0000;"><span class="mord" style="color:#cc0000;">\textgreater</span></span><span class="mord text"><span class="mord">MI</span></span><span class="mord text" style="color:#cc0000;"><span class="mord" style="color:#cc0000;">\textgreater</span></span><span class="mord text"><span class="mord">TE</span></span></span></span></span>，ViLD得出的结论是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>MI</mtext><mstyle mathcolor="#cc0000"><mtext>\textgreater</mtext></mstyle><mtext>VE</mtext><mo>=</mo><mtext>TE</mtext></mrow><annotation encoding="application/x-tex">\text{MI} \textgreater \text{VE} = \text{TE}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">MI</span></span><span class="mord text" style="color:#cc0000;"><span class="mord" style="color:#cc0000;">\textgreater</span></span><span class="mord text"><span class="mord">VE</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">TE</span></span></span></span></span></p>
-<h3 id="模型结构-3">模型结构</h3>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/ViLD.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/ViLD_train&test.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<h3 id="训练阶段">训练阶段</h3>
-<ul>
-<li>
-<p>定位：图片经过RPN得到proposal【<strong>类别不可知</strong>】</p>
-</li>
-<li>
-<p>编码：使用预训练的图像编码器（CLIP）输出裁剪后的区域的图像编码特征，以及与训练的文本编码器输出文本编码特征</p>
-</li>
-<li>
-<p>蒸馏【<strong>测试阶段不涉及</strong>】：ViLD-text部分将区域编码与文本编码进行比较，通过最小化它们之间的距离来训练检测器的head，使其能够根据文本编码对定位的区域进行分类；ViLD-image部分通常使用L1，对齐<strong>M个相同输入</strong>，在不同模型上【ViLD &amp; CLIP】的输出结果</p>
-</li>
-</ul>
-<p>测试阶段和CLIP<a href="#CLIP">4</a>一样</p>
-<h2 id="GLIP">GLIP</h2>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/GLIP.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<h2 id="GLIPv2">GLIPv2</h2>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/GLIPv2.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<h2 id="ALBEF">ALBEF</h2>
-<p>在此之前相关研究存在的问题：</p>
-<ul>
-<li>
-<p>用于抽取图像特征和文本特征的模型是分别单独训练的【特征不在一个空间内】</p>
-</li>
-<li>
-<p>使用目标检测模型作为图像特征的抽取器很&quot;贵&quot;，在预训练阶段，需要标注物体的box位置，在预测阶段需要有高分辨率的图片</p>
-</li>
-<li>
-<p>目前广泛使用的图像-文本数据集存在着固有的噪声，这些噪声会影响模型性能</p>
-</li>
-</ul>
-<h3 id="模型结构-4">模型结构</h3>
-<p><strong>整体结构与<a href="#ViLD">7</a>中的c类结构比较接近</strong></p>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/ALBEF.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<h3 id="Image-Text-Contrastive-Learning-ITC">Image-Text Contrastive Learning, ITC</h3>
-<p>只涉及图像和文本的encoder，主要目的是<strong>通过该任务使得图像编码器的向量空间与文本编码器的向量空间对齐</strong>【通过计算两个特征之间的相似度实现】</p>
-<p><strong>针对数据噪声问题</strong>，在ITC任务中使用了Momentum Distillation【训练的过程中将伪标签加入GT】。</p>
-<h3 id="Masked-Language-Modeling-MLM">Masked Language Modeling, MLM</h3>
-<p><strong>完形填空</strong></p>
-<h3 id="Image-Text-Matching-ITM">Image-Text Matching, ITM</h3>
-<p>ITM和ITC<a href="#ITC">10.2</a>很相似，区别在于ITC只通过encoder获取特征就判断是否对齐，而ITM让图像、文本特征经过多模态层之后再判断是否匹配。</p>
-<p>对于ITM而言，判断负样本太简单了，如果简单的随机抽取样本作为负样本的话，模型训练效果不太好。作者在一个batch里，通过计算特征相似度，寻找一张图片中除它本身对应的文本之外相似度最高的文本作为负样本。这样就能构建一批hard negatives，从而提升训练难度。</p>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/ALBEF_Exp.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<h2 id="BLIP">BLIP</h2>
-<p><strong>网上爬下来的图像文本对，大部分都是不干净的</strong></p>
-<h2 id="CoCa">CoCa</h2>
-<p>减少文本特征提取模型forward的次数</p>
-<h2 id="BeiTv3">BeiTv3</h2>
-<p>做大做强</p>
-<h2 id="SAM">SAM</h2>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/SAM.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<blockquote>
-<p><strong>输入是什么？</strong></p>
-<p>图片和prompt、</p>
-</blockquote>
-<h3 id="image-encoder">image encoder</h3>
-<p>利用mae预训练的vit，最低限度适应高分辨率的输入，该encoder在prompt encoder之前，对每张图像只运行一次。</p>
-<p>输入<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">(</mo><mi>c</mi><mo separator="true">,</mo><mi>h</mi><mo separator="true">,</mo><mi>w</mi><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\left(c, h, w\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">h</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>的图像，对图像进行缩放，按照长边缩放成1024，短边不够就pad，得到<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">(</mo><mi>c</mi><mo separator="true">,</mo><mn>1024</mn><mo separator="true">,</mo><mn>1024</mn><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\left(c, 1024, 1024\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1024</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1024</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>的图像，经过image encoder，得到对图像16倍下采样的feature，大小为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">(</mo><mn>256</mn><mo separator="true">,</mo><mn>64</mn><mo separator="true">,</mo><mn>64</mn><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\left(256, 64, 64\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord">256</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">64</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">64</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>。</p>
-<h3 id="prompt-encoder">prompt encoder</h3>
-<p>分成2类：稀疏的(点，box，文本)，稠密的（mask）</p>
-<ul>
-<li>
-<p>point：【点坐标调整加上0.5是为了向中心移动】映射到256维的向量，【填充处理，为了允许模型处理不同数量的点提示时保持输入一致】包含代表点位置的 positional encoding，加2个代表该点是前景/背景的可学习的embedding</p>
-</li>
-<li>
-<p>box：用一个embedding对表示</p>
-</li>
-<li>
-<p>文本：通过CLIP模型进行文本编码</p>
-</li>
-<li>
-<p>mask：用输入图像1/4分辨率的mask，然后用<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">(</mo><mn>2</mn><mo separator="true">,</mo><mn>2</mn><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\left(2, 2\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>卷积核，stride-2输出【共下采样16倍】，再用<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">(</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\left(1, 1\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>卷积核将channel升到256. mask 和image embedding通过element-wise相乘【可以理解成mask的feature对image的feature进行加权】</p>
-</li>
-</ul>
-<p>映射出的特征的channel和image embedding的channel一致【因为后面要用attention进行融合】。</p>
-<h3 id="mask-decoder">mask decoder</h3>
-<p>在prompt embeddings中插入一个可学习的token【iou token和mask token】，用于docoder的输出</p>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/SAM_maskdecoder.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<ul>
-<li>
-<p>prompt toekns + output tokens进行self attn</p>
-</li>
-<li>
-<p>用得到的token和image embedding进行 cross attn（token作为Q）</p>
-</li>
-<li>
-<p>point-wise MLP 更新token</p>
-</li>
-<li>
-<p>用image embedding和（3）的token进行cross atten（image embedding作为Q）</p>
-</li>
-</ul>
-<p>重复上述步骤2次，再将attn再通过残差进行连接，最终输出masks和iou scores。</p>
-<p>为了解决输出模糊性问题【一个提示可能生成多个mask】，预测输出多个masks，在训练过程中,只回传最小的loss，为了对mask进行排序，增加一个小的head预测mask和目标的iou。</p>
-<p>当输入多个提示时，生成的mask会比较接近，为了减少loss退化和确保获取明确的mask，此时只预测一个mask</p>
-<blockquote>
-<p>masks的输出维度是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>×</mo><mi>C</mi><mo>×</mo><mi>H</mi><mo>×</mo><mi>W</mi></mrow><annotation encoding="application/x-tex">B\times C\times H\times W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span></span></span></span>，其中<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span>是输入的prompt数量，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span>是mask的数量，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">(</mo><mi>H</mi><mo separator="true">,</mo><mi>W</mi><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\left(H, W\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>为输入图像尺寸</p>
-</blockquote>
-<blockquote>
-<p><strong>解码器部分的结构设计依据？</strong></p>
-</blockquote>
-<h2 id="YOLACT">YOLACT</h2>
-<p><strong>并行预测当前图片的原型掩码（prototype mask）和每个bbox实例的掩码系数（mask coefficient）</strong>，然后通过将原型与掩模系数线性组合来生成实例掩码（instance masks）</p>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/YOLACT.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
-<h3 id="训练过程">训练过程</h3>
-<ul>
-<li>
-<p>bbox预测分支：每个bbox的mask系数没有标签，故bbox head分支仅仅对bbox【<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">(</mo><mi>N</mi><mo>×</mo><mn>4</mn><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\left(N\times 4\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>】和cls【<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">(</mo><mi>N</mi><mo>×</mo><mn>81</mn><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\left(N\times 81\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">81</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>】分支计算loss，mask系数【<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">(</mo><mi>N</mi><mo>×</mo><mn>32</mn><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\left(N\times 32\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">32</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>】监督信息来自后面的原型掩码预测分支</p>
-</li>
-<li>
-<p>掩码预测分支：不能用预测的bbox来裁剪【<strong>前期不稳定</strong>】，基于正样本anchor，采用gt bbox去裁剪对应的预测mask图，就可以得到实例级别mask【直接采用所有gt bbox去crop，可能会存在bbox分支和protonet分支监督点不一致的问题】</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">prototypes = <span class="variable language_">self</span>.protonet(x)</span><br><span class="line">    prototypes = prototypes.permute(<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>).contiguous()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># idx表示图片索引</span></span><br><span class="line">    cur_sampling_results = sampling_results[idx]</span><br><span class="line">    <span class="comment"># 找出正样本索引</span></span><br><span class="line">    pos_assigned_gt_inds = cur_sampling_results.pos_assigned_gt_inds</span><br><span class="line"></span><br><span class="line">    <span class="comment"># cur_bboxes是gt bbox，(M, 4)</span></span><br><span class="line">    bboxes_for_cropping = cur_bboxes[pos_assigned_gt_inds].clone()</span><br><span class="line">    pos_inds = cur_sampling_results.pos_inds</span><br><span class="line">    <span class="comment"># cur_coeff_pred是正样本索引所对应的mask系数预测值(M, 32)</span></span><br><span class="line">    cur_coeff_pred = cur_coeff_pred[pos_inds]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 每个实例对应的mask预测图(138, 138, M)</span></span><br><span class="line">    mask_pred = cur_prototypes @ cur_coeff_pred.t()</span><br><span class="line">    mask_pred = torch.sigmoid(mask_pred)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 基于bbox裁剪出mask图</span></span><br><span class="line">    mask_pred = <span class="variable language_">self</span>.crop(mask_pred, bboxes_for_cropping)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 后面就可以计算bce loss了</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="推理过程">推理过程</h3>
-<ul>
-<li>
-<p>遍历每个预测输出层，对每个层先利用nms_pre参数过滤到指定数目的框；对这些框进行解码操作；最后对所有结果采用nms进行抑制得到指定数目的bbox和对应类别、mask系数值，默认最多是100</p>
-</li>
-<li>
-<p>为了使得mask更加精确，这里只选择了FPN后输出的最大尺度特征图预测全局原型，特征图上面每个位置都采用长度为32的prototypes来表征，然后将N个预测框和 prototypes矩阵进行乘加操作，即可得到每个bbox对应的mask</p>
-</li>
-<li>
-<p>利用bbox坐标去mask图上进行切割即可得到对应的mask图</p>
-</li>
-<li>
-<p>二值化，插值函数将bbox和mask都还原到原始图尺度，最终得到实例分割结果</p>
-</li>
-</ul>
-<h2 id="FastSAM">FastSAM</h2>
-<p><strong>FastSAM通过两阶段实现，先全景实例分割，再根据提示匹配</strong></p>
-<h3 id="全实例分割">全实例分割</h3>
-<p>基于Yolov8-seg实现，可以参考YOLACT<a href="#YOLACT">15</a></p>
-<h3 id="目标匹配">目标匹配</h3>
-<ul>
-<li>
-<p>点提示：通过点提示匹配后，模型会选择与点提示相对应的多个掩码。然后，这些掩码会被合并成一个单一的掩码，以完整地标记感兴趣的对象。在合并过程中，可能会使用形态学操作（如膨胀和腐蚀）来改善掩码的合并效果</p>
-</li>
-<li>
-<p>框提示：每个边界框与分割掩码之间的交并比，选择与用户指定的边界框具有最高IoU分数的分割掩码作为最佳匹配</p>
-</li>
-<li>
-<p>文本提示：使用CLIP模型的文本编码器来处理文本提示，提取出与文本描述相对应的文本嵌入，再比较文本嵌入与图像特征之间的相似性，以找到与文本描述最匹配的图像区域</p>
-</li>
-</ul>
-<h2 id="Grounding-DINO">Grounding DINO</h2>
-<p>**特点：**可以根据文字描述检测指定目标</p>
-<p>相较于<a href="#GLIP">8</a>，它的优势是：</p>
-<ul>
-<li>
-<p>Grounding DINO的transformer结构更接近于NLP模型，因此它更容易同时处理图片和文字</p>
-</li>
-<li>
-<p>Transformer-based detector在处理大型数据集时被证明有优势</p>
-</li>
-<li>
-<p>作为DETR的变种，DINO能够完成end-to-end的训练，而且不需要NMS等额外的后处理</p>
-</li>
-</ul>
-<p><strong>越多越早的特征融合带来的收益越大</strong></p>
-<p>在以上结论的指导下，作者设计了不同的特征融合方式分别应用在三个阶段上：</p>
-<ul>
-<li>
-<p>设计了结合self-attention、text-to-image cross-attention、image-to-text attention的特征enhancer应用在Neck中</p>
-</li>
-<li>
-<p>设计了一个language-guided query selection方法用于初始化Head的query；</p>
-</li>
-<li>
-<p>设计了一个跨模态的decoder用于Head部分，从而增强query的特征表达</p>
-</li>
-</ul>
-<p>Swin Transformer作为image backbone，BERT作为text backbone</p>
-<h3 id="Feature-Extraction-and-Enhancer">Feature Extraction and Enhancer</h3>
-<figure data-latex-placement="H">
-<img src="/images/multimodal/Grounding_DINO_2.PNG" style="max-width:100%;height:auto;display:block;margin:0 auto;" />
-</figure>
+    <div class="post-body" itemprop="articleBody"><p>论文学习</p>
+<span id="more"></span>
+<embed src="/pdf/多模态学习笔记.pdf" width="100%" height="550" type="application/pdf">
 
     </div>
 
