@@ -88,3 +88,5 @@ D:\Code\blog
 - **404 页**：`source/404.html` 顶部必须保留 `layout: false`（Hexo 7 会把无 front-matter 的 .html 渲染进主题布局，出现侧栏/评论区）。
 - **图片点击放大**：`mediumzoom: true`（medium-zoom 已本地化到 `source/lib/medium-zoom/`）。
 - **PDF 文章侧栏**：无标题结构的 PDF 文章页自动隐藏空"文章目录"Tab、显示站点概览（`sidebar.njk` 内 JS）。- **Actions 时区**：构建 step 必须 `env: TZ: Asia/Shanghai`，否则午夜附近的文章日期会跨天、URL 差一天（踩过）。
+- **站内搜索**：本地搜索（`local_search`）依赖 `hexo-generator-searchdb` 的 `search.js`，已本地化到 `source/lib/hexo-generator-searchdb/`（SRI 哈希与 `_vendors.yml` 一致）。快捷键 `/` 或 `Ctrl+K` 打开搜索弹窗（自定义 JS 优先点击 `.popup-trigger`）。
+- **文章阅读量**：`post_meta.views` 开启，用 busuanzi 统计。
