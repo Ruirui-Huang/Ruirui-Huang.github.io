@@ -36,6 +36,10 @@ D:\Code\blog
 ├── source/
 │   ├── _posts/          # 文章（10 篇；5 篇为 LaTeX 转换，front-matter 含 mathjax: true）
 │   ├── _data/styles.styl # 自定义样式（figure/图注排版）
+│   ├── tags/ categories/ # 标签云 / 分类页（type: tags/categories）
+│   ├── about/            # 关于页
+│   ├── robots.txt        # 爬虫规则（指向 sitemap.xml）
+│   ├── 404.html          # 自定义 404
 │   └── images/          # 文章图片（zaji/multimodal/semantic_seg/target_detection/openmmlab）
 └── themes/next/         # NexT 主题副本
 ```
