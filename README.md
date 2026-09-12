@@ -87,4 +87,4 @@ D:\Code\blog
 - **OG 分享图**：`source/images/og-image.png`（1200x630 品牌图），`head.njk` 注入 og:image / twitter:card。
 - **404 页**：`source/404.html` 顶部必须保留 `layout: false`（Hexo 7 会把无 front-matter 的 .html 渲染进主题布局，出现侧栏/评论区）。
 - **图片点击放大**：`mediumzoom: true`（medium-zoom 已本地化到 `source/lib/medium-zoom/`）。
-- **PDF 文章侧栏**：无标题结构的 PDF 文章页自动隐藏空"文章目录"Tab、显示站点概览（`sidebar.njk` 内 JS）。
+- **PDF 文章侧栏**：无标题结构的 PDF 文章页自动隐藏空"文章目录"Tab、显示站点概览（`sidebar.njk` 内 JS）。- **Actions 时区**：构建 step 必须 `env: TZ: Asia/Shanghai`，否则午夜附近的文章日期会跨天、URL 差一天（踩过）。
