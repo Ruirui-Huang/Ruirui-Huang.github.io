@@ -69,6 +69,19 @@
 
 
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HuangR's Blog",
+  "alternateName": "黄锐的博客",
+  "url": "https://ruirui-huang.github.io/",
+  "description": "黄锐的个人博客，记录 Python、深度学习与日常。",
+  "author": {"@type": "Person", "name": "黄锐", "url": "https://github.com/Ruirui-Huang"}
+}
+</script>
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -249,6 +262,28 @@
       document.addEventListener('DOMContentLoaded', initAvatarTilt);
     } else {
       initAvatarTilt();
+    }
+  })();
+</script>
+<script>
+  (function () {
+    // 页脚访问统计数字加单位文字（不蒜子只输出数字）
+    function labelBusuanzi() {
+      var uv = document.getElementById('busuanzi_value_site_uv');
+      var pv = document.getElementById('busuanzi_value_site_pv');
+      if (uv && !uv.dataset.labelled) {
+        uv.insertAdjacentText('afterend', ' 访客');
+        uv.dataset.labelled = '1';
+      }
+      if (pv && !pv.dataset.labelled) {
+        pv.insertAdjacentText('afterend', ' 次访问');
+        pv.dataset.labelled = '1';
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', labelBusuanzi);
+    } else {
+      labelBusuanzi();
     }
   })();
 </script>

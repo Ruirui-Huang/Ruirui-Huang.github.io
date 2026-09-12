@@ -16,6 +16,17 @@
       </tags>
   </entry>
   <entry>
+    <title>杂记</title>
+    <url>/2019/09/10/%E6%9D%82%E8%AE%B0/</url>
+    <content><![CDATA[<p>零散的记录</p>
+<span id="more"></span>
+<embed src="/pdf/杂记.pdf" width="100%" height="550" type="application/pdf">
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
     <title>多模态</title>
     <url>/2022/02/18/%E5%A4%9A%E6%A8%A1%E6%80%81/</url>
     <content><![CDATA[<p>论文学习</p>
@@ -29,44 +40,6 @@
       <tags>
         <tag>多模态</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>板端部署</title>
-    <url>/2022/07/11/%E6%9D%BF%E7%AB%AF%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<span id="more"></span>
-<h1>Ascend310</h1>
-<h2 id="优化建议">优化建议</h2>
-<h3 id="网络结构">网络结构</h3>
-<ul>
-<li>推荐使用主流的网络拓扑，包括ResNet、MobileNet,不建议使用VGG、AlexNet等结构，网络模型偏大，单宽压力大</li>
-<li>矩阵乘法的MKN，尽量取16的倍数。算法上可以考虑适当增加channel个数，而不是分group的方式减少channel数量</li>
-<li>增加数据复用率。一个参数的利用次数越多带宽的瓶颈越小，所以算法上可以考虑增加filter的复用次数，比如增加feature map大小，避免过大的stride或dilation</li>
-</ul>
-<h3 id="算子">算子</h3>
-<ul>
-<li>Conv算子： 非量化模式下，Conv的输入和输出通道数建议采用16的整数倍；</li>
-<li>量化模式下，Conv的输入和输出通道数建议采用32的整数倍；</li>
-<li>量化模式下，多个Conv算子之间，建议少插入Pooling算子</li>
-</ul>
-<p>FC（FullConnection）算子：当网络中存在FC算子，尽量使用多Batch同时推理，且Batch数为16倍数时，性能较好
-Concat算子：</p>
-<ul>
-<li>非量化模式下，Concat的输入和输出通道数建议采用16的整数倍；</li>
-<li>量化模式下，Concat的输入和输出通道数建议采用32的整数倍</li>
-<li>Conv融合算子：推荐使用Conv+BN+Scale+ReLu/ReLu6的组合</li>
-<li>Norm算子：推荐使用BN算子，使用预训练的Norm参数；不推荐使用需要在线计算Norm参数的算子，比如LRN等</li>
-<li>检测算子：建议使用主流的检测网络拓扑，包括FasterRCNN、SSD</li>
-</ul>
-<h3 id="其他">其他</h3>
-<ul>
-<li>Conv + (BN + Scale) + ReLu性能较Conv + (BN + Scale) + Tanh等激活算子好，尽量避免过于复杂的激活函数</li>
-<li>Concat算子在C维度进行拼接时，输入Tensor的Channel数均为16的倍数时，性能较好</li>
-<li>连续卷积结构性能较好，如果卷积层间反复插入较多Vector算子，则性能较差，尤其在INT8模型中较为明显</li>
-</ul>
-]]></content>
-      <categories>
-        <category>部署</category>
-      </categories>
   </entry>
   <entry>
     <title>搭建流程</title>
@@ -346,6 +319,44 @@ Concat算子：</p>
       </categories>
   </entry>
   <entry>
+    <title>板端部署</title>
+    <url>/2022/07/11/%E6%9D%BF%E7%AB%AF%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<span id="more"></span>
+<h1>Ascend310</h1>
+<h2 id="优化建议">优化建议</h2>
+<h3 id="网络结构">网络结构</h3>
+<ul>
+<li>推荐使用主流的网络拓扑，包括ResNet、MobileNet,不建议使用VGG、AlexNet等结构，网络模型偏大，单宽压力大</li>
+<li>矩阵乘法的MKN，尽量取16的倍数。算法上可以考虑适当增加channel个数，而不是分group的方式减少channel数量</li>
+<li>增加数据复用率。一个参数的利用次数越多带宽的瓶颈越小，所以算法上可以考虑增加filter的复用次数，比如增加feature map大小，避免过大的stride或dilation</li>
+</ul>
+<h3 id="算子">算子</h3>
+<ul>
+<li>Conv算子： 非量化模式下，Conv的输入和输出通道数建议采用16的整数倍；</li>
+<li>量化模式下，Conv的输入和输出通道数建议采用32的整数倍；</li>
+<li>量化模式下，多个Conv算子之间，建议少插入Pooling算子</li>
+</ul>
+<p>FC（FullConnection）算子：当网络中存在FC算子，尽量使用多Batch同时推理，且Batch数为16倍数时，性能较好
+Concat算子：</p>
+<ul>
+<li>非量化模式下，Concat的输入和输出通道数建议采用16的整数倍；</li>
+<li>量化模式下，Concat的输入和输出通道数建议采用32的整数倍</li>
+<li>Conv融合算子：推荐使用Conv+BN+Scale+ReLu/ReLu6的组合</li>
+<li>Norm算子：推荐使用BN算子，使用预训练的Norm参数；不推荐使用需要在线计算Norm参数的算子，比如LRN等</li>
+<li>检测算子：建议使用主流的检测网络拓扑，包括FasterRCNN、SSD</li>
+</ul>
+<h3 id="其他">其他</h3>
+<ul>
+<li>Conv + (BN + Scale) + ReLu性能较Conv + (BN + Scale) + Tanh等激活算子好，尽量避免过于复杂的激活函数</li>
+<li>Concat算子在C维度进行拼接时，输入Tensor的Channel数均为16的倍数时，性能较好</li>
+<li>连续卷积结构性能较好，如果卷积层间反复插入较多Vector算子，则性能较差，尤其在INT8模型中较为明显</li>
+</ul>
+]]></content>
+      <categories>
+        <category>部署</category>
+      </categories>
+  </entry>
+  <entry>
     <title>目标检测</title>
     <url>/2022/04/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<p>论文学习</p>
@@ -372,16 +383,5 @@ Concat算子：</p>
       <tags>
         <tag>语义分割</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>杂记</title>
-    <url>/2019/09/10/%E6%9D%82%E8%AE%B0/</url>
-    <content><![CDATA[<p>零散的记录</p>
-<span id="more"></span>
-<embed src="/pdf/杂记.pdf" width="100%" height="550" type="application/pdf">
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
   </entry>
 </search>
