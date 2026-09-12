@@ -7,7 +7,7 @@ scheme: Gemini
 # 侧边栏（原站：左侧、文章页显示）
 sidebar:
   position: left
-  display: post
+  display: always
 
 # 头像（原站自定义头像）
 avatar:
@@ -36,6 +36,7 @@ read_more_btn: true
 # 自定义样式（LaTeX 转换文章的排版美化）
 custom_file_path:
   style: source/_data/styles.styl
+  sidebar: source/_data/sidebar.njk
 
 # 数学公式（KaTeX，按页加载：文章 front-matter 加 mathjax: true）
 math:

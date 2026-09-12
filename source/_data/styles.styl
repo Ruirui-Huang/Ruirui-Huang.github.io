@@ -26,3 +26,39 @@
     }
   }
 }
+
+// 侧栏气泡词云
+.sidebar-bubble-cloud {
+  margin-top: 1.5em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--border-color);
+
+  .sidebar-heading {
+    font-size: .95em;
+    font-weight: 600;
+    margin-bottom: .8em;
+    color: var(--text-color);
+  }
+
+  .bubble-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55em;
+    line-height: 1.6;
+  }
+
+  .bubble-tags a {
+    display: inline-block;
+    padding: .1em .65em;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+    transition: transform .2s ease, box-shadow .2s ease;
+
+    &:hover {
+      transform: scale(1.12);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+      color: #fff;
+    }
+  }
+}

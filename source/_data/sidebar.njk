@@ -1,0 +1,38 @@
+{# 侧栏气泡词云（NexT 8 custom_file_path.sidebar 注入） #}
+{% if site.tags.length %}
+  <div class="sidebar-bubble-cloud">
+    <div class="sidebar-heading">
+      <i class="fa fa-tags fa-fw"></i> 标签词云
+    </div>
+    <div class="bubble-tags">
+      {{ tagcloud({
+        min_font: 12,
+        max_font: 20,
+        amount: 200,
+        orderby: 'name',
+        order: 1,
+        color: true,
+        start_color: '#e74c3c',
+        end_color: '#0984e3'
+      }) }}
+    </div>
+  </div>
+  <script>
+    (function () {
+      function styleBubbles() {
+        document.querySelectorAll('.bubble-tags a').forEach(function (a) {
+          if (a.dataset.bubbled) return;
+          var c = getComputedStyle(a).color;
+          a.style.background = c;
+          a.style.color = '#fff';
+          a.dataset.bubbled = '1';
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', styleBubbles);
+      } else {
+        styleBubbles();
+      }
+    })();
+  </script>
+{% endif %}
