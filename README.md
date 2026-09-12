@@ -15,6 +15,9 @@ npx hexo clean && npx hexo g     # 改了 md/配置后建议 clean，增量可�
 # 部署线上（推 .deploy_git 到 master）
 npx hexo d
 
+# 或：直接 push source 分支，GitHub Actions 自动构建部署到 master
+git add -A && git commit -m "..." && git push origin HEAD:source
+
 # 备份源文件（每次改完都做）
 git add -A && git commit -m "..." && git push origin HEAD:source
 ```
@@ -24,7 +27,7 @@ git add -A && git commit -m "..." && git push origin HEAD:source
 | 分支 | 内容 | 更新方式 |
 | --- | --- | --- |
 | `master` | 编译产物（public/） | `npx hexo d`（自动推） |
-| `source` | 源文件（本目录） | 手动 `git push origin HEAD:source` |
+| `source` | 源文件（本目录） | `git push origin HEAD:source`（会触发 Actions 自动构建部署） |
 
 ## 目录结构
 
