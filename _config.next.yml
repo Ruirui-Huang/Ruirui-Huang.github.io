@@ -92,6 +92,12 @@ reward:
   wechatpay: /images/wechatpay.jpg
   alipay: /images/alipay.jpg
 
+# 评论系统选择（active 指定默认显示的系统）
+comments:
+  active: utterances
+  storage: true
+  lazyload: false
+
 # 评论（Utterances：基于 GitHub Issues，NexT 8 原生支持；
 # 替代已停服的 Valine/LeanCloud，2027-01-12 LeanCloud 全面关停）
 utterances:
