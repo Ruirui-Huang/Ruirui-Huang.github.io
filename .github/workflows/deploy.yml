@@ -29,6 +29,8 @@ jobs:
           npm ci || npm install
 
       - name: Build site
+        env:
+          TZ: Asia/Shanghai
         run: npx hexo clean && npx hexo g
 
       - name: Deploy to master (GitHub Pages)
