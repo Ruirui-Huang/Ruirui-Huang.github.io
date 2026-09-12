@@ -44,8 +44,9 @@ D:\Code\blog
 │   ├── archives/ tags/ categories/ # 归档 / 标签云 / 分类页
 │   ├── about/            # 关于页
 │   ├── robots.txt        # 爬虫规则（指向 sitemap.xml）
-│   ├── 404.html          # 自定义 404
-│   └── images/          # 站点图片（avatar/打赏二维码/自定义 favicon）
+│   ├── 404.html          # 自定义 404（front-matter 必须 layout: false，否则被套主题布局）
+│   ├── lib/             # 本地化的 FontAwesome / animate.css（免 Cloudflare CDN）
+│   └── images/          # 站点图片（avatar/打赏二维码/自定义 favicon/og-image）
 └── themes/next/         # NexT 主题副本
 ```
 
@@ -77,3 +78,8 @@ D:\Code\blog
 ## 其他
 
 - 换新电脑迁移流程见《搭建流程》第三章。
+- **第三方资源本地化**：`_config.next.yml` → `vendors.plugins: custom` + `custom_cdn_url: /lib/${cdnjs_name}/${cdnjs_file}`；资源文件已下载到 `source/lib/`（font-awesome 7.0.0 + animate.css 3.1.1，含 webfonts）。避免 Cloudflare CDN 国内访问慢。
+- **版权声明**：`creative_commons: {license: by-nc-sa, post: true}`，文章页底部显示作者/链接/协议。
+- **RSS 全文**：`_config.yml` → `feed.content: true`（atom.xml 输出全文）。
+- **OG 分享图**：`source/images/og-image.png`（1200x630 品牌图），`head.njk` 注入 og:image / twitter:card。
+- **404 页**：`source/404.html` 顶部必须保留 `layout: false`（Hexo 7 会把无 front-matter 的 .html 渲染进主题布局，出现侧栏/评论区）。
