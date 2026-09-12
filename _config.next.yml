@@ -25,6 +25,7 @@ social_icons:
 # 菜单（原站：首页/关于/标签/分类/搜索）
 menu:
   home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
   about: /about/ || fa fa-user
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
@@ -91,6 +92,25 @@ codeblock:
 back2top:
   enable: true
   scrollpercent: true
+
+# 顶部阅读进度条
+reading_progress:
+  enable: true
+  start_at: left
+  position: top
+  reversed: false
+  color: "#3498db"
+  height: 3px
+
+# 文章页"编辑"链接（跳 GitHub source 分支改文）
+post_edit:
+  enable: true
+  url: https://github.com/Ruirui-Huang/Ruirui-Huang.github.io/edit/source/
+
+# 阅读位置书签
+bookmark:
+  enable: true
+  color: "#222"
 
 # 文章元信息
 post_meta:

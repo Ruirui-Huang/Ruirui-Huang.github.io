@@ -59,6 +59,35 @@
   }
 }
 
+// PDF 嵌入文章工具栏（新窗口打开/下载）
+.pdf-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5em;
+  padding: .5em .9em;
+  margin-bottom: .6em;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--card-bg-color);
+  font-size: .9em;
+
+  .pdf-hint {
+    color: var(--text-color);
+  }
+
+  .pdf-actions a {
+    color: #3498db;
+    margin-left: .8em;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 // 侧栏气泡词云
 .sidebar-bubble-cloud {
   margin-top: 1.5em;

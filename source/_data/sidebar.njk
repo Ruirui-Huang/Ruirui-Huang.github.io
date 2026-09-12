@@ -60,3 +60,27 @@
     }
   })();
 </script>
+<script>
+  (function () {
+    // PDF 嵌入文章：自动添加"在新窗口打开 / 下载"链接
+    function enhancePdfEmbeds() {
+      document.querySelectorAll('embed[type="application/pdf"]').forEach(function (e) {
+        if (e.dataset.enhanced) return;
+        var src = e.getAttribute('src');
+        if (!src) return;
+        e.dataset.enhanced = '1';
+        var bar = document.createElement('div');
+        bar.className = 'pdf-toolbar';
+        bar.innerHTML = '<span class="pdf-hint"><i class="fa fa-file-pdf-o"></i> PDF 阅读器内嵌显示</span>'
+          + '<span class="pdf-actions"><a href="' + src + '" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> 新窗口打开</a>'
+          + ' <a href="' + src + '" download><i class="fa fa-download"></i> 下载</a></span>';
+        e.parentNode.insertBefore(bar, e);
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', enhancePdfEmbeds);
+    } else {
+      enhancePdfEmbeds();
+    }
+  })();
+</script>
