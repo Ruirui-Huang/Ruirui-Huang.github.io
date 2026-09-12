@@ -302,6 +302,22 @@
 </script>
 <script>
   (function () {
+    // 正文图片懒加载（首屏外的图延迟加载）
+    function lazyImages() {
+      document.querySelectorAll('.post-body img').forEach(function (img) {
+        if (img.hasAttribute('loading')) return;
+        img.setAttribute('loading', 'lazy');
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', lazyImages);
+    } else {
+      lazyImages();
+    }
+  })();
+</script>
+<script>
+  (function () {
     // PDF 嵌入文章：自动添加"在新窗口打开 / 下载"链接
     function enhancePdfEmbeds() {
       document.querySelectorAll('embed[type="application/pdf"]').forEach(function (e) {
