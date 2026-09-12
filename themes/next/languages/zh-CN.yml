@@ -69,7 +69,7 @@ search:
   hits_time: "找到 %s 个搜索结果（用时 %s 毫秒）"
   hits: "找到 %s 个搜索结果"
 cheers:
-  um: 嗯..
+  um: 不错
   ok: 还行
   nice: 不错
   good: 很好
