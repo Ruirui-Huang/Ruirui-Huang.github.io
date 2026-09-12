@@ -1418,7 +1418,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffff03;
+    background: #60b3e2;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3223,7 +3223,7 @@ header.header {
 .post-body embed[type="application/pdf"] {
   border-radius: 8px;
   background: var(--card-bg-color);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--table-row-odd-bg-color);
 }
 .posts-expand .post-title-link:hover {
   color: #3498db;
@@ -3274,7 +3274,7 @@ header.header {
   text-decoration: none;
   background: var(--btn-default-bg);
   color: var(--text-color);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--table-row-odd-bg-color);
   transition: all 0.2s ease;
 }
 .tag-cloud-tags a:hover {
@@ -3293,7 +3293,7 @@ header.header {
   gap: 0.5em;
   padding: 0.5em 0.9em;
   margin-bottom: 0.6em;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--table-row-odd-bg-color);
   border-radius: 6px;
   background: var(--card-bg-color);
   font-size: 0.9em;
@@ -3312,7 +3312,7 @@ header.header {
 .sidebar-bubble-cloud {
   margin-top: 1.5em;
   padding-top: 1.2em;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--table-row-odd-bg-color);
 }
 .sidebar-bubble-cloud .sidebar-heading {
   font-size: 0.95em;
