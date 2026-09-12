@@ -188,3 +188,8 @@ vendors:
 
 # 图片点击放大
 mediumzoom: true
+
+# Motion 动画
+motion:
+  enable: true
+  async: true
