@@ -52,6 +52,7 @@ D:\Code\blog
 - **评论**：Utterances（GitHub Issues，仓库已开 Issues）。Valine/LeanCloud 已废弃（2027-01-12 停服）。
 - **打赏**：NexT `reward_settings` + `source/images/wechatpay.jpg` / `alipay.jpg`。
 - **首页折叠**：文章 front-matter 写 `description`，主题开 `excerpt_description` + `read_more_btn`。
+- **侧栏气泡词云**：`_config.next.yml` → `custom_file_path.sidebar: source/_data/sidebar.njk` + `sidebar.display: always`（首页也显示侧栏）。`sidebar.njk` 用 `tagcloud()` 输出标签 + 内嵌 JS（`styleBubbles`）把文字色转为气泡背景色（白字）。样式在 `_data/styles.styl` 的 `.sidebar-bubble-cloud`。注意：`{% for tag in site.tags %}` 在 inject 模板里取不到数据（已验证死路），必须用 `tagcloud()`；改 `styles.styl` 后需 `hexo clean && hexo g` 才会重编译进 `main.css`。
 - **git 身份**（全局）：`Ruirui-Huang` / `Ruirui-Huang@users.noreply.github.com`（`.deploy_git` 子仓库读不到仓库级身份，必须全局）。
 
 ## 5 篇学习笔记的维护方式
