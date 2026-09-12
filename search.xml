@@ -16,21 +16,6 @@
       </tags>
   </entry>
   <entry>
-    <title>多模态</title>
-    <url>/2022/02/18/%E5%A4%9A%E6%A8%A1%E6%80%81/</url>
-    <content><![CDATA[<p>论文学习</p>
-<span id="more"></span>
-<embed src="/pdf/多模态学习笔记.pdf" width="100%" height="550" type="application/pdf">
-]]></content>
-      <categories>
-        <category>CV</category>
-        <category>NLP</category>
-      </categories>
-      <tags>
-        <tag>多模态</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>搭建流程</title>
     <url>/2018/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</url>
     <content><![CDATA[<p>本文最初写于 2018 年，记录 GitHub + Hexo 搭建个人博客的流程。<strong>2026 年 9 月更换新电脑后按本文重新完整走了一遍，内容已全面刷新为 runbook 形式</strong>：所有命令、配置与版本组合都在新电脑上实际验证通过，遇到问题直接看「四、问题集合」。以后无论是<strong>全新搭建</strong>还是<strong>旧电脑报废后的迁移恢复</strong>，照本文操作即可。（精华帖）</p>
@@ -308,6 +293,21 @@
       <categories>
         <category>其他</category>
       </categories>
+  </entry>
+  <entry>
+    <title>多模态</title>
+    <url>/2022/02/18/%E5%A4%9A%E6%A8%A1%E6%80%81/</url>
+    <content><![CDATA[<p>论文学习</p>
+<span id="more"></span>
+<embed src="/pdf/多模态学习笔记.pdf" width="100%" height="550" type="application/pdf">
+]]></content>
+      <categories>
+        <category>CV</category>
+        <category>NLP</category>
+      </categories>
+      <tags>
+        <tag>多模态</tag>
+      </tags>
   </entry>
   <entry>
     <title>板端部署</title>
