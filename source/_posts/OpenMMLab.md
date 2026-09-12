@@ -287,7 +287,7 @@ MMCV1.x中主要包含Runner、Hook、Parallel、Registry、Config、FileIO、Im
 
 ### 包名变更
 
-     包名          \<2.0          $\geq$ 2.0
+     包名          \<2.0          ≥ 2.0
   ----------- ---------------- ----------------
    mmcv-full    包含CUDA算子          无
      mmcv      不包含CUDA算子    包含CUDA算子
