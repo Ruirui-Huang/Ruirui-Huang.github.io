@@ -30,36 +30,42 @@ git add -A && git commit -m "..." && git push origin HEAD:source
 
 ```
 D:\Code\blog
-├── _config.yml          # 站点配置（含 markdown-it+KaTeX 渲染器）
-├── _config.next.yml     # NexT 主题覆盖配置（打赏/评论/KaTeX/折叠等）
+├── _config.yml          # 站点配置（含 markdown-it 渲染器）
+├── _config.next.yml     # NexT 主题覆盖配置（打赏/评论/折叠等）
 ├── package.json         # 含 "hexo": {"version": "7.3.0"} 字段（缺失则插件不加载）
+├── _backup_latex/       # LaTeX 转换版备份（md + 图片，已 gitignore，不部署）
 ├── source/
-│   ├── _posts/          # 文章（10 篇；5 篇为 LaTeX 转换，front-matter 含 mathjax: true）
-│   ├── _data/styles.styl # 自定义样式（figure/图注排版）
+│   ├── _posts/          # 文章（7 篇；5 篇笔记为 PDF 嵌入显示）
+│   ├── pdf/             # 5 篇学习笔记的 PDF（文章用 <embed> 嵌入）
+│   ├── _data/styles.styl # 自定义样式
 │   ├── tags/ categories/ # 标签云 / 分类页（type: tags/categories）
 │   ├── about/            # 关于页
 │   ├── robots.txt        # 爬虫规则（指向 sitemap.xml）
 │   ├── 404.html          # 自定义 404
-│   └── images/          # 文章图片（zaji/multimodal/semantic_seg/target_detection/openmmlab）
+│   └── images/          # 站点图片（avatar/打赏二维码等）
 └── themes/next/         # NexT 主题副本
 ```
 
 ## 关键配置备忘
 
-- **数学公式**：`_config.yml` 用 `hexo-renderer-markdown-it` + `@renbaoshuo/markdown-it-katex`（服务端渲染）；`_config.next.yml` 开 KaTeX 且 `every_page: false`，文章 front-matter 加 `mathjax: true` 按页加载。
+- **渲染器**：`_config.yml` 用 `hexo-renderer-markdown-it`（含 KaTeX 插件配置，当前无文章使用公式，按页加载无副作用）。
 - **评论**：Utterances（GitHub Issues，仓库已开 Issues）。Valine/LeanCloud 已废弃（2027-01-12 停服）。
 - **打赏**：NexT `reward_settings` + `source/images/wechatpay.jpg` / `alipay.jpg`。
 - **首页折叠**：文章 front-matter 写 `description`，主题开 `excerpt_description` + `read_more_btn`。
 - **git 身份**（全局）：`Ruirui-Huang` / `Ruirui-Huang@users.noreply.github.com`（`.deploy_git` 子仓库读不到仓库级身份，必须全局）。
 
-## LaTeX 笔记 → 博客正文
+## 5 篇学习笔记的维护方式
 
-5 篇笔记（杂记/多模态/语义分割/目标检测/OpenMMLab）由 Overleaf LaTeX 源经 pandoc 转换。
-转换脚本 `convert_tex.py` 与检查脚本 `scan_pages.py` 在工具目录
-`C:\Users\10327\Doubao\chats\2026-09-10\new-chat-1\`，Overleaf 原始 zip 在 `D:\Docs\`，
-解压源在 `...\new-chat-1\overleaf_src\<项目名>\`。完整流程见文章《搭建流程》第五章。
+杂记/多模态/语义分割/目标检测/OpenMMLab 这 5 篇以 **PDF 内嵌**展示（`<embed src="/pdf/xxx.pdf">`），
+源文件在 Overleaf 维护。更新流程：
+
+1. Overleaf 编辑后 **Download → PDF** 下载新 PDF；
+2. 覆盖 `source/pdf/` 下对应文件（文件名与 md 中 embed 路径一致）；
+3. `npx hexo d` 部署 + `git push origin HEAD:source` 备份。
+
+曾经尝试过 LaTeX → Markdown 正文转换（pandoc + markdown-it + KaTeX），因排版不满意已回退；
+转换版 md 与图片备份在 `_backup_latex/`，转换脚本与 runbook 见《搭建流程》第五章。
 
 ## 其他
 
-- 旧 PDF（`source/pdf/*.pdf`）保留作下载备份，文章已不再嵌入。
 - 换新电脑迁移流程见《搭建流程》第三章。
