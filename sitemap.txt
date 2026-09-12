@@ -21,6 +21,6 @@ https://ruirui-huang.github.io/categories/Python/
 https://ruirui-huang.github.io/categories/pytorch/
 https://ruirui-huang.github.io/categories/CV/NLP/
 https://ruirui-huang.github.io/categories/%E5%85%B6%E4%BB%96/
+https://ruirui-huang.github.io/categories/Python/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/
 https://ruirui-huang.github.io/categories/Coding/
 https://ruirui-huang.github.io/categories/%E9%83%A8%E7%BD%B2/
-https://ruirui-huang.github.io/categories/Python/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/

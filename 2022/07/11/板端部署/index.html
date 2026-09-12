@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ruirui-huang.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"atom-one-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null,"show_result":true},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="Ascend310优化建议网络结构 推荐使用主流的网络拓扑，包括ResNet、MobileNet,不建议使用VGG、AlexNet等结构，网络模型偏大，单宽压力大 矩阵乘法的MKN，尽量取16的倍数。算法上可以考虑适当增加channel个数，而不是分group的方式减少channel数量 增加数据复用率。一个参数的利用次数越多带宽的瓶颈越小，所以算法上可以考虑增加filter的复用次数，比如增">
+    <meta name="description" content="Ascend310 模型部署优化建议：网络结构、算子与工程实践。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="板端部署">
 <meta property="og:url" content="https://ruirui-huang.github.io/2022/07/11/%E6%9D%BF%E7%AB%AF%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="HuangR&#39;s Blog">
-<meta property="og:description" content="Ascend310优化建议网络结构 推荐使用主流的网络拓扑，包括ResNet、MobileNet,不建议使用VGG、AlexNet等结构，网络模型偏大，单宽压力大 矩阵乘法的MKN，尽量取16的倍数。算法上可以考虑适当增加channel个数，而不是分group的方式减少channel数量 增加数据复用率。一个参数的利用次数越多带宽的瓶颈越小，所以算法上可以考虑增加filter的复用次数，比如增">
+<meta property="og:description" content="Ascend310 模型部署优化建议：网络结构、算子与工程实践。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-11T14:47:50.000Z">
 <meta property="article:modified_time" content="2024-03-04T15:07:06.000Z">
@@ -224,7 +224,7 @@
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="板端部署 | HuangR's Blog">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="Ascend310 模型部署优化建议：网络结构、算子与工程实践。">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -268,6 +268,7 @@
     </span>
 </div>
 
+            <div class="post-description">Ascend310 模型部署优化建议：网络结构、算子与工程实践。</div>
         </div>
       </header>
 

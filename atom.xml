@@ -22,11 +22,7 @@
     <id>https://ruirui-huang.github.io/2022/07/11/%E6%9D%BF%E7%AB%AF%E9%83%A8%E7%BD%B2/</id>
     <link href="https://ruirui-huang.github.io/2022/07/11/%E6%9D%BF%E7%AB%AF%E9%83%A8%E7%BD%B2/"/>
     <published>2022-07-11T14:47:50.000Z</published>
-    <summary>
-      <![CDATA[<span id="more"></span>
-
-<h1 id="Ascend310"><a href="#Ascend310" class="headerlink" title="Ascend310"></a>Ascend310</h1><h2 id="优化建议"><a hre]]>
-    </summary>
+    <summary>Ascend310 模型部署优化建议：网络结构、算子与工程实践。</summary>
     <title>板端部署</title>
     <updated>2024-03-04T15:07:06.000Z</updated>
   </entry>
@@ -43,9 +39,7 @@
     <id>https://ruirui-huang.github.io/2022/05/07/OpenMMLab/</id>
     <link href="https://ruirui-huang.github.io/2022/05/07/OpenMMLab/"/>
     <published>2022-05-07T02:32:14.000Z</published>
-    <summary>
-      <![CDATA[<p>训练框架学习</p>]]>
-    </summary>
+    <summary>OpenMMLab 训练框架学习笔记。</summary>
     <title>OpenMMLab</title>
     <updated>2024-02-20T14:37:58.000Z</updated>
   </entry>
@@ -61,9 +55,7 @@
     <id>https://ruirui-huang.github.io/2022/04/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</id>
     <link href="https://ruirui-huang.github.io/2022/04/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     <published>2022-04-30T13:17:39.000Z</published>
-    <summary>
-      <![CDATA[<p>论文学习</p>]]>
-    </summary>
+    <summary>目标检测论文学习笔记。</summary>
     <title>目标检测</title>
     <updated>2024-02-20T14:37:02.000Z</updated>
   </entry>
@@ -79,9 +71,7 @@
     <id>https://ruirui-huang.github.io/2022/03/21/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/</id>
     <link href="https://ruirui-huang.github.io/2022/03/21/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
     <published>2022-03-21T14:02:33.000Z</published>
-    <summary>
-      <![CDATA[<p>论文学习</p>]]>
-    </summary>
+    <summary>语义分割论文学习笔记。</summary>
     <title>语义分割</title>
     <updated>2024-02-19T11:59:33.000Z</updated>
   </entry>
@@ -98,9 +88,7 @@
     <id>https://ruirui-huang.github.io/2022/02/18/%E5%A4%9A%E6%A8%A1%E6%80%81/</id>
     <link href="https://ruirui-huang.github.io/2022/02/18/%E5%A4%9A%E6%A8%A1%E6%80%81/"/>
     <published>2022-02-18T13:18:47.000Z</published>
-    <summary>
-      <![CDATA[<p>论文学习</p>]]>
-    </summary>
+    <summary>多模态论文学习笔记。</summary>
     <title>多模态</title>
     <updated>2024-03-18T13:18:34.000Z</updated>
   </entry>
@@ -115,9 +103,7 @@
     <id>https://ruirui-huang.github.io/2019/09/10/%E6%9D%82%E8%AE%B0/</id>
     <link href="https://ruirui-huang.github.io/2019/09/10/%E6%9D%82%E8%AE%B0/"/>
     <published>2019-09-10T13:29:40.000Z</published>
-    <summary>
-      <![CDATA[<p>零散的记录</p>]]>
-    </summary>
+    <summary>零散的记录。</summary>
     <title>杂记</title>
     <updated>2024-02-20T14:45:29.000Z</updated>
   </entry>
@@ -134,13 +120,7 @@
     <id>https://ruirui-huang.github.io/2018/10/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</id>
     <link href="https://ruirui-huang.github.io/2018/10/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/"/>
     <published>2018-10-16T12:47:01.000Z</published>
-    <summary>
-      <![CDATA[<span id="more"></span>
-
-<h2 id="Python多线程"><a href="#Python多线程" class="headerlink" title="Python多线程"></a>Python多线程</h2><p>主要概念：</p>
-<ul>
-<l]]>
-    </summary>
+    <summary>多线程与多进程学习笔记：join、守护线程、同步锁、死锁与递归锁。</summary>
     <title>Python多线程与多进程</title>
     <updated>2024-02-20T14:44:29.000Z</updated>
   </entry>
@@ -155,11 +135,7 @@
     <id>https://ruirui-huang.github.io/2018/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</id>
     <link href="https://ruirui-huang.github.io/2018/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     <published>2018-02-21T13:43:49.000Z</published>
-    <summary>
-      <![CDATA[<span id="more"></span>
-
-<h1 id="Ciao"><a href="#Ciao" class="headerlink" title="Ciao"></a>Ciao</h1><h2 id="排序"><a href="#排序" class="headerl]]>
-    </summary>
+    <summary>数据结构与算法学习笔记，涵盖排序、Leetcode 与面试题整理。</summary>
     <title>数据结构</title>
     <updated>2024-03-17T13:27:42.000Z</updated>
   </entry>
@@ -170,14 +146,12 @@
     <category term="Python" scheme="https://ruirui-huang.github.io/categories/Python/"/>
     <category term="编程语言" scheme="https://ruirui-huang.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     <content>
-      <![CDATA[<p>本文整理了我在使用和学习python的过程中借鉴的博客！</p><span id="more"></span><p><img src="/2018/02/11/About%20python/python.png"></p><h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="About-Anaconda"><a href="#About-Anaconda" class="headerlink" title="About Anaconda"></a>About Anaconda</h2><ol><li>下载Anaconda<br>  进入<a href="https://www.anaconda.com/distribution/#download-section">Conda</a>官网,点击<code>64-Bit Graphical Installer (462 MB)</code>等待下载</li><li>安装<br>  点击已经下载好的安装包，<code>Destination Folder</code>选择自定义<code>Browse</code>文件夹（建议在D盘新建Conda文件夹）<br>剩余参考：<a href="https://jingyan.baidu.com/article/eae078275a31851fec5485b8.html">https://jingyan.baidu.com/article/eae078275a31851fec5485b8.html</a></li><li><code>Finish</code>之后不需要其他操作，关闭即可。</li></ol><h2 id="About-Pycharm"><a href="#About-Pycharm" class="headerlink" title="About Pycharm"></a>About Pycharm</h2><ol><li>下载Pycharm<br>  进入<a href="https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe">Pychram</a>官网，选择<code>Professional</code>等待下载</li><li>安装</li></ol><ul><li>自定义安装路径，方便存放自己的代码<br>  </li><li>勾选<code>64-bit launcher</code>、<code>.py</code>和<code>Add to ... the PATH</code>，点击<code>next</code></li><li>直接<code>install</code>，结束</li></ul><ol><li>剩余操作参考上面那个链接里面的（点击步骤4中的<code>Pychram</code>转到）（如果觉得麻烦，在下载的时候选择<code>Community</code></li><li>打开pychram<br>  选择<code>open</code>，打开你之前已经创建好了的文件夹，我的是<code>D:/Conda/Code</code>，然后点击左上角<code>file</code>找到里面的<code>setting</code>，进去之后选择<code>project</code>下面的<code>project Interpreter</code>，看到：<img src="/2018/02/11/About%20python/2.png"><br>  按如下操作：<img src="/2018/02/11/About%20python/3.png"><img src="/2018/02/11/About%20python/4.png"></li><li>结束</li></ol><h2 id="About-VScode"><a href="#About-VScode" class="headerlink" title="About VScode"></a>About VScode</h2><ul><li>人狠话不多，上菜！<img src="/2018/02/11/About%20python/vscode.png"></li></ul><h1 id="使用过程中的一些问题"><a href="#使用过程中的一些问题" class="headerlink" title="使用过程中的一些问题"></a>使用过程中的一些问题</h1><h2 id="问题1：安装相应的包很慢"><a href="#问题1：安装相应的包很慢" class="headerlink" title="问题1：安装相应的包很慢"></a>问题1：安装相应的包很慢</h2><h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p>  由于访问外网，python在加载包的时候很慢</p><h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>  方法一：手动添加<code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</code><br>  方法二：windows下，直接在<code>user</code>目录中创建一个<code>pip</code>文件，如：<code>C:\Users\xx\pip</code>，新建文件<code>pip.ini</code></p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure><h2 id="问题2：jupyter更换虚拟环境"><a href="#问题2：jupyter更换虚拟环境" class="headerlink" title="问题2：jupyter更换虚拟环境"></a>问题2：jupyter更换虚拟环境</h2><h3 id="问题描述：-1"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h3><p>  在创建的conda env上运行Jupyter notebook，但是发现在notebook中的python其实并没有运行在那个env上。</p><h3 id="解决方案：-1"><a href="#解决方案：-1" class="headerlink" title="解决方案："></a>解决方案：</h3><ol><li>在<code>cmd</code>中切换到想要的环境xxx</li><li>输入命令<code>conda activate xxx</code></li><li>在xxx环境中安装好<code>ipykernel</code></li><li><code>python -m ipykernel install --name xxx</code>（一般第三步操作完就可以了）</li></ol><h2 id="问题3：Linux环境下使用Jupyter"><a href="#问题3：Linux环境下使用Jupyter" class="headerlink" title="问题3：Linux环境下使用Jupyter"></a>问题3：Linux环境下使用Jupyter</h2><h3 id="问题描述：-2"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h3><p>  linux远程使用jupyter notebook</p><h3 id="解决方案：-2"><a href="#解决方案：-2" class="headerlink" title="解决方案："></a>解决方案：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --allow-root --ip=</span><br></pre></td></tr></table></figure><h2 id="问题4：Pychram专业版破解"><a href="#问题4：Pychram专业版破解" class="headerlink" title="问题4：Pychram专业版破解"></a>问题4：Pychram专业版破解</h2><h3 id="问题描述：-3"><a href="#问题描述：-3" class="headerlink" title="问题描述："></a>问题描述：</h3><p>  专业版功能比较齐全，但是收费，破解感觉比较🐂🍺（社区版可以满足日常学习需求）</p><h3 id="解决方案：-3"><a href="#解决方案：-3" class="headerlink" title="解决方案："></a>解决方案：</h3><ul><li>暂时性激活：<a href="http://lookdiv.com/">入口</a> ,钥匙：lookdiv.com</li><li>永久激活： 下载Pychram2019:<a href="https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe">https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe</a></li><li>下载破解补丁链接：<a href="https://pan.baidu.com/s/1pr5Ri3SxUtpCDaSAUIpQQg">https://pan.baidu.com/s/1pr5Ri3SxUtpCDaSAUIpQQg</a></li><li>将破解补丁<code>JetbrainsCrack-release-enc.jar</code>放置在<code>pychram</code>安装目录<code>\bin</code>目录下面。</li><li>在<code>Pycharm</code>安装目录的\bin目录下找到<code>pycharm.exe.vmoptions</code>和<code>pycharm64.exe.vmoptions</code>两个文件 ，右键以文本格式打开（可用借助<code>Notepad</code>打开），在两个文件最后追加  <code>-javaagent:D:\RuanJian\PyCharm 2018.3.3\bin\JetbrainsCrack-release-enc.jar</code>，注意修改为你自己的安装路径，然后保存即可。</li><li>启动<code>pychram</code>,选择<code>Activation code</code>,输入以下内容。<pre>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br></pre><pre>   ThisCrackLicenseId-{<br>“licenseId”:”11011″,<br>“licenseeName”:”WeChat”,<br>“assigneeName”:”IT–Pig”,<br>“assigneeEmail”:”<a href="mailto:&#49;&#x31;&#49;&#x33;&#x34;&#52;&#x39;&#x38;&#x38;&#49;&#x40;&#x71;&#113;&#x2e;&#x63;&#111;&#109;">1113449881@qq.com</a>”,<br>“licenseRestriction”:””,<br>“checkConcurrentUse”:false,<br>“products”:[<br>{“code”:”II”,”paidUpTo”:”2099-12-31″},<br>{“code”:”DM”,”paidUpTo”:”2099-12-31″},<br>{“code”:”AC”,”paidUpTo”:”2099-12-31″},<br>{“code”:”RS0″,”paidUpTo”:”2099-12-31″},<br>{“code”:”WS”,”paidUpTo”:”2099-12-31″},<br>{“code”:”DPN”,”paidUpTo”:”2099-12-31″},<br>{“code”:”RC”,”paidUpTo”:”2099-12-31″},<br>{“code”:”PS”,”paidUpTo”:”2099-12-31″},<br>{“code”:”DC”,”paidUpTo”:”2099-12-31″},<br>{“code”:”RM”,”paidUpTo”:”2099-12-31″},<br>{“code”:”CL”,”paidUpTo”:”2099-12-31″},<br>{“code”:”PC”,”paidUpTo”:”2099-12-31″}<br>],<br>“hash”:”2911276/0″,<br>“gracePeriodDays”:7,<br>“autoProlongated”:false}<br></pre></li></ul>]]>
+      <![CDATA[<p>本文整理了我在使用和学习python的过程中借鉴的博客！</p><span id="more"></span><p><img src="/2018/02/11/About%20python/python.png"></p><h1 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h1><h2 id="About-Anaconda"><a href="#About-Anaconda" class="headerlink" title="About Anaconda"></a>About Anaconda</h2><ol><li>下载Anaconda<br>  进入<a href="https://www.anaconda.com/distribution/#download-section">Conda</a>官网,点击<code>64-Bit Graphical Installer (462 MB)</code>等待下载</li><li>安装<br>  点击已经下载好的安装包，<code>Destination Folder</code>选择自定义<code>Browse</code>文件夹（建议在D盘新建Conda文件夹）<br>剩余参考：<a href="https://jingyan.baidu.com/article/eae078275a31851fec5485b8.html">https://jingyan.baidu.com/article/eae078275a31851fec5485b8.html</a></li><li><code>Finish</code>之后不需要其他操作，关闭即可。</li></ol><h2 id="About-Pycharm"><a href="#About-Pycharm" class="headerlink" title="About Pycharm"></a>About Pycharm</h2><ol><li>下载Pycharm<br>  进入<a href="https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe">Pychram</a>官网，选择<code>Professional</code>等待下载</li><li>安装</li></ol><ul><li>自定义安装路径，方便存放自己的代码<br>  </li><li>勾选<code>64-bit launcher</code>、<code>.py</code>和<code>Add to ... the PATH</code>，点击<code>next</code></li><li>直接<code>install</code>，结束</li></ul><ol><li>剩余操作参考上面那个链接里面的（点击步骤4中的<code>Pychram</code>转到）（如果觉得麻烦，在下载的时候选择<code>Community</code></li><li>打开pychram<br>  选择<code>open</code>，打开你之前已经创建好了的文件夹，我的是<code>D:/Conda/Code</code>，然后点击左上角<code>file</code>找到里面的<code>setting</code>，进去之后选择<code>project</code>下面的<code>project Interpreter</code>，看到：<img src="/2018/02/11/About%20python/2.png"><br>  按如下操作：<img src="/2018/02/11/About%20python/3.png"><img src="/2018/02/11/About%20python/4.png"></li><li>结束</li></ol><h2 id="About-VScode"><a href="#About-VScode" class="headerlink" title="About VScode"></a>About VScode</h2><ul><li>人狠话不多，上菜！<img src="/2018/02/11/About%20python/vscode.png"></li></ul><h1 id="使用过程中的一些问题"><a href="#使用过程中的一些问题" class="headerlink" title="使用过程中的一些问题"></a>使用过程中的一些问题</h1><h2 id="问题1：安装相应的包很慢"><a href="#问题1：安装相应的包很慢" class="headerlink" title="问题1：安装相应的包很慢"></a>问题1：安装相应的包很慢</h2><h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p>  由于访问外网，python在加载包的时候很慢</p><h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>  方法一：手动添加<code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</code><br>  方法二：windows下，直接在<code>user</code>目录中创建一个<code>pip</code>文件，如：<code>C:\Users\xx\pip</code>，新建文件<code>pip.ini</code></p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure><h2 id="问题2：jupyter更换虚拟环境"><a href="#问题2：jupyter更换虚拟环境" class="headerlink" title="问题2：jupyter更换虚拟环境"></a>问题2：jupyter更换虚拟环境</h2><h3 id="问题描述：-1"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h3><p>  在创建的conda env上运行Jupyter notebook，但是发现在notebook中的python其实并没有运行在那个env上。</p><h3 id="解决方案：-1"><a href="#解决方案：-1" class="headerlink" title="解决方案："></a>解决方案：</h3><ol><li>在<code>cmd</code>中切换到想要的环境xxx</li><li>输入命令<code>conda activate xxx</code></li><li>在xxx环境中安装好<code>ipykernel</code></li><li><code>python -m ipykernel install --name xxx</code>（一般第三步操作完就可以了）</li></ol><h2 id="问题3：Linux环境下使用Jupyter"><a href="#问题3：Linux环境下使用Jupyter" class="headerlink" title="问题3：Linux环境下使用Jupyter"></a>问题3：Linux环境下使用Jupyter</h2><h3 id="问题描述：-2"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h3><p>  linux远程使用jupyter notebook</p><h3 id="解决方案：-2"><a href="#解决方案：-2" class="headerlink" title="解决方案："></a>解决方案：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --allow-root --ip=</span><br></pre></td></tr></table></figure><h2 id="问题4：Pychram专业版破解"><a href="#问题4：Pychram专业版破解" class="headerlink" title="问题4：Pychram专业版破解"></a>问题4：Pychram专业版破解</h2><h3 id="问题描述：-3"><a href="#问题描述：-3" class="headerlink" title="问题描述："></a>问题描述：</h3><p>  专业版功能比较齐全，但是收费，破解感觉比较🐂🍺（社区版可以满足日常学习需求）</p><h3 id="解决方案：-3"><a href="#解决方案：-3" class="headerlink" title="解决方案："></a>解决方案：</h3><ul><li>暂时性激活：<a href="http://lookdiv.com/">入口</a> ,钥匙：lookdiv.com</li><li>永久激活： 下载Pychram2019:<a href="https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe">https://download.jetbrains.8686c.com/python/pycharm-professional-2018.3.3.exe</a></li><li>下载破解补丁链接：<a href="https://pan.baidu.com/s/1pr5Ri3SxUtpCDaSAUIpQQg">https://pan.baidu.com/s/1pr5Ri3SxUtpCDaSAUIpQQg</a></li><li>将破解补丁<code>JetbrainsCrack-release-enc.jar</code>放置在<code>pychram</code>安装目录<code>\bin</code>目录下面。</li><li>在<code>Pycharm</code>安装目录的\bin目录下找到<code>pycharm.exe.vmoptions</code>和<code>pycharm64.exe.vmoptions</code>两个文件 ，右键以文本格式打开（可用借助<code>Notepad</code>打开），在两个文件最后追加  <code>-javaagent:D:\RuanJian\PyCharm 2018.3.3\bin\JetbrainsCrack-release-enc.jar</code>，注意修改为你自己的安装路径，然后保存即可。</li><li>启动<code>pychram</code>,选择<code>Activation code</code>,输入以下内容。<pre>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br></pre><pre>   ThisCrackLicenseId-{<br>“licenseId”:”11011″,<br>“licenseeName”:”WeChat”,<br>“assigneeName”:”IT–Pig”,<br>“assigneeEmail”:”<a href="mailto:&#x31;&#49;&#49;&#51;&#x34;&#x34;&#57;&#56;&#56;&#49;&#64;&#113;&#113;&#x2e;&#99;&#111;&#x6d;">1113449881@qq.com</a>”,<br>“licenseRestriction”:””,<br>“checkConcurrentUse”:false,<br>“products”:[<br>{“code”:”II”,”paidUpTo”:”2099-12-31″},<br>{“code”:”DM”,”paidUpTo”:”2099-12-31″},<br>{“code”:”AC”,”paidUpTo”:”2099-12-31″},<br>{“code”:”RS0″,”paidUpTo”:”2099-12-31″},<br>{“code”:”WS”,”paidUpTo”:”2099-12-31″},<br>{“code”:”DPN”,”paidUpTo”:”2099-12-31″},<br>{“code”:”RC”,”paidUpTo”:”2099-12-31″},<br>{“code”:”PS”,”paidUpTo”:”2099-12-31″},<br>{“code”:”DC”,”paidUpTo”:”2099-12-31″},<br>{“code”:”RM”,”paidUpTo”:”2099-12-31″},<br>{“code”:”CL”,”paidUpTo”:”2099-12-31″},<br>{“code”:”PC”,”paidUpTo”:”2099-12-31″}<br>],<br>“hash”:”2911276/0″,<br>“gracePeriodDays”:7,<br>“autoProlongated”:false}<br></pre></li></ul>]]>
     </content>
     <id>https://ruirui-huang.github.io/2018/02/11/About%20python/</id>
     <link href="https://ruirui-huang.github.io/2018/02/11/About%20python/"/>
     <published>2018-02-11T06:23:47.000Z</published>
-    <summary>
-      <![CDATA[<p>本文整理了我在使用和学习python的过程中借鉴的博客！</p>]]>
-    </summary>
+    <summary>本文整理了我使用和学习 Python 的过程中借鉴的博客，包括 Anaconda、PyCharm 等工具配置。</summary>
     <title>About Python</title>
     <updated>2024-02-20T14:46:01.000Z</updated>
   </entry>
@@ -192,9 +166,7 @@
     <id>https://ruirui-huang.github.io/2018/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</id>
     <link href="https://ruirui-huang.github.io/2018/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/"/>
     <published>2018-02-04T16:20:07.000Z</published>
-    <summary>
-      <![CDATA[<p>本文最初写于 2018 年，记录 GitHub + Hexo 搭建个人博客的流程。<strong>2026 年 9 月更换新电脑后按本文重新完整走了一遍，内容已全面刷新为 runbook 形式</strong>：所有命令、配置与版本组合都在新电脑上实际验证通过，遇到问题直接看「四、问题集合」。以后无论是<strong>全新搭建</strong>还是<strong>旧电脑报废后的迁移恢复</strong>，照本文操作即可。（精华帖）</p>]]>
-    </summary>
+    <summary>GitHub + Hexo 搭建个人博客的完整流程，涵盖从零搭建、日常维护、旧站迁移与问题排查，所有命令实测可用。</summary>
     <title>搭建流程</title>
     <updated>2026-09-12T03:00:00.000Z</updated>
   </entry>
