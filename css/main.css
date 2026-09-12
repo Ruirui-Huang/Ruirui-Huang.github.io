@@ -1282,7 +1282,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #dab43d;
+    background: #620eff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2931,6 +2931,24 @@ header.header {
 }
 .post-block:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+::selection {
+  background: #3498db;
+  color: #fff;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100,100,100,0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100,100,100,0.55);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 .site-author-image {
   transition: transform 0.18s ease;
