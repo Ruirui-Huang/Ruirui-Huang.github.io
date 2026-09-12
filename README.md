@@ -31,18 +31,20 @@ git add -A && git commit -m "..." && git push origin HEAD:source
 ```
 D:\Code\blog
 ├── _config.yml          # 站点配置（含 markdown-it 渲染器）
-├── _config.next.yml     # NexT 主题覆盖配置（打赏/评论/折叠等）
+├── _config.next.yml     # NexT 主题覆盖配置（打赏/评论/折叠/词云/进度条等）
 ├── package.json         # 含 "hexo": {"version": "7.3.0"} 字段（缺失则插件不加载）
 ├── _backup_latex/       # LaTeX 转换版备份（md + 图片，已 gitignore，不部署）
+├── _backup_assets/      # 不再使用的素材备份（如 background.jpg，不部署）
 ├── source/
 │   ├── _posts/          # 文章（7 篇；5 篇笔记为 PDF 嵌入显示）
 │   ├── pdf/             # 5 篇学习笔记的 PDF（文章用 <embed> 嵌入）
-│   ├── _data/styles.styl # 自定义样式
-│   ├── tags/ categories/ # 标签云 / 分类页（type: tags/categories）
+│   ├── _data/styles.styl # 自定义样式（气泡词云/头像旋转/PDF工具栏/标签页）
+│   ├── _data/sidebar.njk # 侧栏注入模板（词云 + 头像旋转 + PDF 增强 JS）
+│   ├── archives/ tags/ categories/ # 归档 / 标签云 / 分类页
 │   ├── about/            # 关于页
 │   ├── robots.txt        # 爬虫规则（指向 sitemap.xml）
 │   ├── 404.html          # 自定义 404
-│   └── images/          # 站点图片（avatar/打赏二维码等）
+│   └── images/          # 站点图片（avatar/打赏二维码/自定义 favicon）
 └── themes/next/         # NexT 主题副本
 ```
 
@@ -53,6 +55,7 @@ D:\Code\blog
 - **打赏**：NexT `reward_settings` + `source/images/wechatpay.jpg` / `alipay.jpg`。
 - **首页折叠**：文章 front-matter 写 `description`，主题开 `excerpt_description` + `read_more_btn`。
 - **侧栏气泡词云**：`_config.next.yml` → `custom_file_path.sidebar: source/_data/sidebar.njk` + `sidebar.display: always`（首页也显示侧栏）。`sidebar.njk` 用 `tagcloud()` 输出标签 + 内嵌 JS（`styleBubbles`）把文字色转为气泡背景色（白字）。样式在 `_data/styles.styl` 的 `.sidebar-bubble-cloud`。注意：`{% for tag in site.tags %}` 在 inject 模板里取不到数据（已验证死路），必须用 `tagcloud()`；改 `styles.styl` 后需 `hexo clean && hexo g` 才会重编译进 `main.css`。
+- **其他自定义 JS/CSS**：侧栏头像鼠标 3D 旋转、PDF 嵌入文章自动加"新窗口打开/下载"工具栏（都在 `sidebar.njk` 的 script 块与 `styles.styl`）。文章菜单：归档/关于/标签/分类；开启阅读进度条、文章编辑链接（GitHub）、书签、本地搜索、代码复制。
 - **git 身份**（全局）：`Ruirui-Huang` / `Ruirui-Huang@users.noreply.github.com`（`.deploy_git` 子仓库读不到仓库级身份，必须全局）。
 
 ## 5 篇学习笔记的维护方式
