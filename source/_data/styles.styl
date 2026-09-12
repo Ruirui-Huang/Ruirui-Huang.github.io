@@ -44,6 +44,27 @@
   }
 }
 
+// 代码块 tab 缩进 4（默认 8 过大，缩进更自然）
+.highlight .code pre {
+  tab-size: 4;
+}
+
+// 行内代码：淡蓝底 + 主题蓝字 + 圆角
+.post-body code:not(.hljs):not(.language-*) {
+  background: rgba(52, 152, 219, .1);
+  color: #217dbb;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+// PDF 嵌入容器：圆角 + 加载占位底色
+.post-body embed[type="application/pdf"] {
+  border-radius: 8px;
+  background: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+}
+
 // 首页文章标题 hover 变主题蓝
 .posts-expand .post-title-link {
   &:hover {

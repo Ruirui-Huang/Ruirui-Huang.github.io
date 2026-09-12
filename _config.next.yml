@@ -169,4 +169,4 @@ footer:
     enable: false
 
 # 主题自带 dark mode 开关（默认关闭）
-darkmode: false
+darkmode: true
