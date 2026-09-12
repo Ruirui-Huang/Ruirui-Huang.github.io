@@ -163,13 +163,6 @@
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/categories/%E5%85%B6%E4%BB%96/</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ruirui-huang.github.io/categories/CV/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -177,7 +170,7 @@
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/categories/%E9%83%A8%E7%BD%B2/</loc>
+    <loc>https://ruirui-huang.github.io/categories/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -185,6 +178,13 @@
   
   <url>
     <loc>https://ruirui-huang.github.io/categories/CV/NLP/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ruirui-huang.github.io/categories/%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

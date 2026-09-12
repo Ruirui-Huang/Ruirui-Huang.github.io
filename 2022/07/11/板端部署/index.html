@@ -368,6 +368,34 @@
     }
   })();
 </script>
+<script>
+  (function () {
+    // 搜索快捷键：按 / 或 Ctrl+K 打开站内搜索弹窗
+    function openSearch() {
+      var trigger = document.querySelector('.menu-item-search a, a[href*="search"], .popup-trigger');
+      if (trigger) {
+        trigger.click();
+        return true;
+      }
+      return false;
+    }
+    function onKey(e) {
+      var t = e.target;
+      var typing = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
+      var k = (e.key || '').toLowerCase();
+      if (e.ctrlKey && k === 'k') {
+        e.preventDefault();
+        openSearch();
+        return;
+      }
+      if (e.key === '/' && !typing && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        e.preventDefault();
+        openSearch();
+      }
+    }
+    document.addEventListener('keydown', onKey);
+  })();
+</script>
 
         </div>
       </div>
