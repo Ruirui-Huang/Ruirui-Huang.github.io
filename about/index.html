@@ -359,6 +359,35 @@
 </script>
 <script>
   (function () {
+    // PDF 文章无标题结构：文章目录为空时自动隐藏该 Tab 并显示站点概览
+    function hideEmptyToc() {
+      var tocWrap = document.querySelector('.post-toc-wrap');
+      if (!tocWrap) return;
+      var hasToc = tocWrap.querySelector('.post-toc') || tocWrap.textContent.trim().length > 0;
+      if (hasToc) return;
+      var navToc = document.querySelector('.sidebar-nav-toc');
+      if (navToc) navToc.style.display = 'none';
+      // 直接切换 NexT 的激活状态（等 boot 就绪后执行）
+      var apply = function () {
+        var sidebar = document.querySelector('.sidebar-inner');
+        if (!sidebar) return;
+        sidebar.classList.remove('sidebar-toc-active');
+        sidebar.classList.add('sidebar-overview-active');
+        document.querySelectorAll('.sidebar-nav li').forEach(function (el, i) {
+          el.classList.toggle('active', i === 1);
+        });
+      };
+      if (window.NexT) { apply(); } else { setTimeout(apply, 150); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', hideEmptyToc);
+    } else {
+      hideEmptyToc();
+    }
+  })();
+</script>
+<script>
+  (function () {
     // 搜索快捷键：按 / 或 Ctrl+K 打开站内搜索弹窗
     function openSearch() {
       var trigger = document.querySelector('.menu-item-search a, a[href*="search"], .popup-trigger');
