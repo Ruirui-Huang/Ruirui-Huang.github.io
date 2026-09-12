@@ -1,0 +1,27 @@
+{# SEO 结构化数据（custom_file_path.head 注入） #}
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | dump | safe }},
+  "url": "https://ruirui-huang.github.io/{{ page.path }}",
+  "datePublished": {{ page.date.toISOString() | dump | safe }},
+  "dateModified": {{ page.updated.toISOString() | dump | safe }},
+  "author": {"@type": "Person", "name": "黄锐", "url": "https://github.com/Ruirui-Huang"},
+  "publisher": {"@type": "Person", "name": "黄锐"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ruirui-huang.github.io/{{ page.path }}"}
+}
+</script>
+{% endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HuangR's Blog",
+  "alternateName": "黄锐的博客",
+  "url": "https://ruirui-huang.github.io/",
+  "description": "黄锐的个人博客，记录 Python、深度学习与日常。",
+  "author": {"@type": "Person", "name": "黄锐", "url": "https://github.com/Ruirui-Huang"}
+}
+</script>

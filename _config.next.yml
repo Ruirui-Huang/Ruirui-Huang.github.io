@@ -45,6 +45,7 @@ read_more_btn: true
 custom_file_path:
   style: source/_data/styles.styl
   sidebar: source/_data/sidebar.njk
+  head: source/_data/head.njk
 
 # 自定义 favicon（"黄"字深蓝图标）
 favicon:
