@@ -55,6 +55,26 @@ prismjs:
   line_number: true
   tab_replace: ''
 
+# Markdown 渲染器：hexo-renderer-markdown-it + @renbaoshuo/markdown-it-katex（KaTeX 数学公式）
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: false
+    linkify: true
+    typographer: false
+  plugins:
+    - name: '@renbaoshuo/markdown-it-katex'
+      options:
+        throwOnError: false
+        strict: false
+  anchors:
+    level: [1, 2, 3, 4, 5, 6]
+    collisionSuffix: ''
+    permalink: false
+    case: 0
+    separator: '-'
+
 # Home page setting
 index_generator:
   path: ''

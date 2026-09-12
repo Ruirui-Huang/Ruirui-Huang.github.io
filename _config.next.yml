@@ -33,6 +33,15 @@ local_search:
 excerpt_description: true
 read_more_btn: true
 
+# 数学公式（KaTeX，按页加载：文章 front-matter 加 mathjax: true）
+math:
+  every_page: false
+  mathjax:
+    enable: false
+  katex:
+    enable: true
+    copy_tex: true
+
 # 访问统计（原站使用 busuanzi）
 busuanzi_count:
   enable: true
