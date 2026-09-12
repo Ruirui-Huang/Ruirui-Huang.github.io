@@ -254,3 +254,28 @@
     }
   }
 }
+
+// 正文链接 hover 下划线动画（页面级）
+.post-body a {
+  text-decoration: none;
+  background-image: linear-gradient(#3498db, #3498db);
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  background-position: 0 100%;
+  transition: background-size .2s ease;
+
+  &:hover {
+    background-size: 100% 2px;
+  }
+}
+
+// 代码块 hover 边框主题蓝
+.highlight,
+pre {
+  transition: border-color .2s ease, box-shadow .2s ease;
+
+  &:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, .18);
+  }
+}
