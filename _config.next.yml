@@ -185,3 +185,6 @@ creative_commons:
 vendors:
   plugins: custom
   custom_cdn_url: /lib/${cdnjs_name}/${cdnjs_file}
+
+# 图片点击放大
+mediumzoom: true
