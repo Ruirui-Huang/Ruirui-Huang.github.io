@@ -1418,7 +1418,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #83eeff;
+    background: #f54;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3213,6 +3213,10 @@ header.header {
 }
 .reading-progress-bar {
   background: #3498db;
+}
+::selection {
+  background: #3498db;
+  color: #fff;
 }
 .code-lang {
   font-size: 11px;
