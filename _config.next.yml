@@ -36,6 +36,7 @@ menu_settings:
 # 本地搜索
 local_search:
   enable: true
+  preload: true
 
 # 首页折叠：用文章 front-matter 的 description 作为摘要，点击"阅读全文"进文章页
 excerpt_description: true
