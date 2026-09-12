@@ -1253,7 +1253,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #1682da;
+    background: #f1a8da;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2858,4 +2858,40 @@ header.header {
 .post-body table th,
 .post-body table td {
   padding: 0.4em 0.8em;
+}
+.sidebar-bubble-cloud {
+  margin-top: 1.5em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--border-color);
+}
+.sidebar-bubble-cloud .sidebar-heading {
+  font-size: 0.95em;
+  font-weight: 600;
+  margin-bottom: 0.8em;
+  color: var(--text-color);
+}
+.sidebar-bubble-cloud .bubble-tags {
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55em;
+  line-height: 1.6;
+}
+.sidebar-bubble-cloud .bubble {
+  display: inline-block;
+  padding: 0.1em 0.65em;
+  border-radius: 999px;
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.sidebar-bubble-cloud .bubble:hover {
+  transform: scale(1.12);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+.sidebar-bubble-cloud .bubble a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: none;
 }
