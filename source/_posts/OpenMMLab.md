@@ -13,11 +13,11 @@ mathjax: true
 
 <!-- more -->
 
-# 前言
+## 前言
 
 以下是在学习、使用OpenMMLab2.0的过程中，总结的学习报告、博客等等，以及针对部分问题提出的个人看法，特此记录！
 
-# 新架构
+## 新架构
 
 > 通用、统一、灵活
 
@@ -27,22 +27,22 @@ mathjax: true
 
 - 细粒度的模块化设计，提供"乐高"式训练
 
-## MMEngine
+### MMEngine
 用户说明文档：<https://mmengine.readthedocs.io/zh_CN/latest/>
 
 <figure id="Runner" data-latex-placement="H">
-<img src="/images/openmmlab/MMEngine.jpg" style="height:5cm" />
+<img src="/images/openmmlab/MMEngine.jpg" style="height:5cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
 <figcaption>更加强大的Runner</figcaption>
 </figure>
 
 训练引擎的核心模块是[执行器（Runner）](https://mmengine.readthedocs.io/zh_CN/latest/tutorials/runner.html)，如图[1](Runner)。为了允许用户拓展、插入和执行自定义逻辑，执行器设置了丰富的[钩子（Hook）](https://mmengine.readthedocs.io/zh_CN/latest/tutorials/hook.html)，如图[2](Hook)。
 
 <figure id="Hook" data-latex-placement="H">
-<img src="/images/openmmlab/Hook.jpg" style="width:12cm" />
+<img src="/images/openmmlab/Hook.jpg" style="width:12cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
 <figcaption>丰富的Hook点位</figcaption>
 </figure>
 
-### 执行器
+#### 执行器
 
 执行器主要调用如下组件来完成训练和推理过程中的循环：
 
@@ -53,7 +53,7 @@ mathjax: true
 - 优化器（Optimizer）：执行反向传播优化模型。 在MMEngine中，官方对优化器做了一层封装：[OptimWrapper](https://mmengine.readthedocs.io/zh_CN/latest/tutorials/optim_wrapper.html)，其优点如下：
 
   <figure id="Optimizer" data-latex-placement="H">
-  <img src="/images/openmmlab/Optimizer.jpg" style="height:6cm" />
+  <img src="/images/openmmlab/Optimizer.jpg" style="height:6cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
   <figcaption>优化器封装优点</figcaption>
   </figure>
 
@@ -93,7 +93,7 @@ mathjax: true
 模型和各模块之间具体的数据流如下：
 
 <figure id="Pipeline" data-latex-placement="H">
-<img src="/images/openmmlab/Pipeline.jpg" style="width:12cm" />
+<img src="/images/openmmlab/Pipeline.jpg" style="width:12cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
 <figcaption>模型和各模块之间具体的数据流</figcaption>
 </figure>
 
@@ -121,7 +121,7 @@ mathjax: true
 
 在训练、推理执行过程中，上述各个组件都可以调用日志管理模块和可视化器进行结构化和非结构化日志的存储与展示。[日志管理（Logging Modules）](https://mmengine.readthedocs.io/zh_CN/latest/advanced_tutorials/logging.html)：负责管理执行器运行过程中产生的各种日志信息。其中消息枢纽（MessageHub）负责实现组件与组件、执行器与执行器之间的数据共享，日志处理器（Log Processor）负责对日志信息进行处理，处理后的日志会分别发送给执行器的日志器（Logger）和可视化器（Visualizer）进行日志的管理与展示。[可视化器（Visualizer）](https://mmengine.readthedocs.io/zh_CN/latest/advanced_tutorials/visualization.html)：可视化器负责对模型的特征图、预测结果和训练过程中产生的结构化日志进行可视化，支持 Tensorboard 和 MLflow 等多种可视化后端。
 
-### 可视化后端
+#### 可视化后端
 
 **TensorBoard**
 
@@ -204,24 +204,24 @@ mathjax: true
 
 总而言之，在新的架构中，MMEngine的执行器集中了所有的模块构建功能，训练脚本只用于最基本的配置解析，如图[\[新架构训练逻辑\]](新架构训练逻辑)，这样新的训练流程不仅逻辑更加清晰，大大减少了代码量，还能为用户带来更方便的模型调试体验，让用户灵活地定义模型的前向和方向过程。
 
-## MMCV
+### MMCV
 > MMCV2.x两大变化：模块增删 & 包名变更
 
-### 模块增删
+#### 模块增删
 
 MMCV1.x中主要包含Runner、Hook、Parallel、Registry、Config、FileIO、Image/Video、CNN和OPS组件。
 
 在MMCV2.x中，和训练流程相关的组件被删除了，由MMEngine提供，只保留图像视频处理、网络基础模块和算子。除此之外，还新增了数据预处理模块（Transform），如图[6](MMCV2.x)。
 
 <figure id="MMCV2.x" data-latex-placement="H">
-<img src="/images/openmmlab/MMCV.jpg" style="height:5cm" />
+<img src="/images/openmmlab/MMCV.jpg" style="height:5cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
 <figcaption>MMCV2.x模块的变化</figcaption>
 </figure>
 
 以分类任务为例，图[7](Datapipeline_cls)展示的是一个典型的数据流水线。
 
 <figure id="Datapipeline_cls" data-latex-placement="H">
-<img src="/images/openmmlab/Datapipeline_cls.jpg" style="height:5cm" />
+<img src="/images/openmmlab/Datapipeline_cls.jpg" style="height:5cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
 <figcaption>一个典型的数据流水线。对每个样本，数据集中保存的基本信息是最左侧所示的字典，之后每经过一个由蓝色块代表的数据变换操作，数据字典中都会加入新的字段（标记为绿色）或更新现有的字段（标记为橙色）</figcaption>
 </figure>
 
@@ -270,14 +270,14 @@ MMCV1.x中主要包含Runner、Hook、Parallel、Registry、Config、FileIO、Im
 - **字段映射（KeyMapper）**：用于对数据字典中的字段进行映射。以RandomFlip为例
 
   <figure data-latex-placement="H">
-  <img src="/images/openmmlab/KeyMapper.jpg" style="width:5cm" />
+  <img src="/images/openmmlab/KeyMapper.jpg" style="width:5cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
   <figcaption>RandomFlip要求输入的字典中包含img 字段，但是用户的输入只包含了gt_img字段，这种情况下可以用KeyMapper将gt_img字段映射为img字段，在RandomFlip完成处理后再将img映射回gt_img</figcaption>
   </figure>
 
 - **随机选择（RandomChoice）**：用于从一系列数据变换组合中随机应用一个数据变换组合。以AutoAugment为例
 
   <figure data-latex-placement="H">
-  <img src="/images/openmmlab/RandomChoice.jpg" style="height:5cm" />
+  <img src="/images/openmmlab/RandomChoice.jpg" style="height:5cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
   <figcaption>两组transform，其中有40%的概率选择第一组，60%的概率选择第二组</figcaption>
   </figure>
 
@@ -285,17 +285,17 @@ MMCV1.x中主要包含Runner、Hook、Parallel、Registry、Config、FileIO、Im
 
 - **多目标扩展（TransformBroadcaster）**
 
-### 包名变更
+#### 包名变更
 
-     包名          \<2.0          ≥ 2.0
-  ----------- ---------------- ----------------
-   mmcv-full    包含CUDA算子          无
-     mmcv      不包含CUDA算子    包含CUDA算子
-   mmcv-lite         无         不包含CUDA算子
+| 包名 | &lt;2.0 | ≥ 2.0 |
+| --- | --- | --- |
+| mmcv-full | 包含CUDA算子 | 无 |
+| mmcv | 不包含CUDA算子 | 包含CUDA算子 |
+| mmcv-lite | 无 | 不包含CUDA算子 |
 
   : 为避免用户混淆，将包名重命名
 
-# MMYOLO
+## MMYOLO
 
 > [Q：]{style="color: red"}为啥要推出MMYOLO？为何要单独开一个仓库而不是直接放到MMDetection中？
 >
@@ -307,9 +307,9 @@ MMCV1.x中主要包含Runner、Hook、Parallel、Registry、Config、FileIO、Im
 >
 > - **多任务支持**：MMYOLO任务不局限于MMDetection，还会支持基于MMPose实现关键点相关的应用，以及基于MMTracking实现追踪相关的应用，因此不太适合直接并入MMDetection
 
-## 训练技巧
+### 训练技巧
 
-### 提升检测性能
+#### 提升检测性能
 
 - [**多尺度训练**](https://mmyolo.readthedocs.io/zh_CN/dev/common_usage/ms_training_testing.html)：在YOLO中大部分模型的训练输入都是单尺度的 640x640，原因有两个方面
 
@@ -369,7 +369,7 @@ MMCV1.x中主要包含Runner、Hook、Parallel、Registry、Config、FileIO、Im
           cfg.optim_wrapper.loss_scale = 'dynamic'
   ```
 
-### 冻结指定网络层权重
+#### 冻结指定网络层权重
 
 - 冻结 backbone 权重 在 MMYOLO 中可以通过设置 [frozen_stages]{style="color: gray"} 参数去冻结主干网络的部分 stage, 使这些 stage 的参数不参与模型的更新。
 
@@ -391,7 +391,7 @@ MMCV1.x中主要包含Runner、Hook、Parallel、Registry、Config、FileIO、Im
       ))
   ```
 
-### 算法组合
+#### 算法组合
 
 参考：[算法组合替换教程](https://github.com/open-mmlab/mmyolo/blob/main/docs/zh_cn/common_usage/module_combination.md)
 
@@ -448,11 +448,11 @@ MMCV1.x中主要包含Runner、Hook、Parallel、Registry、Config、FileIO、Im
                 loss_weight=1.0)))
     ```
 
-# MMSegmentation
+## MMSegmentation
 
 [版本匹配详情](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/zh_cn/notes/faq.md)
 
-## 数据结构
+### 数据结构
 
 MMSegmentation1.0引入了SegDataSample数据结构，将语义分割中的数据封装起来，用于各个功能模块之间的数据传递，SegDataSample里面的字段有：gt_sem_seg、pred_sem_seg、seg_logits 和 metainfo。前两个分别是标签和模型预测对应的分割掩膜（segmeation mask），seg logits是模型最后一层没有经过归一化的输出。
 
@@ -467,18 +467,18 @@ if C > 1:
         'pred_sem_seg': PixelData(**{'data': i_seg_pred})
 ```
 
-## 数据集和数据变化
+### 数据集和数据变化
 
 MMSegmentation1.0新定义了BaseSegDataset，规范了语义分割数据集功能和接口，是 MMEngine中BaseDataset的子类。数据集主要的功能是加载数据信息，数据信息有两种，一种是数据集的元信息，包括类别信息和调色板信息，就是渲染时类别对应的颜色；另一种是数据信息，保存了具体数据集中图片路径和对应的标签路径。
 
 一个典型的语义分割模型训练时的数据变换流水线，如图[8](Datapipeline_seg)所示。
 
 <figure id="Datapipeline_seg" data-latex-placement="H">
-<img src="/images/openmmlab/Datapipeline_seg.jpg" style="height:5cm" />
+<img src="/images/openmmlab/Datapipeline_seg.jpg" style="height:5cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
 <figcaption>一个典型的语义分割模型训练时的数据变换流水线。对每个样本，数据集中保存的基本信息是最左侧所示的字典，之后每经过一个由蓝色块代表的数据变换操作，数据字典中都会加入新的字段（标记为绿色）或更新现有的字段（标记为橙色）</figcaption>
 </figure>
 
-## 模型
+### 模型
 
 MMSegmentation中将语义分割算法模型称为segmentor，共6个模块，分别是：
 
@@ -523,9 +523,9 @@ Args:
 <figcaption>数据流协议。图<a href="#训练时的数据流" data-reference-type="ref" data-reference="训练时的数据流">[训练时的数据流]</a>为训练时的数据流；图<a href="#测试时的数据流" data-reference-type="ref" data-reference="测试时的数据流">[测试时的数据流]</a>为测试时的数据流</figcaption>
 </figure>
 
-## 训练技巧
+### 训练技巧
 
-### 主干网络和解码头组件使用不同的学习率
+#### 主干网络和解码头组件使用不同的学习率
 
 配置文件里添加如下行来让解码头组件的学习率是主干组件的10倍，这样可以获得更好的表现或更快的收敛
 
@@ -536,7 +536,7 @@ optim_wrapper=dict(
             'head': dict(lr_mult=10.)}))
 ```
 
-### 在线难样本挖掘
+#### 在线难样本挖掘
 
 Online Hard Example Mining（OHEM），可以解决样本不平衡问题
 
@@ -548,7 +548,7 @@ model=dict(
 
 通过这种方式，只有置信分数在0.7以下的像素值点会被拿来训练。在训练时我们至少要保留100000个像素值点。如果 thresh 并未被指定，前 min_kept 个损失的像素值点才会被选择。
 
-### 类别平衡损失
+#### 类别平衡损失
 
 对于不平衡类别分布的数据集，可以改变每个类别的损失权重
 
@@ -561,7 +561,7 @@ model=dict(
                 class_weight=[0.8373, 0.9180, 0.8660, 1.0345, 1.0166, 0.9969, 0.9754, 1.0489, 0.8786, 1.0023, 0.9539, 0.9843, 1.1116, 0.9037, 1.0865, 1.0955, 1.0865, 1.1529, 1.0507])))
 ```
 
-### 同时使用多种损失函数
+#### 同时使用多种损失函数
 
 对于训练时损失函数的计算，支持多个损失函数同时使用
 
@@ -580,7 +580,7 @@ model = dict(
 
 **注：**loss_name 的名字必须带有 loss\_ 前缀，这样它才能被包括在计算图里。
 
-# OpenMMLab VS PaddlePaddle
+## OpenMMLab VS PaddlePaddle
 
 OpenMMLab & PaddlePaddle均可分为定制和通用两个部分。
 
@@ -620,16 +620,16 @@ OpenMMLab & PaddlePaddle均可分为定制和通用两个部分。
 
 [PaddlePaddle](https://www.paddlepaddle.org.cn/) 的API代码风格基本模仿PyTorch【学术上几乎没有份额，工业上依靠百度自己开源的项目】，上手快，使用下来最大的问题是Paddle性能有点拉跨，但是由于是百度自己开源的，相对稳定。
 
-# 附录
+## 附录
 
-## 如何选择模型训练的batch size 和 learning rate
+### 如何选择模型训练的batch size 和 learning rate
 
 - Batch size对模型训练的影响\
 
   > - 大的batch size效率高、蓄力时间长、更稳定，但小的batch size更有利于Training
   >
   >   <figure data-latex-placement="H">
-  >   <img src="/images/openmmlab/batch_size.jpg" style="width:12cm" />
+  >   <img src="/images/openmmlab/batch_size.jpg" style="width:12cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
   >   <figcaption>不同的batch size对训练结果的影响</figcaption>
   >   </figure>
 

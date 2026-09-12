@@ -33,6 +33,10 @@ local_search:
 excerpt_description: true
 read_more_btn: true
 
+# 自定义样式（LaTeX 转换文章的排版美化）
+custom_file_path:
+  style: source/_data/styles.styl
+
 # 数学公式（KaTeX，按页加载：文章 front-matter 加 mathjax: true）
 math:
   every_page: false

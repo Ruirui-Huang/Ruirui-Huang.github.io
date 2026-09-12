@@ -1,0 +1,28 @@
+// 由 LaTeX 转换文章的排版美化
+.post-body {
+  figure {
+    margin: 1.2em auto;
+    text-align: center;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    figcaption {
+      margin-top: .5em;
+      font-size: .9em;
+      color: #999;
+      text-align: center;
+    }
+  }
+
+  // 表格悬浮表头与内边距（LaTeX tabular 转换而来）
+  table {
+    border-collapse: collapse;
+
+    th, td {
+      padding: .4em .8em;
+    }
+  }
+}
