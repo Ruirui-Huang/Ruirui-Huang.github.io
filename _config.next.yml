@@ -88,6 +88,7 @@ codeblock:
   copy_button:
     enable: true
     show_result: true
+  language: true
 
 # 回到顶部 + 滚动百分比
 back2top:

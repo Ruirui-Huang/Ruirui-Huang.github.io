@@ -55,6 +55,19 @@
   }
 }
 
+// 代码块语言标签：默认 40px 透明水印 → 右上角清晰小标签
+.code-lang {
+  font-size: 11px;
+  line-height: 1;
+  opacity: .55;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 8px;
+  right: 42px;
+  pointer-events: none;
+}
+
 // 代码块 tab 缩进 4（默认 8 过大，缩进更自然）
 .highlight .code pre {
   tab-size: 4;
