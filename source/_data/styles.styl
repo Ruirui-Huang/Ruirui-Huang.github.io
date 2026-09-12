@@ -33,6 +33,32 @@
   will-change: transform;
 }
 
+// 标签/分类页气泡化（与侧栏词云视觉统一）
+.tag-cloud-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7em;
+  line-height: 1.6;
+
+  a {
+    display: inline-block;
+    padding: .1em .7em;
+    border-radius: 999px;
+    text-decoration: none;
+    background: var(--btn-default-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: all .2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      background: #3498db;
+      color: #fff !important;
+      border-color: #3498db;
+    }
+  }
+}
+
 // 侧栏气泡词云
 .sidebar-bubble-cloud {
   margin-top: 1.5em;

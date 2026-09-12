@@ -15,6 +15,13 @@ avatar:
   rounded: true
   rotated: false
 
+# 社交链接（显示在侧栏底部与文章页）
+social:
+  GitHub: https://github.com/Ruirui-Huang || fab fa-github
+  RSS: /atom.xml || fa fa-rss
+social_icons:
+  enable: true
+
 # 菜单（原站：首页/关于/标签/分类/搜索）
 menu:
   home: / || fa fa-home
@@ -38,14 +45,22 @@ custom_file_path:
   style: source/_data/styles.styl
   sidebar: source/_data/sidebar.njk
 
-# 数学公式（KaTeX，按页加载：文章 front-matter 加 mathjax: true）
+# 自定义 favicon（"黄"字深蓝图标）
+favicon:
+  small: /images/favicon-16x16.png
+  medium: /images/favicon-32x32.png
+  apple_touch_icon: /images/apple-touch-icon.png
+  safari_pinned_tab: /images/logo.svg
+
+# 数学公式（当前 5 篇笔记为 PDF 嵌入、纯文字文章无公式，无需加载 KaTeX；
+# 若未来文章需要公式，再开 katex.enable: true 并注意 NexT 会全站加载其资源）
 math:
   every_page: false
   mathjax:
     enable: false
   katex:
-    enable: true
-    copy_tex: true
+    enable: false
+    copy_tex: false
 
 # 访问统计（原站使用 busuanzi）
 busuanzi_count:
