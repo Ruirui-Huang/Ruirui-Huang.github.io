@@ -480,6 +480,9 @@
 <p>老方案 Valine 依赖的 LeanCloud <strong>2027-01-12 全面停服、数据销毁</strong>，本站已迁移 Utterances。如旧站页面残留 Valine 凭据（appId/appKey），仅作历史存档即可，不再使用。</p>
 <h2 id="五、LaTeX-学习笔记转博客正文（2026-09-实测）">五、LaTeX 学习笔记转博客正文（2026-09 实测）</h2>
 <p>场景：旧站部分文章以 <code>&lt;embed src=&quot;/pdf/xxx.pdf&quot;&gt;</code> 嵌入 PDF 展示，不优雅且移动端体验差。本站在 Overleaf 有 LaTeX 源（ctexart + morelull 模板），可整体转为 Markdown 正文，公式用 KaTeX 渲染。</p>
+<blockquote>
+<p><strong>2026-09 现状</strong>：本站已尝试该方案并完成部署，但因排版与 PDF 原版仍有差距，已<strong>回退为 PDF 嵌入显示</strong>。本章完整保留转换方法、渲染器配置与全部坑点，如需再试可直接复用。</p>
+</blockquote>
 <h3 id="5-1-获取-Overleaf-源文件">5.1 获取 Overleaf 源文件</h3>
 <ul>
 <li>项目页可浏览器下载 zip：<strong>点击按钮后 <code>wait_for_download</code></strong>（<code>bu.download(zip链接)</code> 直下无效、按钮被浮层遮挡时用 JS 按 <code>[aria-label=&quot;Download .zip file&quot;]</code> 点击）。</li>
