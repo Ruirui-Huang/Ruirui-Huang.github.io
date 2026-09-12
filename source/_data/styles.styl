@@ -42,6 +42,17 @@
       padding: .4em .8em;
     }
   }
+
+  // 标题层级：h2 加细分隔线增强结构感
+  h2 {
+    border-bottom: 1px solid var(--table-row-odd-bg-color);
+    padding-bottom: .3em;
+  }
+
+  // 列表 marker 主题蓝
+  li::marker {
+    color: #3498db;
+  }
 }
 
 // 代码块 tab 缩进 4（默认 8 过大，缩进更自然）
