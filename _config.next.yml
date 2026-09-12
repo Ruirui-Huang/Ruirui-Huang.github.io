@@ -1,0 +1,106 @@
+# NexT 主题配置（替代配置文件，未列出的项沿用主题默认）
+# 文档: https://theme-next.js.org/docs/
+
+# 主题风格（原站为 Gemini）
+scheme: Gemini
+
+# 侧边栏（原站：左侧、文章页显示）
+sidebar:
+  position: left
+  display: post
+
+# 头像（原站自定义头像）
+avatar:
+  url: /images/avatar.gif
+  rounded: true
+  rotated: false
+
+# 菜单（原站：首页/关于/标签/分类/搜索）
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  # 搜索走搜索弹窗
+menu_settings:
+  badges: false
+
+# 本地搜索
+local_search:
+  enable: true
+
+# 访问统计（原站使用 busuanzi）
+busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_visitors_icon: fa fa-user
+  total_views: true
+  total_views_icon: fa fa-eye
+  post_views: true
+  post_views_icon: fa fa-eye
+
+# 文章版权信息（对应原站版权声明块）
+post_copyright:
+  enable: true
+  license: 知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议
+  license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+# 代码块样式与复制按钮
+codeblock:
+  theme:
+    light: default
+    dark: atom-one-dark
+  copy_button:
+    enable: true
+    show_result: true
+
+# 回到顶部 + 滚动百分比
+back2top:
+  enable: true
+  scrollpercent: true
+
+# 文章元信息
+post_meta:
+  created_at: true
+  updated_at:
+    enable: true
+    another_day: true
+
+# 打赏（原站有微信/支付宝打赏，收款码在 source/images 下，
+# 如需开启将 enable 改 true 并配置 wechatpay/alipay 二维码图片）
+reward:
+  enable: false
+  comment: 如果觉得这篇文章对你有用，可以支持一下哦
+  methods:
+    - name: 微信支付
+      img: /images/wechatpay.jpg
+    - name: 支付宝
+      img: /images/alipay.jpg
+
+# 评论（原站使用 Valine，需要 LeanCloud 账号的 appid/appkey，
+# 如需恢复评论，填入下面两项并 enable: true）
+valine:
+  enable: false
+  appid:  # 你的 LeanCloud appid
+  appkey:  # 你的 LeanCloud appkey
+  placeholder: 说点什么吧
+  avatar: retro
+  guest_info: nick,mail,link
+  pageSize: 10
+  notify: false
+  verify: false
+
+# 页脚信息
+footer:
+  since: 2018
+  icon:
+    enable: true
+    animated: false
+    color: "#808080"
+  powered:
+    enable: true
+  beian:
+    enable: false
+
+# 主题自带 dark mode 开关（默认关闭）
+darkmode: false
