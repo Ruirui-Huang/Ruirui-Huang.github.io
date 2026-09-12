@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>多模态</title>
-    <url>/2022/02/18/%E5%A4%9A%E6%A8%A1%E6%80%81/</url>
-    <content><![CDATA[<p>论文学习</p>
-<span id="more"></span>
-<embed src="/pdf/多模态学习笔记.pdf" width="100%" height="550" type="application/pdf">
-]]></content>
-      <categories>
-        <category>CV</category>
-        <category>NLP</category>
-      </categories>
-      <tags>
-        <tag>多模态</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenMMLab</title>
     <url>/2022/05/07/OpenMMLab/</url>
     <content><![CDATA[<p>训练框架学习</p>
@@ -31,116 +16,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Python多线程与多进程</title>
-    <url>/2018/10/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</url>
-    <content><![CDATA[<span id="more"></span>
-<h2 id="Python多线程">Python多线程</h2>
-<p>主要概念：</p>
-<ul>
-<li></li>
-</ul>
-<p>join()：在子线程完成运行之前，这个子线程的父线程将一直被阻塞</p>
-<ul>
-<li></li>
-</ul>
-<p>setDaemon(True)：将线程声明为守护线程，必须在start()方法调用之前设置，如果不设置为守护线程程序会被无限挂起。这个方法基本和join是相反的。当我们在程序运行中，执行一个主线程，如果主线程又创建一个子线程，主线程和子线程 就分兵两路，分别运行，那么当主线程完成想退出时，会检验子线程是否完成。如 果子线程未完成，则主线程会等待子线程完成后再退出。但是有时候我们需要的是 只要主线程完成了，不管子线程是否完成，都要和主线程一起退出，这时就可以 用setDaemon方法啦</p>
-<ul>
-<li>run():  线程被cpu调度后自动执行线程对象的run方法</li>
-<li>start():启动线程活动</li>
-<li>isAlive(): 返回线程是否活动的</li>
-<li>getName(): 返回线程名</li>
-<li>setName(): 设置线程名</li>
-<li>threading.currentThread()：返回当前的线程变量</li>
-<li>threading.enumerate()：返回一个包含正在运行的线程的list。正在运行指线程启动后、结束前，不包括启动前和终止后的线程</li>
-<li>threading.activeCount()：返回正在运行的线程数量，与len(threading.enumerate())有相同的结果</li>
-</ul>
-<h3 id="开始">开始</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">name</span>):</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你好%s at %s&#x27;</span> %(name,time.ctime()))</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;结束%s at %s&quot;</span> %(name,time.ctime()))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">listen</span>(<span class="params">name</span>):</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你好%s at %s&#x27;</span> % (name,time.ctime()))</span><br><span class="line">time.sleep(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;结束%s at %s&quot;</span> % (name,time.ctime()))</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="comment"># 创建线程对象</span></span><br><span class="line">t1 = threading.Thread(target=say,args=(<span class="string">&#x27;tony&#x27;</span>,))  <span class="comment">#Thread是一个类，实例化产生t1对象，这里就是创建了一个线程对象t1</span></span><br><span class="line"><span class="comment"># 启动线程</span></span><br><span class="line">t1.start()</span><br><span class="line">t2 = threading.Thread(target=listen, args=(<span class="string">&#x27;simon&#x27;</span>,)) <span class="comment">#这里就是创建了一个线程对象t2</span></span><br><span class="line">t2.start()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序结束=====================&quot;</span>)</span><br><span class="line">结果：</span><br><span class="line">你好tony at Thu Apr <span class="number">25</span> <span class="number">16</span>:<span class="number">46</span>:<span class="number">22</span> <span class="number">2019</span>  --t1线程执行</span><br><span class="line">你好simon at Thu Apr <span class="number">25</span> <span class="number">16</span>:<span class="number">46</span>:<span class="number">22</span> <span class="number">2019</span> --t2线程执行</span><br><span class="line">程序结束=====================         --主线程执行</span><br><span class="line">结束tony at Thu Apr <span class="number">25</span> <span class="number">16</span>:<span class="number">46</span>:<span class="number">24</span> <span class="number">2019</span>  --sleep之后，t1线程执行</span><br><span class="line">结束simon at Thu Apr <span class="number">25</span> <span class="number">16</span>:<span class="number">46</span>:<span class="number">26</span> <span class="number">2019</span> --sleep之后，t2线程执行</span><br><span class="line">Process finished <span class="keyword">with</span> exit code <span class="number">0</span>     --主线程结束</span><br></pre></td></tr></table></figure>
-<p>可以看到主线程的print并不是等t1,t2线程都执行完毕之后才打印的，这是因为主线程和t1,t2 线程是同时跑的。但是主进程要等非守护子线程结束之后，主线程才会退出。</p>
-<p>一般开发中，我们需要主线程的print打印是在最后面的，表明所有流程都结束了，也就是主线程结束了。这里就引入了一个join的概念。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">name</span>):</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你好%s at %s&#x27;</span> %(name,time.ctime()))</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;结束%s at %s&quot;</span> %(name,time.ctime()))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">listen</span>(<span class="params">name</span>):</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你好%s at %s&#x27;</span> % (name,time.ctime()))</span><br><span class="line">time.sleep(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;结束%s at %s&quot;</span> % (name,time.ctime()))</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">t1 = threading.Thread(target=say,args=(<span class="string">&#x27;tony&#x27;</span>,))  <span class="comment">#Thread是一个类，实例化产生t1对象，这里就是创建了一个线程对象t1</span></span><br><span class="line">t1.start() <span class="comment">#线程执行</span></span><br><span class="line">t2 = threading.Thread(target=listen, args=(<span class="string">&#x27;simon&#x27;</span>,)) <span class="comment">#这里就是创建了一个线程对象t2</span></span><br><span class="line">t2.start()</span><br><span class="line">t1.join() <span class="comment">#join等t1子线程结束，主线程打印并且结束</span></span><br><span class="line">t2.join() <span class="comment">#join等t2子线程结束，主线程打印并且结束</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序结束=====================&quot;</span>)</span><br><span class="line">结果：</span><br><span class="line">你好tony at Thu Apr <span class="number">25</span> <span class="number">16</span>:<span class="number">57</span>:<span class="number">32</span> <span class="number">2019</span></span><br><span class="line">你好simon at Thu Apr <span class="number">25</span> <span class="number">16</span>:<span class="number">57</span>:<span class="number">32</span> <span class="number">2019</span></span><br><span class="line">结束tony at Thu Apr <span class="number">25</span> <span class="number">16</span>:<span class="number">57</span>:<span class="number">34</span> <span class="number">2019</span></span><br><span class="line">结束simon at Thu Apr <span class="number">25</span> <span class="number">16</span>:<span class="number">57</span>:<span class="number">36</span> <span class="number">2019</span></span><br><span class="line">程序结束=====================</span><br></pre></td></tr></table></figure>
-<p>*注意：*主线程执行了打印操作和主线程结束不是一个概念，如果子线程不加join，则主线程也会执行打印，但是主线程不会结束，还是需要待非守护子线程结束之后，主线程才结束。</p>
-<p><strong>什么是非守护子线程？</strong></p>
-<p>默认的子线程都是主线程的非守护子线程，但是有时候我们有需求，当主进程结束，不管子线程有没有结束，子线程都要跟随主线程一起退出，这时候我们引入一个“<em>守护线程</em>”的概念。</p>
-<p>如果某个子线程设置为守护线程，主线程其实就不用管这个子线程了，当所有其他非守护线程结束，主线程就会退出，而守护线程将和主线程一起退出，守护主线程</p>
-<ul>
-<li>设置t1线程为守护线程</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">name</span>):</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你好%s at %s&#x27;</span> %(name,time.ctime()))</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;结束%s at %s&quot;</span> %(name,time.ctime()))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">listen</span>(<span class="params">name</span>):</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你好%s at %s&#x27;</span> % (name,time.ctime()))</span><br><span class="line">time.sleep(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;结束%s at %s&quot;</span> % (name,time.ctime()))</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">t1 = threading.Thread(target=say,args=(<span class="string">&#x27;tony&#x27;</span>,))  <span class="comment">#Thread是一个类，实例化产生t1对象，这里就是创建了一个线程对象t1</span></span><br><span class="line">t1.setDaemon(<span class="literal">True</span>)</span><br><span class="line">t1.start() <span class="comment">#线程执行</span></span><br><span class="line">t2 = threading.Thread(target=listen, args=(<span class="string">&#x27;simon&#x27;</span>,)) <span class="comment">#这里就是创建了一个线程对象t2</span></span><br><span class="line">t2.start()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序结束=====================&quot;</span>)</span><br><span class="line">结果：</span><br><span class="line">你好tony at Thu Apr <span class="number">25</span> <span class="number">17</span>:<span class="number">11</span>:<span class="number">41</span> <span class="number">2019</span></span><br><span class="line">你好simon at Thu Apr <span class="number">25</span> <span class="number">17</span>:<span class="number">11</span>:<span class="number">41</span> <span class="number">2019</span></span><br><span class="line">程序结束=====================</span><br><span class="line">结束tony at Thu Apr <span class="number">25</span> <span class="number">17</span>:<span class="number">11</span>:<span class="number">43</span> <span class="number">2019</span>  -- 也会打印，因为主线程在等待t2线程结束的</span><br><span class="line">结束simon at Thu Apr <span class="number">25</span> <span class="number">17</span>:<span class="number">11</span>:<span class="number">45</span> <span class="number">2019</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>设置t2为守护线程</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">name</span>):</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你好%s at %s&#x27;</span> %(name,time.ctime()))</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;结束%s at %s&quot;</span> %(name,time.ctime()))</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">listen</span>(<span class="params">name</span>):</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;你好%s at %s&#x27;</span> % (name,time.ctime()))</span><br><span class="line">time.sleep(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;结束%s at %s&quot;</span> % (name,time.ctime()))</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">t1 = threading.Thread(target=say,args=(<span class="string">&#x27;tony&#x27;</span>,))  <span class="comment">#Thread是一个类，实例化产生t1对象，这里就是创建了一个线程对象t1</span></span><br><span class="line">t1.start() <span class="comment">#线程执行</span></span><br><span class="line">t2 = threading.Thread(target=listen, args=(<span class="string">&#x27;simon&#x27;</span>,)) <span class="comment">#这里就是创建了一个线程对象t2</span></span><br><span class="line">t2.setDaemon(<span class="literal">True</span>)</span><br><span class="line">t2.start()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序结束=====================&quot;</span>)</span><br><span class="line">结果：</span><br><span class="line">你好tony at Thu Apr <span class="number">25</span> <span class="number">17</span>:<span class="number">15</span>:<span class="number">36</span> <span class="number">2019</span></span><br><span class="line">你好simon at Thu Apr <span class="number">25</span> <span class="number">17</span>:<span class="number">15</span>:<span class="number">36</span> <span class="number">2019</span></span><br><span class="line">程序结束=====================</span><br><span class="line">结束tony at Thu Apr <span class="number">25</span> <span class="number">17</span>:<span class="number">15</span>:<span class="number">38</span> <span class="number">2019</span></span><br><span class="line">结束simon at Thu Apr <span class="number">25</span> <span class="number">14</span>:<span class="number">11</span>:<span class="number">58</span> <span class="number">2019</span> -- 不会打印，因为主线程在等待t1线程结束的</span><br></pre></td></tr></table></figure>
-<h3 id="总结">总结</h3>
-<p>上面的例子中我们注意到两个任务如果顺序执行要6s结束，如果是多线程执行4S结束，性能是有所提升的，但是我们要知道这里的性能提升实际上是由于cpu并发实现性能提升，也就是cpu线程切换（多道技术）带来的，而并不是真正的多cpu并行执行。</p>
-<p><strong>并行和并发有什么区别？</strong>
-并行是并发的一种情况</p>
-<ul>
-<li>并发：是指一个系统具有处理多个任务的能力（cpu切换，多道技术）</li>
-<li>并行：是指一个系统具有同时处理多个任务的能力（cpu同时处理多个任务）</li>
-</ul>
-<h2 id="Python多线程同步锁，死锁和递归锁">Python多线程同步锁，死锁和递归锁</h2>
-<p>前面说的两个功能是相互独立的，相互不干涉的，不会用到同享的资源或者数据，如果我们多个线程要用到相同的数据，那么就会存在资源争用和锁的问题，不管在什么语言中，这个都是不能避免的。</p>
-<h3 id="Python同步锁">Python同步锁</h3>
-<p>Python同步锁通常被用来实现对共享资源的同步访问。为每一个共享资源创建一个Lock对象，当你需要访问该资源时，调用acquire方法来获取锁对象（如果其它线程已经获得了该锁，则当前线程需等待其被释放），待资源访问完后，再调用release方法释放锁。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">num = <span class="number">100</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_sub</span>():</span><br><span class="line"><span class="keyword">global</span> num</span><br><span class="line"><span class="comment"># num -= 1</span></span><br><span class="line">num2 = num</span><br><span class="line">time.sleep(<span class="number">0.001</span>)</span><br><span class="line">num = num2-<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;开始测试同步锁 at %s&#x27;</span> % time.ctime())</span><br><span class="line">thread_list = []</span><br><span class="line"><span class="keyword">for</span> thread <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">t = threading.Thread(target=fun_sub)</span><br><span class="line">t.start()</span><br><span class="line">thread_list.append(t)</span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> thread_list:</span><br><span class="line">t.join()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;num is %d&#x27;</span> % num)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;结束测试同步锁 at %s&#x27;</span> % time.ctime())</span><br><span class="line">结果：</span><br><span class="line">开始测试同步锁 at Sun Apr <span class="number">28</span> 09:<span class="number">56</span>:<span class="number">45</span> <span class="number">2019</span></span><br><span class="line">num <span class="keyword">is</span> <span class="number">91</span></span><br><span class="line">结束测试同步锁 at Sun Apr <span class="number">28</span> 09:<span class="number">56</span>:<span class="number">45</span> <span class="number">2019</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>1.只有一个线程（假设线程1）拿到了num这个资源，然后把变量赋值给num2, sleep 0.001秒，这时候 num = 100</li>
-<li>2.当第一个线程sleep 0.001秒这个期间，这个线程会做yield操作，就是把cpu切换给别的线程执行（假设线程2获得cpu使用权），线程2也和线程1一样也拿到num，返回赋值给num2，然sleep，这时候，其实num还是100.</li>
-<li>3.线程2 sleep时候，又要yield操作，假设线程3拿到num，执行上面的操作，其实num有可能还是100</li>
-<li>4.等到后面cpu重新切换给线程1，线程2，线程3上执行的时候，他们执行减1操作后，其实等到的num其实都是99，而不是顺序递减的。</li>
-<li>5.其他剩余的线程操作如上</li>
-</ul>
-<p>下面借助于python的同步锁，同一时间只能放一个线程来操作num变量，减1之后，后面的线程操作来操作num变量。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">num = <span class="number">100</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_sub</span>():</span><br><span class="line"><span class="keyword">global</span> num</span><br><span class="line">lock.acquire()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;----加锁----&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;现在操作共享资源的线程名字是:&#x27;</span>,t.name)</span><br><span class="line">num2 = num</span><br><span class="line">time.sleep(<span class="number">0.001</span>)</span><br><span class="line">num = num2-<span class="number">1</span></span><br><span class="line">lock.release()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;----释放锁----&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;开始测试同步锁 at %s&#x27;</span> % time.ctime())</span><br><span class="line">lock = threading.Lock() <span class="comment">#创建一把同步锁</span></span><br><span class="line">thread_list = []</span><br><span class="line"><span class="keyword">for</span> thread <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">t = threading.Thread(target=fun_sub)</span><br><span class="line">t.start()</span><br><span class="line">thread_list.append(t)</span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> thread_list:</span><br><span class="line">t.join()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;num is %d&#x27;</span> % num)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;结束测试同步锁 at %s&#x27;</span> % time.ctime())</span><br><span class="line">结果：</span><br><span class="line">.......</span><br><span class="line">----加锁----</span><br><span class="line">现在操作共享资源的线程名字是: Thread-<span class="number">98</span></span><br><span class="line">----释放锁----</span><br><span class="line">----加锁----</span><br><span class="line">现在操作共享资源的线程名字是: Thread-<span class="number">100</span></span><br><span class="line">----释放锁----</span><br><span class="line">num <span class="keyword">is</span> <span class="number">0</span></span><br><span class="line">结束测试同步锁 at Sun Apr <span class="number">28</span> <span class="number">12</span>:08:<span class="number">27</span> <span class="number">2019</span></span><br></pre></td></tr></table></figure>
-<h3 id="Python死锁">Python死锁</h3>
-<p>python中在线程间共享多个资源的时候，如果两个线程分别占有一部分资源并且同时等待对方的资源，就会造成死锁，因为系统判断这部分资源都正在使用，所有这两个线程在无外力作用下将一直等待下去。</p>
-<p>比如：A拿了一个苹果；B拿了一个香蕉；A现在想再拿个香蕉，就在等待B释放这个香蕉；B同时想要再拿个苹果，这时候就等待A释放苹果；这样就是陷入了僵局，这就是生活中的死锁</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">lock_apple = threading.Lock()</span><br><span class="line">lock_banana = threading.Lock()</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread</span>(threading.Thread):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">threading.Thread.__init__(<span class="variable language_">self</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line"><span class="variable language_">self</span>.fun1()</span><br><span class="line"><span class="variable language_">self</span>.fun2()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun1</span>(<span class="params">self</span>):</span><br><span class="line">lock_apple.acquire()  <span class="comment"># 如果锁被占用,则阻塞在这里,等待锁的释放</span></span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;线程 %s , 想拿: %s--%s&quot;</span> %(<span class="variable language_">self</span>.name, <span class="string">&quot;苹果&quot;</span>,time.ctime()))</span><br><span class="line">lock_banana.acquire()</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;线程 %s , 想拿: %s--%s&quot;</span> %(<span class="variable language_">self</span>.name, <span class="string">&quot;香蕉&quot;</span>,time.ctime()))</span><br><span class="line">lock_banana.release()</span><br><span class="line">lock_apple.release()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun2</span>(<span class="params">self</span>):</span><br><span class="line">lock_banana.acquire()</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;线程 %s , 想拿: %s--%s&quot;</span> %(<span class="variable language_">self</span>.name, <span class="string">&quot;香蕉&quot;</span>,time.ctime()))</span><br><span class="line">time.sleep(<span class="number">0.1</span>)</span><br><span class="line">lock_apple.acquire()</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;线程 %s , 想拿: %s--%s&quot;</span> %(<span class="variable language_">self</span>.name, <span class="string">&quot;苹果&quot;</span>,time.ctime()))</span><br><span class="line">lock_apple.release()</span><br><span class="line">lock_banana.release()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">10</span>):  <span class="comment">#建立10个线程</span></span><br><span class="line">my_thread = MyThread()  <span class="comment">#类继承法是python多线程的另外一种实现方式</span></span><br><span class="line">my_thread.start()</span><br><span class="line">结果：</span><br><span class="line">线程 Thread-<span class="number">1</span> , 想拿: 苹果--Sun Apr <span class="number">28</span> <span class="number">12</span>:<span class="number">21</span>:06 <span class="number">2019</span></span><br><span class="line">线程 Thread-<span class="number">1</span> , 想拿: 香蕉--Sun Apr <span class="number">28</span> <span class="number">12</span>:<span class="number">21</span>:06 <span class="number">2019</span></span><br><span class="line">线程 Thread-<span class="number">1</span> , 想拿: 香蕉--Sun Apr <span class="number">28</span> <span class="number">12</span>:<span class="number">21</span>:06 <span class="number">2019</span></span><br><span class="line">线程 Thread-<span class="number">2</span> , 想拿: 苹果--Sun Apr <span class="number">28</span> <span class="number">12</span>:<span class="number">21</span>:06 <span class="number">2019</span></span><br><span class="line">Process finished <span class="keyword">with</span> exit code -<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h3 id="Python递归锁RLock">Python递归锁RLock</h3>
-<p>为了支持在同一线程中多次请求同一资源，python提供了”递归锁”：threading.RLock。RLock内部维护着一个Lock和一个counter变量，counter记录了acquire的次数，从而使得资源可以被多次acquire。直到一个线程所有的acquire都被release，其他的线程才能获得资源。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">lock = threading.RLock()  <span class="comment">#递归锁</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread</span>(threading.Thread):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">threading.Thread.__init__(<span class="variable language_">self</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line"><span class="variable language_">self</span>.fun1()</span><br><span class="line"><span class="variable language_">self</span>.fun2()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun1</span>(<span class="params">self</span>):</span><br><span class="line">lock.acquire()  <span class="comment"># 如果锁被占用,则阻塞在这里,等待锁的释放</span></span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;线程 %s , 想拿: %s--%s&quot;</span> %(<span class="variable language_">self</span>.name, <span class="string">&quot;苹果&quot;</span>,time.ctime()))</span><br><span class="line">lock.acquire()</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;线程 %s , 想拿: %s--%s&quot;</span> %(<span class="variable language_">self</span>.name, <span class="string">&quot;香蕉&quot;</span>,time.ctime()))</span><br><span class="line">lock.release()</span><br><span class="line">lock.release()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun2</span>(<span class="params">self</span>):</span><br><span class="line">lock.acquire()</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;线程 %s , 想拿: %s--%s&quot;</span> %(<span class="variable language_">self</span>.name, <span class="string">&quot;香蕉&quot;</span>,time.ctime()))</span><br><span class="line">time.sleep(<span class="number">0.1</span>)</span><br><span class="line">lock.acquire()</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;线程 %s , 想拿: %s--%s&quot;</span> %(<span class="variable language_">self</span>.name, <span class="string">&quot;苹果&quot;</span>,time.ctime()))</span><br><span class="line">lock.release()</span><br><span class="line">lock.release()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">10</span>):  <span class="comment">#建立10个线程</span></span><br><span class="line">my_thread = MyThread()  <span class="comment">#类继承法是python多线程的另外一种实现方式</span></span><br><span class="line">my_thread.start()</span><br></pre></td></tr></table></figure>
-<p>可以把RLock理解为大锁中还有小锁，只有等到内部所有的小锁，都没有了，其他的线程才能进入这个公共资源。</p>
-<p><strong>如果都上锁了，也就是单线程了，那开多线程有什么用呢？</strong></p>
-<p>在访问共享资源的时候，锁是一定要存在了，但是代码中不是总是在访问公共资源，还有一些其他的逻辑可以使用多线程，所以在代码里面加锁的时候，要注意在什么地方加，对性能的影响最小。</p>
-<h2 id="Python多线程之同步条件，信号量和队列">Python多线程之同步条件，信号量和队列</h2>
-<h3 id="同步条件（Event）">同步条件（Event）</h3>
-<p><strong>为什么需要同步条件？</strong></p>
-<p>python多线程在执行task过程中，是相互竞争的，大家都可以先获取cpu的执行权限，这就是问题所在的地方，每个线程都是独立运行且状态不可预测，但是如果业务中需要根据情况来决定线程的执行顺序，也就是程序中的其他线程需要通过判断某个线程的状态来确定自己下一步的操作，这时候就需要使用threading库中的Event对象。它包含一个可由线程设置的信号标志，允许线程等待某些事件的发生。</p>
-<p>场景：老师说这堂课我们要做测试卷子，做完才能放学；学生叫苦连天，啊啊啊啊啊啊；学生做试卷中；做完试卷放学回家</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Teacher</span>(threading.Thread):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;大家现在要考试&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(event.isSet())</span><br><span class="line">event.<span class="built_in">set</span>() <span class="comment"># 老师线程说完&quot;大家现在要考试&quot;，然后event.set()，执行event,设置完执行，学生线程就能够被唤醒继续执行下面的操作发出&quot;啊啊啊啊啊啊&quot;的叫苦连天</span></span><br><span class="line">time.sleep(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;考试结束&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(event.isSet())</span><br><span class="line">event.<span class="built_in">set</span>() <span class="comment"># 老师线程执行event.set()，唤醒学生线程，然后下课回家.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(threading.Thread):</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">event.wait()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;啊啊啊啊啊啊&quot;</span>)</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line">event.clear() <span class="comment"># 学生线程进行考试，并且执行event.clear()，清除event，因为他们在等老师说“考试结束”，之后他们在等老师线程的event.set()</span></span><br><span class="line">event.wait() <span class="comment"># 学生线程开始event.wait()，这个说明如果event如果一直不设置的话，学生线程就一直等待，等待一个event.set()操作</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;下课回家&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">event=threading.Event()</span><br><span class="line">threads=[]</span><br><span class="line"><span class="comment"># 模拟1个老师和10个学生，进行考试，学生线程要等待老师线程说完“大家现在考试”，然后学生线程去考试，之后老师线程说“考试结束”，学生线程放学回家，学生线程的执行与否取决于老师线程，所以这里用的Event</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">threads.append(Student())</span><br><span class="line">threads.append(Teacher())</span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> threads:</span><br><span class="line">t.start()</span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> threads:</span><br><span class="line">t.join()</span><br><span class="line">结果：</span><br><span class="line">大家现在要考试</span><br><span class="line"><span class="literal">False</span></span><br><span class="line">啊啊啊啊啊啊</span><br><span class="line">啊啊啊啊啊啊</span><br><span class="line">啊啊啊啊啊啊</span><br><span class="line">啊啊啊啊啊啊</span><br><span class="line">啊啊啊啊啊啊</span><br><span class="line">啊啊啊啊啊啊</span><br><span class="line">啊啊啊啊啊啊</span><br><span class="line">啊啊啊啊啊啊</span><br><span class="line">啊啊啊啊啊啊</span><br><span class="line">啊啊啊啊啊啊</span><br><span class="line">考试结束</span><br><span class="line"><span class="literal">False</span></span><br><span class="line">下课回家</span><br><span class="line">下课回家</span><br><span class="line">下课回家</span><br><span class="line">下课回家</span><br><span class="line">下课回家</span><br><span class="line">下课回家</span><br><span class="line">下课回家</span><br><span class="line">下课回家</span><br><span class="line">下课回家</span><br><span class="line">下课回家</span><br><span class="line">Process finished <span class="keyword">with</span> exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h3 id="信号量（Semaphore）">信号量（Semaphore）</h3>
-<p>信号量用来控制线程并发数的，Semaphore管理一个内置的计数 器，每当调用acquire()时-1，调用release()时+1。计数器不能小于0，当计数器为 0时，acquire()将阻塞线程至同步锁定状态，直到其他线程调用release()。其实就是控制最多几个线程可以操作同享资源。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">semaphore = threading.Semaphore(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line"><span class="keyword">if</span> semaphore.acquire():</span><br><span class="line"><span class="built_in">print</span> (threading.currentThread().getName() + <span class="string">&#x27;获取共享资源&#x27;</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line">semaphore.release()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)</span><br><span class="line">t1 = threading.Thread(target=func)</span><br><span class="line">t1.start()</span><br><span class="line">结果：创建<span class="number">10</span>个线程，让每次只让<span class="number">5</span>个线程去执行func函数。<span class="number">5</span>个线程一批一批的执行打印,中间停格2s</span><br><span class="line">Thread-<span class="number">1</span>获取共享资源</span><br><span class="line">Thread-<span class="number">2</span>获取共享资源</span><br><span class="line">Thread-<span class="number">3</span>获取共享资源</span><br><span class="line">Thread-<span class="number">4</span>获取共享资源</span><br><span class="line">Thread-<span class="number">5</span>获取共享资源</span><br><span class="line">Thread-<span class="number">6</span>获取共享资源</span><br><span class="line">Thread-<span class="number">8</span>获取共享资源</span><br><span class="line">Thread-<span class="number">7</span>获取共享资源</span><br><span class="line">Thread-<span class="number">9</span>获取共享资源</span><br></pre></td></tr></table></figure>
-<h3 id="队列（Queue）">队列（Queue）</h3>
-<p>Queue提供了一个适用于多线程编程的先进先出的数据结构，用来在生产者和消费者线程之间的信息传递</p>
-<p><strong>list不是线程安全的</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> threading,time</span><br><span class="line">m=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="built_in">print</span>(m[-<span class="number">1</span>])</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">remove_last</span>():</span><br><span class="line">a=m[-<span class="number">1</span>]</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line">m.remove(a)</span><br><span class="line">t1=threading.Thread(target=remove_last)</span><br><span class="line">t1.start()</span><br><span class="line">t2=threading.Thread(target=remove_last)</span><br><span class="line">t2.start()</span><br><span class="line">结果：</span><br><span class="line">ValueError: <span class="built_in">list</span>.remove(x): x <span class="keyword">not</span> <span class="keyword">in</span> <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
-<p>开2个线程取队列M的最后一个数，按道理是最后m的数据会被remove完，但是结果却报错了，这是因为list不是线程安全的，线程1取了最后一个数据删除但是sleep1秒的时候，线程2也拿到了相同的数，那么等线程1 remove这个数之后，线程2再去remove就会报错</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">创建一个“队列”对象</span><br><span class="line"><span class="keyword">import</span> Queue</span><br><span class="line">q = Queue.Queue(maxsize = <span class="number">10</span>)</span><br><span class="line">Queue.Queue类即是一个队列的同步实现。队列长度可为无限或者有限。可通过Queue的构造函数的可选参数maxsize来设定队列长度。如果maxsize小于<span class="number">1</span>就表示队列长度无限。</span><br><span class="line">将一个值放入队列中</span><br><span class="line">q.put(<span class="number">10</span>)</span><br><span class="line">调用队列对象的put()方法在队尾插入一个项目。put()有两个参数，第一个item为必需的，为插入项目的值；第二个block为可选参数，默认为</span><br><span class="line"><span class="number">1</span>。如果队列当前为空且block为<span class="number">1</span>，put()方法就使调用线程暂停,直到空出一个数据单元。如果block为<span class="number">0</span>，put方法将引发Full异常。</span><br><span class="line">将一个值从队列中取出</span><br><span class="line">q.get()</span><br><span class="line">调用队列对象的get()方法从队头删除并返回一个项目。可选参数为block，默认为<span class="literal">True</span>。如果队列为空且block为<span class="literal">True</span>，</span><br><span class="line">get()就使调用线程暂停，直至有项目可用。如果队列为空且block为<span class="literal">False</span>，队列将引发Empty异常。</span><br><span class="line">Python Queue模块有三种队列及构造函数:</span><br><span class="line"><span class="number">1</span>、Python Queue模块的FIFO队列先进先出。   <span class="keyword">class</span> <span class="title class_">queue</span>.Queue(maxsize)</span><br><span class="line"><span class="number">2</span>、LIFO类似于堆，即先进后出。               <span class="keyword">class</span> <span class="title class_">queue</span>.LifoQueue(maxsize)</span><br><span class="line"><span class="number">3</span>、还有一种是优先级队列级别越低越先出来。        <span class="keyword">class</span> <span class="title class_">queue</span>.PriorityQueue(maxsize)</span><br><span class="line">此包中的常用方法(q = Queue.Queue()):</span><br><span class="line">q.qsize() 返回队列的大小</span><br><span class="line">q.empty() 如果队列为空，返回<span class="literal">True</span>,反之<span class="literal">False</span></span><br><span class="line">q.full() 如果队列满了，返回<span class="literal">True</span>,反之<span class="literal">False</span></span><br><span class="line">q.full 与 maxsize 大小对应</span><br><span class="line">q.get([block[, timeout]]) 获取队列，timeout等待时间</span><br><span class="line">q.get_nowait() 相当q.get(<span class="literal">False</span>)</span><br><span class="line">非阻塞 q.put(item) 写入队列，timeout等待时间</span><br><span class="line">q.put_nowait(item) 相当q.put(item, <span class="literal">False</span>)</span><br><span class="line">q.task_done() 在完成一项工作之后，q.task_done() 函数向任务已经完成的队列发送一个信号</span><br><span class="line">q.join() 实际上意味着等到队列为空，再执行别的操作</span><br></pre></td></tr></table></figure>
-<p><strong>队列(queue)一般会被用在生产者和消费者模型上</strong></p>
-<ul>
-<li>为什么要使用生产者和消费者模式</li>
-</ul>
-<p>在python线程中，生产者就是生产数据的线程，消费者就是消费数据的线程。在多线程开发当中，如果生产者处理速度很快，而消费者处理速度很慢，那么生产者就必须等待消费者处理完，才能继续生产数据。同样的道理，如果消费者的处理能力大于生产者，那么消费者就必须等待生产者。为了解决这个问题于是引入了生产者和消费者模式。</p>
-<ul>
-<li>什么是生产者消费者模式</li>
-</ul>
-<p>生产者消费者模式是通过一个容器来解决生产者和消费者的强耦合问题。生产者和消费者彼此之间不直接通讯，而通过阻塞队列来进行通讯，所以生产者生产完数据之后不用等待消费者处理，直接扔给阻塞队列，消费者不找生产者要数据，而是直接从阻塞队列里取，阻塞队列就相当于一个缓冲区，平衡了生产者和消费者的处理能力。</p>
-<p>举个例子</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time,random</span><br><span class="line"><span class="keyword">import</span> queue,threading</span><br><span class="line">q = queue.Queue()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">Producer</span>(<span class="params">name</span>):</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> count &lt;<span class="number">10</span>:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;制造包子ing&quot;</span>)</span><br><span class="line">time.sleep(random.randrange(<span class="number">3</span>))</span><br><span class="line">q.put(count)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;生产者 %s 生产了 %s 包子..&#x27;</span> %(name, count))</span><br><span class="line">count +=<span class="number">1</span></span><br><span class="line"><span class="comment">#q.task_done()</span></span><br><span class="line"><span class="comment">#q.join()</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">Consumer</span>(<span class="params">name</span>):</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> count &lt;<span class="number">10</span>:</span><br><span class="line">time.sleep(random.randrange(<span class="number">4</span>))</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> q.empty():</span><br><span class="line">data = q.get()</span><br><span class="line"><span class="comment">#q.task_done()</span></span><br><span class="line"><span class="comment">#q.join()</span></span><br><span class="line"><span class="built_in">print</span>(data)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;消费者 %s 消费了 %s 包子...&#x27;</span> %(name, data))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;包子吃完了&quot;</span>)</span><br><span class="line">count +=<span class="number">1</span></span><br><span class="line">c1 = threading.Thread(target=Producer, args=(<span class="string">&#x27;小明&#x27;</span>,))</span><br><span class="line">c2 = threading.Thread(target=Consumer, args=(<span class="string">&#x27;小花&#x27;</span>,))</span><br><span class="line">c3 = threading.Thread(target=Consumer, args=(<span class="string">&#x27;小灰&#x27;</span>,))</span><br><span class="line">c1.start()</span><br><span class="line">c2.start()</span><br><span class="line">c3.start()</span><br><span class="line">c1.join()</span><br><span class="line">c2.join()</span><br><span class="line">c3.join()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;结束&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>上面的代码还可以使用下面的方法来实现</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">q.task_done() 在完成一项工作之后，q.task_done() 函数向任务已经完成的队列发送一个信号</span><br><span class="line">q.join() 实际上意味着等到队列为空，再执行别的操作</span><br><span class="line"><span class="keyword">import</span> time,random</span><br><span class="line"><span class="keyword">import</span> queue,threading</span><br><span class="line">q = queue.Queue()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">Producer</span>(<span class="params">name</span>):</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> count &lt;<span class="number">10</span>:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;制造包子ing&quot;</span>)</span><br><span class="line">time.sleep(random.randrange(<span class="number">3</span>))</span><br><span class="line">q.put(count)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;生产者 %s 生产了 %s 包子..&#x27;</span> %(name, count))</span><br><span class="line">count +=<span class="number">1</span></span><br><span class="line">q.task_done()</span><br><span class="line"><span class="comment">#q.join()</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">Consumer</span>(<span class="params">name</span>):</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> count &lt;<span class="number">10</span>:</span><br><span class="line">time.sleep(random.randrange(<span class="number">4</span>))</span><br><span class="line">data = q.get()</span><br><span class="line"><span class="comment">#q.task_done()</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;等待中&#x27;</span>)</span><br><span class="line">q.join()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;消费者 %s 消费了 %s 包子...&#x27;</span> %(name, data))</span><br><span class="line">count +=<span class="number">1</span></span><br><span class="line">c1 = threading.Thread(target=Producer, args=(<span class="string">&#x27;小明&#x27;</span>,))</span><br><span class="line">c2 = threading.Thread(target=Consumer, args=(<span class="string">&#x27;小花&#x27;</span>,))</span><br><span class="line">c3 = threading.Thread(target=Consumer, args=(<span class="string">&#x27;小灰&#x27;</span>,))</span><br><span class="line">c4 = threading.Thread(target=Consumer, args=(<span class="string">&#x27;小天&#x27;</span>,))</span><br><span class="line">c1.start()</span><br><span class="line">c2.start()</span><br><span class="line">c3.start()</span><br><span class="line">c4.start()</span><br></pre></td></tr></table></figure>
-<h2 id="Python多进程">Python多进程</h2>
-<h3 id="Python多进程模块">Python多进程模块</h3>
-<p>Python中的多进程是通过multiprocessing包来实现的，和多线程的threading.Thread差不多，它可以利用multiprocessing.Process对象来创建一个进程对象。这个进程对象的方法和线程对象的方法差不多也有start(), run(), join()等方法，其中有一个方法不同Thread线程对象中的守护线程方法是setDeamon，而Process进程对象的守护进程是通过设置daemon属性来完成的。</p>
+    <title>多模态</title>
+    <url>/2022/02/18/%E5%A4%9A%E6%A8%A1%E6%80%81/</url>
+    <content><![CDATA[<p>论文学习</p>
+<span id="more"></span>
+<embed src="/pdf/多模态学习笔记.pdf" width="100%" height="550" type="application/pdf">
 ]]></content>
       <categories>
-        <category>Python</category>
-        <category>多线程与多进程</category>
+        <category>CV</category>
+        <category>NLP</category>
       </categories>
       <tags>
-        <tag>编程语言</tag>
+        <tag>多模态</tag>
       </tags>
   </entry>
   <entry>
@@ -418,41 +305,14 @@
       </categories>
   </entry>
   <entry>
-    <title>板端部署</title>
-    <url>/2022/07/11/%E6%9D%BF%E7%AB%AF%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<span id="more"></span>
-<h1>Ascend310</h1>
-<h2 id="优化建议">优化建议</h2>
-<h3 id="网络结构">网络结构</h3>
-<ul>
-<li>推荐使用主流的网络拓扑，包括ResNet、MobileNet,不建议使用VGG、AlexNet等结构，网络模型偏大，单宽压力大</li>
-<li>矩阵乘法的MKN，尽量取16的倍数。算法上可以考虑适当增加channel个数，而不是分group的方式减少channel数量</li>
-<li>增加数据复用率。一个参数的利用次数越多带宽的瓶颈越小，所以算法上可以考虑增加filter的复用次数，比如增加feature map大小，避免过大的stride或dilation</li>
-</ul>
-<h3 id="算子">算子</h3>
-<ul>
-<li>Conv算子： 非量化模式下，Conv的输入和输出通道数建议采用16的整数倍；</li>
-<li>量化模式下，Conv的输入和输出通道数建议采用32的整数倍；</li>
-<li>量化模式下，多个Conv算子之间，建议少插入Pooling算子</li>
-</ul>
-<p>FC（FullConnection）算子：当网络中存在FC算子，尽量使用多Batch同时推理，且Batch数为16倍数时，性能较好
-Concat算子：</p>
-<ul>
-<li>非量化模式下，Concat的输入和输出通道数建议采用16的整数倍；</li>
-<li>量化模式下，Concat的输入和输出通道数建议采用32的整数倍</li>
-<li>Conv融合算子：推荐使用Conv+BN+Scale+ReLu/ReLu6的组合</li>
-<li>Norm算子：推荐使用BN算子，使用预训练的Norm参数；不推荐使用需要在线计算Norm参数的算子，比如LRN等</li>
-<li>检测算子：建议使用主流的检测网络拓扑，包括FasterRCNN、SSD</li>
-</ul>
-<h3 id="其他">其他</h3>
-<ul>
-<li>Conv + (BN + Scale) + ReLu性能较Conv + (BN + Scale) + Tanh等激活算子好，尽量避免过于复杂的激活函数</li>
-<li>Concat算子在C维度进行拼接时，输入Tensor的Channel数均为16的倍数时，性能较好</li>
-<li>连续卷积结构性能较好，如果卷积层间反复插入较多Vector算子，则性能较差，尤其在INT8模型中较为明显</li>
-</ul>
+    <title>杂记</title>
+    <url>/2019/09/10/%E6%9D%82%E8%AE%B0/</url>
+    <content><![CDATA[<p>零散的记录</p>
+<span id="more"></span>
+<embed src="/pdf/杂记.pdf" width="100%" height="550" type="application/pdf">
 ]]></content>
       <categories>
-        <category>部署</category>
+        <category>其他</category>
       </categories>
   </entry>
   <entry>
@@ -706,6 +566,44 @@ min(abs(y-x), m-abs(y-x)
       </categories>
   </entry>
   <entry>
+    <title>板端部署</title>
+    <url>/2022/07/11/%E6%9D%BF%E7%AB%AF%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<span id="more"></span>
+<h1>Ascend310</h1>
+<h2 id="优化建议">优化建议</h2>
+<h3 id="网络结构">网络结构</h3>
+<ul>
+<li>推荐使用主流的网络拓扑，包括ResNet、MobileNet,不建议使用VGG、AlexNet等结构，网络模型偏大，单宽压力大</li>
+<li>矩阵乘法的MKN，尽量取16的倍数。算法上可以考虑适当增加channel个数，而不是分group的方式减少channel数量</li>
+<li>增加数据复用率。一个参数的利用次数越多带宽的瓶颈越小，所以算法上可以考虑增加filter的复用次数，比如增加feature map大小，避免过大的stride或dilation</li>
+</ul>
+<h3 id="算子">算子</h3>
+<ul>
+<li>Conv算子： 非量化模式下，Conv的输入和输出通道数建议采用16的整数倍；</li>
+<li>量化模式下，Conv的输入和输出通道数建议采用32的整数倍；</li>
+<li>量化模式下，多个Conv算子之间，建议少插入Pooling算子</li>
+</ul>
+<p>FC（FullConnection）算子：当网络中存在FC算子，尽量使用多Batch同时推理，且Batch数为16倍数时，性能较好
+Concat算子：</p>
+<ul>
+<li>非量化模式下，Concat的输入和输出通道数建议采用16的整数倍；</li>
+<li>量化模式下，Concat的输入和输出通道数建议采用32的整数倍</li>
+<li>Conv融合算子：推荐使用Conv+BN+Scale+ReLu/ReLu6的组合</li>
+<li>Norm算子：推荐使用BN算子，使用预训练的Norm参数；不推荐使用需要在线计算Norm参数的算子，比如LRN等</li>
+<li>检测算子：建议使用主流的检测网络拓扑，包括FasterRCNN、SSD</li>
+</ul>
+<h3 id="其他">其他</h3>
+<ul>
+<li>Conv + (BN + Scale) + ReLu性能较Conv + (BN + Scale) + Tanh等激活算子好，尽量避免过于复杂的激活函数</li>
+<li>Concat算子在C维度进行拼接时，输入Tensor的Channel数均为16的倍数时，性能较好</li>
+<li>连续卷积结构性能较好，如果卷积层间反复插入较多Vector算子，则性能较差，尤其在INT8模型中较为明显</li>
+</ul>
+]]></content>
+      <categories>
+        <category>部署</category>
+      </categories>
+  </entry>
+  <entry>
     <title>目标检测</title>
     <url>/2022/04/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<p>论文学习</p>
@@ -732,16 +630,5 @@ min(abs(y-x), m-abs(y-x)
       <tags>
         <tag>语义分割</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>杂记</title>
-    <url>/2019/09/10/%E6%9D%82%E8%AE%B0/</url>
-    <content><![CDATA[<p>零散的记录</p>
-<span id="more"></span>
-<embed src="/pdf/杂记.pdf" width="100%" height="550" type="application/pdf">
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
   </entry>
 </search>

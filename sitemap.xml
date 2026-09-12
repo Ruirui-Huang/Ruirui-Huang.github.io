@@ -83,15 +83,6 @@
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/2018/10/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</loc>
-    
-    <lastmod>2024-02-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ruirui-huang.github.io/2022/05/07/OpenMMLab/</loc>
     
     <lastmod>2024-02-20</lastmod>
@@ -128,13 +119,6 @@
 
   
   <url>
-    <loc>https://ruirui-huang.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ruirui-huang.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -149,7 +133,7 @@
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</loc>
+    <loc>https://ruirui-huang.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -172,13 +156,6 @@
 
   
   <url>
-    <loc>https://ruirui-huang.github.io/categories/CV/</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ruirui-huang.github.io/categories/pytorch/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -186,7 +163,7 @@
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/categories/Python/</loc>
+    <loc>https://ruirui-huang.github.io/categories/CV/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -194,6 +171,13 @@
   
   <url>
     <loc>https://ruirui-huang.github.io/categories/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ruirui-huang.github.io/categories/Coding/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -208,20 +192,6 @@
   
   <url>
     <loc>https://ruirui-huang.github.io/categories/%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ruirui-huang.github.io/categories/Python/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ruirui-huang.github.io/categories/Coding/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
