@@ -1418,7 +1418,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #1cffff;
+    background: #edec90;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3212,6 +3212,12 @@ header.header {
 }
 .post-block:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.main-inner .post-block {
+  border-radius: 10px;
+}
+.post-body .highlight {
+  border-radius: 8px;
 }
 ::selection {
   background: #3498db;
