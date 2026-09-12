@@ -1418,7 +1418,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #a2d97c;
+    background: #c3ffff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3207,6 +3207,9 @@ header.header {
 }
 .post-body li::marker {
   color: #3498db;
+}
+.post-body blockquote {
+  border-left-color: #3498db;
 }
 .code-lang {
   font-size: 11px;
