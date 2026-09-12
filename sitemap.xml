@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/about/index.html</loc>
+    <loc>https://ruirui-huang.github.io/categories/index.html</loc>
     
     <lastmod>2026-09-12</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/categories/index.html</loc>
+    <loc>https://ruirui-huang.github.io/about/index.html</loc>
     
     <lastmod>2026-09-12</lastmod>
     
@@ -177,14 +177,14 @@
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/categories/CV/NLP/</loc>
+    <loc>https://ruirui-huang.github.io/categories/%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/categories/%E9%83%A8%E7%BD%B2/</loc>
+    <loc>https://ruirui-huang.github.io/categories/CV/NLP/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
