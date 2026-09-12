@@ -1299,7 +1299,80 @@ OD     **21k**      8.3k
 <p>用 Python <code>tarfile</code> 解压（见 3.2），或 PowerShell 指定编码后处理。</p>
 <h3 id="Code-504-The-app-is-archived（Valine-时代遗留，已过时）">Code 504: The app is archived（Valine 时代遗留，已过时）</h3>
 <p>老方案 Valine 依赖的 LeanCloud <strong>2027-01-12 全面停服、数据销毁</strong>，本站已迁移 Utterances。如旧站页面残留 Valine 凭据（appId/appKey），仅作历史存档即可，不再使用。</p>
-<p>未完待续！！!</p>
+<h2 id="五、LaTeX-学习笔记转博客正文（2026-09-实测）">五、LaTeX 学习笔记转博客正文（2026-09 实测）</h2>
+<p>场景：旧站部分文章以 <code>&lt;embed src=&quot;/pdf/xxx.pdf&quot;&gt;</code> 嵌入 PDF 展示，不优雅且移动端体验差。本站在 Overleaf 有 LaTeX 源（ctexart + morelull 模板），可整体转为 Markdown 正文，公式用 KaTeX 渲染。</p>
+<h3 id="5-1-获取-Overleaf-源文件">5.1 获取 Overleaf 源文件</h3>
+<ul>
+<li>项目页可浏览器下载 zip：<strong>点击按钮后 <code>wait_for_download</code></strong>（<code>bu.download(zip链接)</code> 直下无效、按钮被浮层遮挡时用 JS 按 <code>[aria-label=&quot;Download .zip file&quot;]</code> 点击）。</li>
+<li>zip 解压结构：<code>main.tex</code> + <code>demo.tex</code> + <code>morelull.sty</code>（自定义模板宏包）+ <code>imgs&amp;code/</code>（图片）。</li>
+</ul>
+<h3 id="5-2-pandoc-转换（pypandoc-binary，pandoc-3-9）">5.2 pandoc 转换（pypandoc-binary，pandoc 3.9）</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pypandoc</span><br><span class="line">md = pypandoc.convert_file(<span class="string">&#x27;main.tex&#x27;</span>, <span class="string">&#x27;markdown&#x27;</span>,</span><br><span class="line">      extra_args=[<span class="string">&#x27;--wrap=none&#x27;</span>, <span class="string">&#x27;--resource-path=&lt;项目&gt;/imgs&amp;code&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>必须 <code>--resource-path</code> 指向图片目录</strong>，否则图片引用丢失；图片实际在 <code>imgs&amp;code/</code>（不是 images/）。</li>
+<li>pandoc 对 <code>\includegraphics[scale=...]</code> 输出<strong>无尺寸的 <code>&lt;img&gt;</code></strong>；对 <code>[width=...]</code> 输出 <code>&lt;img style=&quot;width:90%&quot;&gt;</code>。都不是 markdown 图片语法。</li>
+<li><strong>预处理</strong>：删除 <code>\usepackage&#123;morelull&#125;</code>（pandoc 解析该宏包会报错）；自定义环境 <code>&#123;提醒&#125;/&#123;问题&#125;/&#123;特点&#125;</code> → <code>&#123;quote&#125;</code>，否则内容丢失。</li>
+<li><strong>CRLF 坑</strong>：pandoc 输出用 <code>\r\n</code>，行首正则全部失效，<code>clean()</code> 开头必须 <code>text.replace('\r\n', '\n')</code>。</li>
+<li>pandoc 会给标题加属性 <code># 标题 {#id}</code>——<strong>hexo 会把它当模板注释解析报 FATAL</strong>（expected end of comment），转换后必须删掉 <code> {#xxx}</code>。</li>
+</ul>
+<h3 id="5-3-渲染器：markdown-it-KaTeX（关键决策）">5.3 渲染器：markdown-it + KaTeX（关键决策）</h3>
+<p>hexo-renderer-marked <strong>会把 <code>$$...$$</code> 公式内容当普通 Markdown 解析</strong>（<code>_</code> 变斜体、<code>&amp;</code> 转义、公式被拆成段落/代码块），必须换渲染器：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked</span><br><span class="line">npm i hexo-renderer-markdown-it @renbaoshuo/markdown-it-katex</span><br></pre></td></tr></table></figure>
+<p><code>_config.yml</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span> &#123; <span class="attr">html:</span> <span class="literal">true</span>, <span class="attr">breaks:</span> <span class="literal">false</span>, <span class="attr">linkify:</span> <span class="literal">true</span> &#125;</span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">&#x27;@renbaoshuo/markdown-it-katex&#x27;</span></span><br><span class="line">      <span class="attr">options:</span> &#123; <span class="attr">throwOnError:</span> <span class="literal">false</span>, <span class="attr">strict:</span> <span class="literal">false</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>主题 <code>_config.next.yml</code>（按页加载，仅含公式的文章加载）：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">every_page:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">mathjax:</span> &#123; <span class="attr">enable:</span> <span class="literal">false</span> &#125;</span><br><span class="line">  <span class="attr">katex:</span> &#123; <span class="attr">enable:</span> <span class="literal">true</span>, <span class="attr">copy_tex:</span> <span class="literal">true</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>文章 front-matter 必须加 <strong><code>mathjax: true</code></strong>（NexT 8 按页触发判断的就是这个字段，即使引擎是 KaTeX）。</p>
+<h3 id="5-4-排版坑清单（全部实测）">5.4 排版坑清单（全部实测）</h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正文 section 变 h1，6 个大标题抢文章标题层级</td>
+<td>转换后所有标题降一级（<code>#</code>→<code>##</code>）</td>
+</tr>
+<tr>
+<td>无尺寸大图溢出正文容器</td>
+<td>所有 <code>&lt;img&gt;</code> 统一加 <code>max-width:100%;height:auto;display:block;margin:0 auto</code></td>
+</tr>
+<tr>
+<td>figure/figcaption 无样式</td>
+<td>主题 <code>custom_file_path.style: source/_data/styles.styl</code> 加样式</td>
+</tr>
+<tr>
+<td>块级公式不渲染</td>
+<td><code>$$...$$</code> 必须独占段落（前后补空行）</td>
+</tr>
+<tr>
+<td><code>\text&#123;$y=1$&#125;</code> 嵌套 $</td>
+<td>去除 \text 内层 $；<code>W_i_K</code> 双下标按语义改 <code>W_i^K</code></td>
+</tr>
+<tr>
+<td><code>$^&#123;\ref&#123;xx&#125;&#125;$</code> 清理后残留孤立 <code>$$</code></td>
+<td>先整删 <code>$^&#123;\ref&#123;xx&#125;&#125;$</code> 再删 <code>\ref&#123;xx&#125;</code></td>
+</tr>
+<tr>
+<td>pandoc 对齐式表格不渲染为 table</td>
+<td>转成 markdown 管道表格（或 <code>-t markdown+pipe_tables</code>）</td>
+</tr>
+<tr>
+<td>表格内 <code>$\geq$</code> 不渲染</td>
+<td>直接替换为 Unicode <code>≥</code></td>
+</tr>
+<tr>
+<td>hexo 增量生成不检测 md 变化（0 files）</td>
+<td>转换后务必 <code>hexo clean &amp;&amp; hexo g</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-5-验证与部署">5.5 验证与部署</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx hexo clean &amp;&amp; npx hexo g     <span class="comment"># 生成</span></span><br><span class="line">npx hexo server -p 4000          <span class="comment"># 本地预览：公式/图片/表格逐篇过</span></span><br><span class="line">python scan_pages.py             <span class="comment"># 脚本扫描 katex-err/残留/坏图</span></span><br><span class="line">npx hexo d                       <span class="comment"># 部署 master</span></span><br><span class="line">git add -A &amp;&amp; git commit -m ... &amp;&amp; git push origin HEAD:<span class="built_in">source</span>  <span class="comment"># 备份源文件</span></span><br></pre></td></tr></table></figure>
+<p>转换脚本复用：<code>convert_tex.py</code>（含以上全部修复，跑一遍重出 5 篇 md 并重拷图片），位于本站工具目录（见 README）。</p>
 ]]></content>
       <categories>
         <category>其他</category>
