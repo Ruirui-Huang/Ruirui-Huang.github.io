@@ -227,6 +227,30 @@
     })();
   </script>
 
+<script>
+  (function () {
+    // 侧栏头像跟随鼠标 3D 旋转
+    function initAvatarTilt() {
+      var img = document.querySelector('.site-author-image');
+      if (!img) return;
+      var wrap = img.closest('.site-author') || img.parentElement;
+      wrap.addEventListener('mousemove', function (e) {
+        var r = wrap.getBoundingClientRect();
+        var dx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2 || 1);
+        var dy = (e.clientY - (r.top + r.height / 2)) / (r.height / 2 || 1);
+        img.style.transform = 'perspective(420px) rotateY(' + (dx * 18).toFixed(1) + 'deg) rotateX(' + (-dy * 18).toFixed(1) + 'deg) scale(1.05)';
+      });
+      wrap.addEventListener('mouseleave', function () {
+        img.style.transform = '';
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAvatarTilt);
+    } else {
+      initAvatarTilt();
+    }
+  })();
+</script>
 
         </div>
       </div>

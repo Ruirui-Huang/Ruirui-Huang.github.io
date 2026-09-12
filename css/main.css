@@ -1253,7 +1253,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #a2fb16;
+    background: #ff3657;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2858,6 +2858,10 @@ header.header {
 .post-body table th,
 .post-body table td {
   padding: 0.4em 0.8em;
+}
+.site-author-image {
+  transition: transform 0.18s ease;
+  will-change: transform;
 }
 .sidebar-bubble-cloud {
   margin-top: 1.5em;
