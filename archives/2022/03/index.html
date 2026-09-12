@@ -294,5 +294,26 @@
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
 
+<script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript">
+  var GUEST = ['nick','mail','link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(function(item){
+    return GUEST.indexOf(item)>-1;
+  });
+  new Valine({
+      el: '#comments',
+      verify: false,
+      notify: false,
+      appId: 'HHBn5XjQ2BAAB8s1rcAPf2YN-gzGzoHsz',
+      appKey: 'FBIsIoenE5GCB1IF3mBTpgTz',
+      placeholder: '元芳，你怎么看......',
+      avatar: 'monsterid',
+      guest_info: guest,
+      pageSize: 10,
+  });
+</script>
+
 </body>
 </html>

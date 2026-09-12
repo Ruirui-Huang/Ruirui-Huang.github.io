@@ -307,6 +307,24 @@
     
 
     <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="黄锐 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="黄锐 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
 
         
 
@@ -328,6 +346,7 @@
 
 
 
+    <div class="comments" id="comments"></div>
 </div>
   </main>
 
@@ -381,6 +400,27 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
+
+<script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript">
+  var GUEST = ['nick','mail','link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(function(item){
+    return GUEST.indexOf(item)>-1;
+  });
+  new Valine({
+      el: '#comments',
+      verify: false,
+      notify: false,
+      appId: 'HHBn5XjQ2BAAB8s1rcAPf2YN-gzGzoHsz',
+      appKey: 'FBIsIoenE5GCB1IF3mBTpgTz',
+      placeholder: '元芳，你怎么看......',
+      avatar: 'monsterid',
+      guest_info: guest,
+      pageSize: 10,
+  });
+</script>
 
 </body>
 </html>
