@@ -75,9 +75,18 @@ reward:
   wechatpay: /images/wechatpay.jpg
   alipay: /images/alipay.jpg
 
-# 评论（Valine，凭据从原站静态页恢复）
-valine:
+# 评论（Utterances：基于 GitHub Issues，NexT 8 原生支持；
+# 替代已停服的 Valine/LeanCloud，2027-01-12 LeanCloud 全面关停）
+utterances:
   enable: true
+  repo: Ruirui-Huang/Ruirui-Huang.github.io
+  issue_term: pathname
+  theme: github-light
+  language: zh-CN
+
+# 评论（旧方案 Valine，LeanCloud 2027 年停服，已弃用）
+valine:
+  enable: false
   appid: HHBn5XjQ2BAAB8s1rcAPf2YN-gzGzoHsz
   appkey: FBIsIoenE5GCB1IF3mBTpgTz
   placeholder: 元芳，你怎么看......
