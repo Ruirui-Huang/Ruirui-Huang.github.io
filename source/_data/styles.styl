@@ -101,6 +101,14 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
 }
 
+// 卡片与代码块圆角（视觉统一）——需与 NexT 同 specificity 才生效
+.main-inner .post-block {
+  border-radius: 10px;
+}
+.post-body .highlight {
+  border-radius: 8px;
+}
+
 // 文字选中：品牌蓝底白字
 ::selection {
   background: #3498db;
