@@ -1282,7 +1282,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #f21b0f;
+    background: #dab43d;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2893,6 +2893,18 @@ header.header {
     padding: 10px 12px;
   }
 }
+.post-body a {
+  color: #3498db;
+  border-bottom: 1px solid rgba(52,152,219,0.4);
+}
+.post-body a:hover {
+  color: #217dbb;
+  border-bottom-color: #217dbb;
+}
+.post-body img {
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
 .post-body figure {
   margin: 1.2em auto;
   text-align: center;
@@ -2913,6 +2925,12 @@ header.header {
 .post-body table th,
 .post-body table td {
   padding: 0.4em 0.8em;
+}
+.posts-expand .post-title-link:hover {
+  color: #3498db;
+}
+.post-block:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 .site-author-image {
   transition: transform 0.18s ease;
