@@ -74,11 +74,11 @@ busuanzi_count:
   post_views: true
   post_views_icon: fa fa-eye
 
-# 文章版权信息（对应原站版权声明块）
+# 文章版权信息（对应原站版权声明块，与下方 creative_commons 保持一致）
 post_copyright:
   enable: true
-  license: 知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议
-  license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+  license: 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 # 代码块样式与复制按钮
 codeblock:
