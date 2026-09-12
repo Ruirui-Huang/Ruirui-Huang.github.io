@@ -100,6 +100,27 @@
 </script>
 <script>
   (function () {
+    // 正文外部链接新窗口打开（站内链接保持同窗口）
+    function externalLinks() {
+      var base = location.origin;
+      document.querySelectorAll('.post-body a').forEach(function (a) {
+        var href = a.getAttribute('href');
+        if (!href || a.hasAttribute('target')) return;
+        if (href.startsWith('http') && href.indexOf(base) !== 0 && href.indexOf('ruirui-huang.github.io') === -1) {
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener nofollow');
+        }
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', externalLinks);
+    } else {
+      externalLinks();
+    }
+  })();
+</script>
+<script>
+  (function () {
     // PDF 嵌入文章：自动添加"在新窗口打开 / 下载"链接
     function enhancePdfEmbeds() {
       document.querySelectorAll('embed[type="application/pdf"]').forEach(function (e) {

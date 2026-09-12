@@ -117,6 +117,7 @@ feed:
   type: atom
   path: atom.xml
   limit: 20
+  content: true
 
 # Local search (search.xml)
 search:

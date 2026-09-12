@@ -174,3 +174,10 @@ darkmode: true
 
 # 窄屏减少内边距（移动端紧凑布局）
 mobile_layout_economy: true
+
+# 版权声明（文章页底部）
+creative_commons:
+  license: by-nc-sa
+  size: small
+  sidebar: false
+  post: true
