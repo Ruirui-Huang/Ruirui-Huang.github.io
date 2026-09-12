@@ -31,17 +31,6 @@
       </tags>
   </entry>
   <entry>
-    <title>杂记</title>
-    <url>/2019/09/10/%E6%9D%82%E8%AE%B0/</url>
-    <content><![CDATA[<p>零散的记录</p>
-<span id="more"></span>
-<embed src="/pdf/杂记.pdf" width="100%" height="550" type="application/pdf">
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
     <title>搭建流程</title>
     <url>/2018/02/05/%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</url>
     <content><![CDATA[<p>本文最初写于 2018 年，记录 GitHub + Hexo 搭建个人博客的流程。<strong>2026 年 9 月更换新电脑后按本文重新完整走了一遍，内容已全面刷新为 runbook 形式</strong>：所有命令、配置与版本组合都在新电脑上实际验证通过，遇到问题直接看「四、问题集合」。以后无论是<strong>全新搭建</strong>还是<strong>旧电脑报废后的迁移恢复</strong>，照本文操作即可。（精华帖）</p>
@@ -115,7 +104,7 @@
 <h3 id="1-4-站点配置-config-yml">1.4 站点配置 <code>_config.yml</code></h3>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">HuangR&#x27;s</span> <span class="string">Blog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">记录世界，记录你！</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">黄锐</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>          <span class="comment"># NexT 8 无 zh-Hans，必须用 zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://你的用户名.github.io/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/你的用户名/你的用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 <h3 id="1-5-主题配置（站点根目录建-config-next-yml）">1.5 主题配置（站点根目录建 <code>_config.next.yml</code>）</h3>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span>                        <span class="comment"># 风格</span></span><br><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">left</span>                      <span class="comment"># 侧栏在左</span></span><br><span class="line">  <span class="attr">display:</span> <span class="string">post</span></span><br><span class="line"></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.gif</span>             <span class="comment"># 自定义头像放 source/images/</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line"></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                        <span class="comment"># 本地搜索</span></span><br><span class="line"></span><br><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                        <span class="comment"># 访问统计</span></span><br><span class="line"></span><br><span class="line"><span class="attr">post_copyright:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                        <span class="comment"># 文章版权</span></span><br><span class="line"></span><br><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">atom-one-dark</span>               <span class="comment"># highlight.js 11 无 tomorrow-night</span></span><br><span class="line"></span><br><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span>                 <span class="comment"># 回到顶部+阅读进度</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward_settings:</span>                      <span class="comment"># 打赏（收款码放 source/images/）</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">wechatpay:</span> <span class="string">/images/wechatpay.jpg</span></span><br><span class="line">  <span class="attr">alipay:</span> <span class="string">/images/alipay.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="attr">utterances:</span>                           <span class="comment"># 评论</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">你的用户名/你的用户名.github.io</span></span><br><span class="line">  <span class="attr">issue_term:</span> <span class="string">pathname</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">github-light</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span>                        <span class="comment"># 风格</span></span><br><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">left</span>                      <span class="comment"># 侧栏在左</span></span><br><span class="line">  <span class="attr">display:</span> <span class="string">post</span></span><br><span class="line"></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.gif</span>             <span class="comment"># 自定义头像放 source/images/</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line"></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                        <span class="comment"># 本地搜索</span></span><br><span class="line"></span><br><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                        <span class="comment"># 访问统计</span></span><br><span class="line"></span><br><span class="line"><span class="attr">post_copyright:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                        <span class="comment"># 文章版权</span></span><br><span class="line"></span><br><span class="line"><span class="attr">creative_commons:</span>                     <span class="comment"># 版权协议（文章页底部 CC BY-NC-SA）</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="attr">language:</span> <span class="literal">true</span>                     <span class="comment"># 代码块显示语言标签</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">atom-one-dark</span>               <span class="comment"># highlight.js 11 无 tomorrow-night</span></span><br><span class="line"></span><br><span class="line"><span class="attr">darkmode:</span> <span class="literal">true</span>                       <span class="comment"># 暗色模式（跟随系统 prefers-color-scheme）</span></span><br><span class="line"><span class="attr">mobile_layout_economy:</span> <span class="literal">true</span>          <span class="comment"># 窄屏紧凑布局</span></span><br><span class="line"></span><br><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span>                 <span class="comment"># 回到顶部+阅读进度</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward_settings:</span>                      <span class="comment"># 打赏（收款码放 source/images/）</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">wechatpay:</span> <span class="string">/images/wechatpay.jpg</span></span><br><span class="line">  <span class="attr">alipay:</span> <span class="string">/images/alipay.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="attr">utterances:</span>                           <span class="comment"># 评论</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">你的用户名/你的用户名.github.io</span></span><br><span class="line">  <span class="attr">issue_term:</span> <span class="string">pathname</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">github-light</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
 <h3 id="1-6-首次发布">1.6 首次发布</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g          <span class="comment"># 生成</span></span><br><span class="line">hexo s          <span class="comment"># 本地预览 http://localhost:4000，确认无误后</span></span><br><span class="line">hexo d          <span class="comment"># 部署（首次会弹出 GitHub 登录授权）</span></span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -319,6 +308,17 @@
       </categories>
   </entry>
   <entry>
+    <title>杂记</title>
+    <url>/2019/09/10/%E6%9D%82%E8%AE%B0/</url>
+    <content><![CDATA[<p>零散的记录</p>
+<span id="more"></span>
+<embed src="/pdf/杂记.pdf" width="100%" height="550" type="application/pdf">
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
     <title>板端部署</title>
     <url>/2022/07/11/%E6%9D%BF%E7%AB%AF%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<span id="more"></span>
@@ -357,20 +357,6 @@
       </categories>
   </entry>
   <entry>
-    <title>目标检测</title>
-    <url>/2022/04/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</url>
-    <content><![CDATA[<p>论文学习</p>
-<span id="more"></span>
-<embed src="/pdf/目标检测学习笔记.pdf" width="100%" height="550" type="application/pdf">
-]]></content>
-      <categories>
-        <category>CV</category>
-      </categories>
-      <tags>
-        <tag>目标检测</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>语义分割</title>
     <url>/2022/03/21/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/</url>
     <content><![CDATA[<p>论文学习</p>
@@ -382,6 +368,20 @@
       </categories>
       <tags>
         <tag>语义分割</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目标检测</title>
+    <url>/2022/04/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[<p>论文学习</p>
+<span id="more"></span>
+<embed src="/pdf/目标检测学习笔记.pdf" width="100%" height="550" type="application/pdf">
+]]></content>
+      <categories>
+        <category>CV</category>
+      </categories>
+      <tags>
+        <tag>目标检测</tag>
       </tags>
   </entry>
 </search>
