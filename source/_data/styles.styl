@@ -1,5 +1,22 @@
 // 由 LaTeX 转换文章的排版美化
 .post-body {
+  // 正文链接：主题蓝 + hover 加深（默认 #555 与正文同色，可点击性弱）
+  a {
+    color: #3498db;
+    border-bottom: 1px solid rgba(52, 152, 219, .4);
+
+    &:hover {
+      color: #217dbb;
+      border-bottom-color: #217dbb;
+    }
+  }
+
+  // 正文图片圆角 + 轻阴影
+  img {
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+  }
+
   figure {
     margin: 1.2em auto;
     text-align: center;
@@ -25,6 +42,18 @@
       padding: .4em .8em;
     }
   }
+}
+
+// 首页文章标题 hover 变主题蓝
+.posts-expand .post-title-link {
+  &:hover {
+    color: #3498db;
+  }
+}
+
+// 文章卡片 hover 阴影加深（轻微交互反馈）
+.post-block:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
 }
 
 // 侧栏头像鼠标跟随旋转
