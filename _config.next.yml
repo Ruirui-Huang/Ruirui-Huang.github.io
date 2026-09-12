@@ -120,6 +120,9 @@ post_meta:
   updated_at:
     enable: true
     another_day: true
+  views:
+    enable: true
+    count_zero: true
 
 # 打赏（原站有微信/支付宝打赏，收款码在 source/images 下）
 reward_settings:
