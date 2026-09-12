@@ -1253,7 +1253,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffc9ff;
+    background: #c2703d;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2837,4 +2837,25 @@ header.header {
   .comments {
     padding: 10px 12px;
   }
+}
+.post-body figure {
+  margin: 1.2em auto;
+  text-align: center;
+}
+.post-body figure img {
+  display: block;
+  margin: 0 auto;
+}
+.post-body figure figcaption {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  color: #999;
+  text-align: center;
+}
+.post-body table {
+  border-collapse: collapse;
+}
+.post-body table th,
+.post-body table td {
+  padding: 0.4em 0.8em;
 }
