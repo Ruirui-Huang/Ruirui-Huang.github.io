@@ -1418,7 +1418,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #adffff;
+    background: #ffc8a8;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3191,6 +3191,10 @@ header.header {
 .post-body table th,
 .post-body table td {
   padding: 0.4em 0.8em;
+}
+.post-body table thead th {
+  background: var(--table-row-odd-bg-color);
+  font-weight: 600;
 }
 .post-body h2 {
   border-bottom: 1px solid var(--table-row-odd-bg-color);
