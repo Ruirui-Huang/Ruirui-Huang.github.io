@@ -119,13 +119,6 @@
 
   
   <url>
-    <loc>https://ruirui-huang.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ruirui-huang.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -140,7 +133,7 @@
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
+    <loc>https://ruirui-huang.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -153,7 +146,21 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://ruirui-huang.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://ruirui-huang.github.io/categories/pytorch/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>https://ruirui-huang.github.io/categories/CV/</loc>
@@ -170,7 +177,7 @@
   </url>
   
   <url>
-    <loc>https://ruirui-huang.github.io/categories/pytorch/</loc>
+    <loc>https://ruirui-huang.github.io/categories/%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -178,13 +185,6 @@
   
   <url>
     <loc>https://ruirui-huang.github.io/categories/CV/NLP/</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ruirui-huang.github.io/categories/%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

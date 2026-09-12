@@ -1418,7 +1418,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffff2e;
+    background: #1cffff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3180,6 +3180,17 @@ header.header {
 }
 .post-body li::marker {
   color: #3498db;
+}
+.code-lang {
+  font-size: 11px;
+  line-height: 1;
+  opacity: 0.55;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 8px;
+  right: 42px;
+  pointer-events: none;
 }
 .highlight .code pre {
   tab-size: 4;
