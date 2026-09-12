@@ -386,7 +386,7 @@
   (function () {
     // 搜索快捷键：按 / 或 Ctrl+K 打开站内搜索弹窗
     function openSearch() {
-      var trigger = document.querySelector('.menu-item-search a, a[href*="search"], .popup-trigger');
+      var trigger = document.querySelector('.popup-trigger, .menu-item-search a, a[href*="search"]');
       if (trigger) {
         trigger.click();
         return true;
