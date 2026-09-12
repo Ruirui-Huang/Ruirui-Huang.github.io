@@ -56,6 +56,26 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
 }
 
+// 文字选中：品牌蓝底白字
+::selection {
+  background: #3498db;
+  color: #fff;
+}
+
+// 细滚动条（WebKit）
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, .35);
+  border-radius: 4px;
+  &:hover { background: rgba(100, 100, 100, .55); }
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 // 侧栏头像鼠标跟随旋转
 .site-author-image {
   transition: transform .18s ease;
