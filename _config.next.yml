@@ -181,5 +181,7 @@ creative_commons:
   size: small
   sidebar: false
   post: true
-
-
+# 第三方资源本地化（避免 Cloudflare CDN 国内访问慢）
+vendors:
+  plugins: custom
+  custom_cdn_url: /lib/${cdnjs_name}/${cdnjs_file}
