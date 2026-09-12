@@ -360,8 +360,7 @@
 <script>
   (function () {
     // PDF 文章无标题结构：文章目录为空时自动隐藏该 Tab 并显示站点概览
-    function hideEmptyToc() {
-      var tocWrap = document.querySelector('.post-toc-wrap');
+    function hideEmptyToc() {      var tocWrap = document.querySelector('.post-toc-wrap');
       if (!tocWrap) return;
       var hasToc = tocWrap.querySelector('.post-toc') || tocWrap.textContent.trim().length > 0;
       if (hasToc) return;
@@ -412,6 +411,26 @@
       }
     }
     document.addEventListener('keydown', onKey);
+  })();
+</script>
+<script>
+  (function () {
+    // 文章页键盘导航：← 上一篇 / → 下一篇
+    function navKeys(e) {
+      var t = e.target;
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+      var items = document.querySelectorAll('.post-nav .post-nav-item a');
+      if (!items.length) return;
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        if (items[0].getAttribute('href')) window.location.href = items[0].getAttribute('href');
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        var next = items[1] || items[0];
+        if (next.getAttribute('href')) window.location.href = next.getAttribute('href');
+      }
+    }
+    document.addEventListener('keydown', navKeys);
   })();
 </script>
 
