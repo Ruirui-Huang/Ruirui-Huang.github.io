@@ -35,7 +35,7 @@ mathjax: true
 <figcaption>更加强大的Runner</figcaption>
 </figure>
 
-训练引擎的核心模块是[执行器（Runner）](https://mmengine.readthedocs.io/zh_CN/latest/tutorials/runner.html)，如图[1](Runner)。为了允许用户拓展、插入和执行自定义逻辑，执行器设置了丰富的[钩子（Hook）](https://mmengine.readthedocs.io/zh_CN/latest/tutorials/hook.html)，如图[2](Hook)。
+训练引擎的核心模块是[执行器（Runner）](https://mmengine.readthedocs.io/zh_CN/latest/tutorials/runner.html)，如图[1](#Runner)。为了允许用户拓展、插入和执行自定义逻辑，执行器设置了丰富的[钩子（Hook）](https://mmengine.readthedocs.io/zh_CN/latest/tutorials/hook.html)，如图[2](#Hook)。
 
 <figure id="Hook" data-latex-placement="H">
 <img src="/images/openmmlab/Hook.jpg" style="width:12cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
@@ -105,7 +105,7 @@ mathjax: true
 
 > [Q：]{style="color: red"}既然Runner、Hook 这些核心组件都在MMEngine里实现了，那MMCV还有啥嘞？架构升级后，还能用MMCV做哪些事情？
 >
-> [A：]{style="color: red"}详见[2.2](MMCV)节
+> [A：]{style="color: red"}详见[2.2](#MMCV)节
 
 >  [Q：]{style="color: red"}数据预处理模型 [data_preprocessor]{style="color: gray"} 和数据集 [trasform]{style="color: gray"}有何不同？
 >
@@ -202,7 +202,7 @@ mathjax: true
 <figcaption>全新的架构设计。图<a href="#原架构训练逻辑" data-reference-type="ref" data-reference="原架构训练逻辑">[原架构训练逻辑]</a>为原来的架构训练逻辑；图<a href="#新架构训练逻辑" data-reference-type="ref" data-reference="新架构训练逻辑">[新架构训练逻辑]</a>为新的架构训练逻辑</figcaption>
 </figure>
 
-总而言之，在新的架构中，MMEngine的执行器集中了所有的模块构建功能，训练脚本只用于最基本的配置解析，如图[\[新架构训练逻辑\]](新架构训练逻辑)，这样新的训练流程不仅逻辑更加清晰，大大减少了代码量，还能为用户带来更方便的模型调试体验，让用户灵活地定义模型的前向和方向过程。
+总而言之，在新的架构中，MMEngine的执行器集中了所有的模块构建功能，训练脚本只用于最基本的配置解析，如图[\[新架构训练逻辑\]](#新架构训练逻辑)，这样新的训练流程不仅逻辑更加清晰，大大减少了代码量，还能为用户带来更方便的模型调试体验，让用户灵活地定义模型的前向和方向过程。
 
 ### MMCV
 > MMCV2.x两大变化：模块增删 & 包名变更
@@ -211,14 +211,14 @@ mathjax: true
 
 MMCV1.x中主要包含Runner、Hook、Parallel、Registry、Config、FileIO、Image/Video、CNN和OPS组件。
 
-在MMCV2.x中，和训练流程相关的组件被删除了，由MMEngine提供，只保留图像视频处理、网络基础模块和算子。除此之外，还新增了数据预处理模块（Transform），如图[6](MMCV2.x)。
+在MMCV2.x中，和训练流程相关的组件被删除了，由MMEngine提供，只保留图像视频处理、网络基础模块和算子。除此之外，还新增了数据预处理模块（Transform），如图[6](#MMCV2.x)。
 
 <figure id="MMCV2.x" data-latex-placement="H">
 <img src="/images/openmmlab/MMCV.jpg" style="height:5cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
 <figcaption>MMCV2.x模块的变化</figcaption>
 </figure>
 
-以分类任务为例，图[7](Datapipeline_cls)展示的是一个典型的数据流水线。
+以分类任务为例，图[7](#Datapipeline_cls)展示的是一个典型的数据流水线。
 
 <figure id="Datapipeline_cls" data-latex-placement="H">
 <img src="/images/openmmlab/Datapipeline_cls.jpg" style="height:5cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
@@ -471,7 +471,7 @@ if C > 1:
 
 MMSegmentation1.0新定义了BaseSegDataset，规范了语义分割数据集功能和接口，是 MMEngine中BaseDataset的子类。数据集主要的功能是加载数据信息，数据信息有两种，一种是数据集的元信息，包括类别信息和调色板信息，就是渲染时类别对应的颜色；另一种是数据信息，保存了具体数据集中图片路径和对应的标签路径。
 
-一个典型的语义分割模型训练时的数据变换流水线，如图[8](Datapipeline_seg)所示。
+一个典型的语义分割模型训练时的数据变换流水线，如图[8](#Datapipeline_seg)所示。
 
 <figure id="Datapipeline_seg" data-latex-placement="H">
 <img src="/images/openmmlab/Datapipeline_seg.jpg" style="height:5cm;max-width:100%;height:auto;display:block;margin:0 auto;" />
@@ -482,7 +482,7 @@ MMSegmentation1.0新定义了BaseSegDataset，规范了语义分割数据集功�
 
 MMSegmentation中将语义分割算法模型称为segmentor，共6个模块，分别是：
 
-- data_preprocessor，详见[\[数据预处理模型\]](数据预处理模型)
+- data_preprocessor，详见[\[数据预处理模型\]](#数据预处理模型)
 
 - Backbone，常见的模型有ResNet，Swin transformer等
 
@@ -513,9 +513,9 @@ Args:
 
 数据流协议分为训练和测试两种。
 
-如图[\[训练时的数据流\]](训练时的数据流)，训练的时候，dataloader搬运经过data transforms处理的数据，传给模型train_step方法，模型里会先调数据预处理模块，再传给模型的forward函数，前传并计算损失。这个loss dict会经过parse_losses模块解析，得到一个loss scalar，然后在opitimizer warpper 里的update_params对模型反传，计算梯度，并更新参数。
+如图[\[训练时的数据流\]](#训练时的数据流)，训练的时候，dataloader搬运经过data transforms处理的数据，传给模型train_step方法，模型里会先调数据预处理模块，再传给模型的forward函数，前传并计算损失。这个loss dict会经过parse_losses模块解析，得到一个loss scalar，然后在opitimizer warpper 里的update_params对模型反传，计算梯度，并更新参数。
 
-如图[\[测试时的数据流\]](测试时的数据流)，测试时，数据会传给模型的test_step方法，同样是先经过预处理，predict输出datasample。这里的datasample就是输入网络的datasample，只不过新增了pred_sem_seg和seg_logits两个字段用以保存网络的预测结果。将这个修改后的data sample和inputs送到评测器计算评测指标，或者送到可视化器中进行处理。
+如图[\[测试时的数据流\]](#测试时的数据流)，测试时，数据会传给模型的test_step方法，同样是先经过预处理，predict输出datasample。这里的datasample就是输入网络的datasample，只不过新增了pred_sem_seg和seg_logits两个字段用以保存网络的预测结果。将这个修改后的data sample和inputs送到评测器计算评测指标，或者送到可视化器中进行处理。
 
 <figure data-latex-placement="H">
 <p><br />
